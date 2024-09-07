@@ -1,3 +1,7 @@
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <section id="home" className="h-screen">
+      <div>Home</div>
+    </section>
+  );
 }
