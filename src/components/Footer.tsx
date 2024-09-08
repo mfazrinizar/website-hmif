@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="flex flex-col justify-between gap-8 py-8 md:flex-row"
+      className="mt-24 flex flex-col justify-between gap-8 py-8 md:mt-32 md:flex-row lg:mt-40"
     >
       <div className="flex flex-col justify-center gap-4 text-center">
         <img

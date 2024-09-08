@@ -22,6 +22,11 @@ export default function About() {
           className="hidden size-1/3 md:block"
         />
       </div>
+      <img
+        src="img/ellipse-4.png"
+        alt="ellipse-4"
+        className="absolute right-0 top-10 -z-50 w-1/3"
+      />
       <div className="space-y-10">
         <h1 className="text-center text-3xl font-bold text-primary xl:text-4xl">
           VISI & MISI
