@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section id="about" className="space-y-24 lg:space-y-32 xl:space-y-40">
-      <div className="flex items-center justify-between">
+      <section id="about-hero" className="flex items-center justify-between">
         <div className="space-y-4 md:w-1/2">
           <h1 className="text-3xl font-bold text-primary xl:text-4xl">
             About HMIF
@@ -21,13 +21,13 @@ export default function About() {
           alt="logo-hmif"
           className="hidden size-1/3 md:block"
         />
-      </div>
+      </section>
       <img
         src="img/ellipse-4.png"
         alt="ellipse-4"
         className="absolute right-0 top-10 -z-50 w-1/3"
       />
-      <div className="space-y-10">
+      <section id="about-visi-misi" className="space-y-10">
         <h1 className="text-center text-3xl font-bold text-primary xl:text-4xl">
           VISI & MISI
         </h1>
@@ -77,8 +77,8 @@ export default function About() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="space-y-10">
+      </section>
+      <section id="about-logo-info" className="space-y-10">
         <h1 className="text-3xl font-bold text-primary xl:text-4xl">
           FILOSOFI LOGO ANTAVARTA
         </h1>
@@ -120,8 +120,8 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="space-y-4">
+      </section>
+      <section id="about-gallery" className="space-y-4">
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
           <div className="grid space-y-4 overflow-hidden">
             <div className="space-y-4">
@@ -149,7 +149,7 @@ export default function About() {
             <img src="img/gallery-8.png" alt="gallery-8" />
           </div>
         </div>
-      </div>
+      </section>
     </section>
   );
 }
