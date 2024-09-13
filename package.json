@@ -15,12 +15,14 @@
     "@tanstack/react-query": "^5.55.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "firebase": "^10.13.1",
     "lucide-react": "^0.439.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.26.1",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "website-hmif": "file:"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",
