@@ -3,6 +3,7 @@ import { RouteObject } from "react-router-dom";
 import AppLayout from "./pages/Layout/AppLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Academic from "./pages/Academic";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -14,6 +15,10 @@ const RouterBuilder = () => {
     {
       path: "/about",
       element: <About />,
+    },
+    {
+      path: "/academic",
+      element: <Academic />,
     },
   ];
 
