@@ -1,3 +1,5 @@
+import FellowInfo from "@/components/FellowInfo";
+
 export default function AcademicHero() {
   return (
     <section
@@ -14,9 +16,10 @@ export default function AcademicHero() {
           Jelajahi berbagai beasiswa, seminar, dan perlombaan yang tersedia
           untuk mendukung minat Anda!
         </p>
-        <div className="flex gap-4 self-end md:w-1/2">
-          {/* <FellowInfo qty={40} text="Program Kerja Terlaksana" /> */}
-          {/* <FellowInfo qty={120} text="Member HMIF 2024" /> */}
+        <div className="flex justify-center gap-2 self-end pt-10 text-center md:w-1/2 lg:justify-normal lg:gap-x-12">
+          <FellowInfo qty={30} text="Scholarship" />
+          <FellowInfo qty={20} text="Competition" />
+          <FellowInfo qty={20} text="Seminar" />
         </div>
       </div>
 
