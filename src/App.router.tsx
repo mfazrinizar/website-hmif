@@ -4,6 +4,7 @@ import AppLayout from "./pages/Layout/AppLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Academic from "./pages/Academic";
+import Profile from "./pages/Profile";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -19,6 +20,10 @@ const RouterBuilder = () => {
     {
       path: "/academic",
       element: <Academic />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
     },
   ];
 
