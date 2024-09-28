@@ -1,5 +1,4 @@
 import ProfileTabs from "@/components/Profile/ProfileTabs";
-import ProfileCarousel from "@/components/Profile/ProfileCarousel";
 
 export default function Profile() {
   return (
@@ -38,7 +37,6 @@ export default function Profile() {
         className="space-y-24 lg:space-y-32 xl:space-y-40"
       >
         <ProfileTabs />
-        <ProfileCarousel />
       </section>
     </section>
   );

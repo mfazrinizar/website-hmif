@@ -1,4 +1,27 @@
-export default function ProfileInfo() {
+import { useEffect, useState } from "react";
+import axios from "axios";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+type Props = {
+  divisi: string;
+};
+
+export default function ProfileInfo({ divisi }: Props) {
+  const [infoDesc, setInfoDesc] = useState([]);
+  const [infoTitle, setInfoTitle] = useState([]);
+
+  useEffect(() => {
+    axios.get(`/data/profile/${divisi}.json`).then((res) => {
+      setInfoTitle(res.data.infoTitle);
+      setInfoDesc(res.data.infoDesc);
+    });
+  }, []);
+
   return (
     <section
       id="profile-info"
@@ -10,13 +33,30 @@ export default function ProfileInfo() {
         className="hidden md:block md:w-1/4"
       />
       <div className="space-y-6 md:w-3/5">
-        <h4 className="text-left text-3xl font-medium text-primary">INTI</h4>
-        <p className="text-left text-base md:text-xl">
-          BPH Inti adalah bagian yang bertanggung jawab atas seluruh urusan
-          internal dan eksternal HMIF UNSRI. BPH Inti bertanggung jawab atas
-          memberi arahan, memantau, dan pembuat kebijakan tertinggi di HMIF
-          UNSRI
-        </p>
+        <h4 className="text-left text-3xl font-medium uppercase text-primary">
+          {infoTitle[0]}
+        </h4>
+        <p className="text-left text-base md:text-xl">{infoDesc[0]}</p>
+        {infoDesc[1] && infoDesc[2] && infoTitle[1] && infoTitle[2] && (
+          <Accordion type="single" collapsible className="space-y-8">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="capitalize">
+                {infoTitle[1]}
+              </AccordionTrigger>
+              <AccordionContent className="text-left">
+                {infoDesc[1]}
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="capitalize">
+                {infoTitle[2]}
+              </AccordionTrigger>
+              <AccordionContent className="text-left">
+                {infoDesc[2]}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        )}
       </div>
     </section>
   );

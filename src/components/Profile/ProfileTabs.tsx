@@ -1,5 +1,17 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProfileInfo from "./ProfileInfo";
+import ProfileCarousel from "@/components/Profile/ProfileCarousel";
+
+const divisi = [
+  "inti",
+  "kominfo",
+  "akademik",
+  "psdm",
+  "pmb",
+  "kwu",
+  "kastrad",
+  "adm",
+];
 
 export default function ProfileTabs() {
   return (
@@ -21,10 +33,14 @@ export default function ProfileTabs() {
           <TabsTrigger value="adm">adm</TabsTrigger>
         </div>
       </TabsList>
-      <TabsContent value="inti" className="mt-20">
-        <ProfileInfo />
+      <TabsContent value="inti">
+        <ProfileInfo divisi="inti" />
+        <ProfileCarousel divisi="inti" />
       </TabsContent>
-      <TabsContent value="kominfo"></TabsContent>
+      <TabsContent value="kominfo">
+        <ProfileInfo divisi="kominfo" />
+        <ProfileCarousel divisi="kominfo" />
+      </TabsContent>
       <TabsContent value="akademik"></TabsContent>
       <TabsContent value="psdm"></TabsContent>
       <TabsContent value="pmb"></TabsContent>
