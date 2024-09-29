@@ -28,7 +28,7 @@ export default function ProfileInfo({ divisi }: Props) {
       className="flex flex-col items-center justify-between gap-6 md:flex-row"
     >
       <img
-        src="/img/big-logo-hmif.png"
+        src={`/img/profile/${divisi}/logo.png`}
         alt="logo-hmif"
         className="hidden md:block md:w-1/4"
       />

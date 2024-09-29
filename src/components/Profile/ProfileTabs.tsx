@@ -33,7 +33,13 @@ export default function ProfileTabs() {
           <TabsTrigger value="adm">adm</TabsTrigger>
         </div>
       </TabsList>
-      <TabsContent value="inti">
+      {divisi.map((item) => (
+        <TabsContent value={item}>
+          <ProfileInfo divisi={item} />
+          <ProfileCarousel divisi={item} />
+        </TabsContent>
+      ))}
+      {/* <TabsContent value="inti">
         <ProfileInfo divisi="inti" />
         <ProfileCarousel divisi="inti" />
       </TabsContent>
@@ -46,7 +52,7 @@ export default function ProfileTabs() {
       <TabsContent value="pmb"></TabsContent>
       <TabsContent value="kwu"></TabsContent>
       <TabsContent value="kastrad"></TabsContent>
-      <TabsContent value="adm"></TabsContent>
+      <TabsContent value="adm"></TabsContent> */}
     </Tabs>
   );
 }

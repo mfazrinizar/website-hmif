@@ -40,6 +40,7 @@ export default function ProfileCarousel({ divisi }: Props) {
                 angkatan={item["angkatan"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
+                divisi={divisi}
                 key={item["instagram"] + key}
               />
             ))}
@@ -49,7 +50,7 @@ export default function ProfileCarousel({ divisi }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${item["nama"]}.png`}
+                src={`/img/profile/${divisi}/${item["nama"]}.png`}
               />
             ))}
           </div>
@@ -68,6 +69,7 @@ export default function ProfileCarousel({ divisi }: Props) {
                 angkatan={item["angkatan"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
+                divisi={divisi}
                 key={item["instagram"] + key}
               />
             ))}
@@ -77,7 +79,7 @@ export default function ProfileCarousel({ divisi }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${item["nama"]}.png`}
+                src={`/img/profile/${divisi}/${item["nama"]}.png`}
               />
             ))}
           </div>
@@ -93,6 +95,7 @@ export default function ProfileCarousel({ divisi }: Props) {
                 angkatan={item["angkatan"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
+                divisi={divisi}
                 key={item["instagram"] + key}
               />
             ))}
@@ -102,7 +105,7 @@ export default function ProfileCarousel({ divisi }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${item["nama"]}.png`}
+                src={`/img/profile/${divisi}/${item["nama"]}.png`}
               />
             ))}
           </div>
