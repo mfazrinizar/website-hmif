@@ -1,3 +1,5 @@
+import ProkerTabs from "@/components/Proker/ProkerTabs";
+
 export default function Proker() {
   return (
     <section id="proker" className="space-y-24 lg:space-y-32 xl:space-y-40">
@@ -12,6 +14,9 @@ export default function Proker() {
                 </div>
                 </div>
             </div>
+        </section>
+        <section>
+          <ProkerTabs />
         </section>
     </section>
   )
