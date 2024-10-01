@@ -9,17 +9,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 type Props = {
-  divisi: string;
+  dinas: string;
 };
 
-export default function ProfileCarousel({ divisi }: Props) {
-  const [inti, setInti] = useState([]);
+export default function ProfileCarousel({ dinas }: Props) {
+  const [core, setCore] = useState([]);
   const [staff, setStaff] = useState([[]]);
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    axios.get(`/data/profile/${divisi}.json`).then((res) => {
-      setInti(res.data.inti);
+    axios.get(`/data/profile/${dinas}.json`).then((res) => {
+      setCore(res.data.core);
       if (res.data.staff) setStaff(res.data.staff);
       setTitle(res.data.title);
     });
@@ -27,30 +27,30 @@ export default function ProfileCarousel({ divisi }: Props) {
 
   return (
     <section id="profile-carousel" className="space-y-8">
-      {inti && (
+      {core && (
         <Carousel className="flex flex-col">
           <h1 className="mb-4 self-start text-2xl font-bold uppercase text-primary lg:mb-20 xl:text-4xl">
             bph {title}
           </h1>
           <CarouselContent>
-            {inti.map((item, key) => (
+            {core.map((item, key) => (
               <ProfileCarouselItem
                 nama={item["nama"]}
                 jabatan={item["jabatan"]}
                 angkatan={item["angkatan"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
-                divisi={divisi}
+                dinas={dinas}
                 key={item["instagram"] + key}
               />
             ))}
           </CarouselContent>
           <div className="embla__dots no-scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap lg:mt-0 lg:w-1/2">
-            {inti.map((item, key) => (
+            {core.map((item, key) => (
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${divisi}/${item["nama"]}.png`}
+                src={`/img/profile/${dinas}/${item["nama"]}.png`}
               />
             ))}
           </div>
@@ -69,7 +69,7 @@ export default function ProfileCarousel({ divisi }: Props) {
                 angkatan={item["angkatan"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
-                divisi={divisi}
+                dinas={dinas}
                 key={item["instagram"] + key}
               />
             ))}
@@ -79,7 +79,7 @@ export default function ProfileCarousel({ divisi }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${divisi}/${item["nama"]}.png`}
+                src={`/img/profile/${dinas}/${item["nama"]}.png`}
               />
             ))}
           </div>
@@ -95,7 +95,7 @@ export default function ProfileCarousel({ divisi }: Props) {
                 angkatan={item["angkatan"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
-                divisi={divisi}
+                dinas={dinas}
                 key={item["instagram"] + key}
               />
             ))}
@@ -105,7 +105,7 @@ export default function ProfileCarousel({ divisi }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${divisi}/${item["nama"]}.png`}
+                src={`/img/profile/${dinas}/${item["nama"]}.png`}
               />
             ))}
           </div>

@@ -1,0 +1,90 @@
+{
+  "core": [
+    {
+      "nama": "Muhammad Adlan Azzikra",
+      "jabatan": "Kepala Dinas PSDM",
+      "angkatan": "Teknik Informatika Bilingual 2022",
+      "instagram": "adlnzkra",
+      "email": "adlnzkra@gmail.com"
+    },
+    {
+      "nama": "Diva Sarasvati Azzahra",
+      "jabatan": "Wakil Kepala Dinas PSDM",
+      "angkatan": "Teknik Informatika Reguler 2022",
+      "instagram": "divaasarasvati",
+      "email": "sarasvatiazzahra@gmail.com"
+    }
+  ],
+  "staff": [
+    [
+      {
+        "nama": "Muhammad Adrian",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2022",
+        "instagram": "rianadrian29",
+        "email": "adriancool.ac18@gmail.com"
+      },
+      {
+        "nama": "Adhia Rihal Sulaiman",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2023",
+        "instagram": "rihal.sulaiman",
+        "email": "rihalsulaiman123@gmail.com"
+      },
+      {
+        "nama": "Muhammad Adrian",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2023",
+        "instagram": "rianadrian29",
+        "email": "adriancool.ac18@gmail.com"
+      },
+      {
+        "nama": "Achmad Aziz Baihaqi",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2023",
+        "instagram": "achmdazzbaihqi_",
+        "email": "achmadazizbaihaqi0619@gmail.com"
+      },
+      {
+        "nama": "Syakirah Febriani",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2023",
+        "instagram": "syakirahfe",
+        "email": "syakirahfe@gmail.com"
+      },
+      {
+        "nama": "Thalia Dyah Zaneta",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Bilingual 2023",
+        "instagram": "thaliadyah",
+        "email": "thalia.dyah@gmail.com"
+      },
+      {
+        "nama": "Zalfa Zahirah",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2023",
+        "instagram": "zalfazaah",
+        "email": "zalfazahirah1604@gmail.com"
+      },
+      {
+        "nama": "Junico Hans Gunawan",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Reguler 2023",
+        "instagram": "junico_hans_gunawan",
+        "email": "junicogunawan365@gmail.com"
+      },
+      {
+        "nama": "Muhammad Muzriyono",
+        "jabatan": "Staff PSDM",
+        "angkatan": "Teknik Informatika Bilingual 2022",
+        "instagram": "musriyono12",
+        "email": "muzriyono2@gmail.com"
+      }
+    ]
+  ],
+  "title": "psdm",
+  "infoTitle": ["PENGEMBANGAN SUMBER DAYA MANUSIA"],
+  "infoDesc": [
+    "Dinas Pengembangan Sumber Daya Manusia atau PSDM adalah dinas yang berperan aktif dalam membangun dan membina hubungan baik antar internal HMIF. Tugas PSDM mengembangkan dan memelihara kualitas internal HMIF untuk mewujudkan SDM yang berkompeten dan berkarakter, dengan menciptakan suasana kekeluargaan antar internal HMIF."
+  ]
+}

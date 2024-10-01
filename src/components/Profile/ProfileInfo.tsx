@@ -8,15 +8,15 @@ import {
 } from "@/components/ui/accordion";
 
 type Props = {
-  divisi: string;
+  dinas: string;
 };
 
-export default function ProfileInfo({ divisi }: Props) {
+export default function ProfileInfo({ dinas }: Props) {
   const [infoDesc, setInfoDesc] = useState([]);
   const [infoTitle, setInfoTitle] = useState([]);
 
   useEffect(() => {
-    axios.get(`/data/profile/${divisi}.json`).then((res) => {
+    axios.get(`/data/profile/${dinas}.json`).then((res) => {
       setInfoTitle(res.data.infoTitle);
       setInfoDesc(res.data.infoDesc);
     });
@@ -28,7 +28,7 @@ export default function ProfileInfo({ divisi }: Props) {
       className="flex flex-col items-center justify-between gap-6 md:flex-row"
     >
       <img
-        src={`/img/profile/${divisi}/logo.png`}
+        src={`/img/profile/${dinas}/logo.png`}
         alt="logo-hmif"
         className="hidden md:block md:w-1/4"
       />

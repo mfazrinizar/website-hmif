@@ -8,7 +8,7 @@ type Props = {
   angkatan: string;
   instagram: string;
   email: string;
-  divisi: string;
+  dinas: string;
 };
 
 export default function ProfileCarouselItem({
@@ -17,12 +17,12 @@ export default function ProfileCarouselItem({
   angkatan,
   instagram,
   email,
-  divisi,
+  dinas,
 }: Props) {
   return (
     <CarouselItem className="flex items-center gap-32">
       <img
-        src={`/img/profile/${divisi}/${nama}.png`}
+        src={`/img/profile/${dinas}/${nama}.png`}
         alt={nama}
         className="hidden w-1/4 md:block"
       />

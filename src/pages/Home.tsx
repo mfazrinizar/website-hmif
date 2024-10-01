@@ -119,9 +119,9 @@ export default function Home() {
           opts={{
             align: "start",
           }}
-          className="w-full"
+          className="overflow-hidden"
         >
-          <CarouselContent>
+          <CarouselContent className="gap-8">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <EventCard />
@@ -148,9 +148,9 @@ export default function Home() {
           opts={{
             align: "start",
           }}
-          className="w-full"
+          className="overflow-hidden"
         >
-          <CarouselContent>
+          <CarouselContent className="gap-8">
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <ReviewCard />

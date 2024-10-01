@@ -205,10 +205,7 @@ const CarouselImg = ({ src, index }: CarouselDotProps) => {
       key={index}
       src={src}
       alt="carousel-dot"
-      className={cn(
-        "embla__dot size-32",
-        index === selectedIndex ? "size-48" : "",
-      )}
+      className={cn("embla__dot w-32", index === selectedIndex ? "w-48" : "")}
       onClick={() => scrollTo(index)}
     />
   );
