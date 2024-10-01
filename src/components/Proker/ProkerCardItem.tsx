@@ -16,7 +16,7 @@ export default function ProkerCardItem({eventFormat, name, date, description, di
       <img
       src={`img/proker/${dinas}/${name}.png`}
       alt={`${name}`}
-      className="mb-4 w-full h-1/2 md:w-1/2 md:mb-0 lg:1/4 md:h-full"
+      className="mb-4 w-full h-1/2 md:w-1/2 md:mb-0 lg:w-1/4 md:h-full"
       />
       <div className="flex flex-col gap-2 justify-between items-start md:pl-14">
       <p className="inline-block rounded bg-primary px-2 py-1 text-white">
