@@ -27,20 +27,6 @@ export default function ProfileTabs() {
           <ProfileCarousel dinas={item} />
         </TabsContent>
       ))}
-      {/* <TabsContent value="inti">
-        <ProfileInfo dinas="inti" />
-        <ProfileCarousel dinas="inti" />
-      </TabsContent>
-      <TabsContent value="kominfo">
-        <ProfileInfo dinas="kominfo" />
-        <ProfileCarousel dinas="kominfo" />
-      </TabsContent>
-      <TabsContent value="akademik"></TabsContent>
-      <TabsContent value="psdm"></TabsContent>
-      <TabsContent value="pmb"></TabsContent>
-      <TabsContent value="kwu"></TabsContent>
-      <TabsContent value="kastrad"></TabsContent>
-      <TabsContent value="adm"></TabsContent> */}
     </Tabs>
   );
 }

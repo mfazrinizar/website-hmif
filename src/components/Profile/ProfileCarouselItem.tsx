@@ -3,18 +3,18 @@ import { CarouselItem } from "../ui/carousel";
 import { Mail, Instagram } from "lucide-react";
 
 type Props = {
-  nama: string;
-  jabatan: string;
-  angkatan: string;
+  name: string;
+  position: string;
+  gen: string;
   instagram: string;
   email: string;
   dinas: string;
 };
 
 export default function ProfileCarouselItem({
-  nama,
-  jabatan,
-  angkatan,
+  name,
+  position,
+  gen,
   instagram,
   email,
   dinas,
@@ -22,16 +22,16 @@ export default function ProfileCarouselItem({
   return (
     <CarouselItem className="flex items-center gap-32">
       <img
-        src={`/img/profile/${dinas}/${nama}.png`}
-        alt={nama}
+        src={`/img/profile/${dinas}/${name}.png`}
+        alt={name}
         className="hidden w-1/4 md:block"
       />
       <div className="space-y-2 text-left lg:space-y-4">
         <h4 className="text-2xl font-medium text-primary lg:text-4xl">
-          {jabatan}
+          {position}
         </h4>
-        <p className="text-base font-medium md:text-xl">{nama}</p>
-        <p className="text-base font-normal md:text-xl">{angkatan}</p>
+        <p className="text-base font-medium md:text-xl">{name}</p>
+        <p className="text-base font-normal md:text-xl">{gen}</p>
         <Link
           to={`https://www.instagram.com/${instagram}/`}
           className="flex items-center gap-2 text-base font-normal text-primary md:text-xl"

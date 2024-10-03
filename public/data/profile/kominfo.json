@@ -1,30 +1,30 @@
 {
   "core": [
     {
-      "nama": "Putri Hidayahni",
-      "jabatan": "Kepala Dinas Kominfo",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Putri Hidayahni",
+      "position": "Kepala Dinas Kominfo",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "putrihdyhn_",
       "email": "putrihidayahni45@gmail.com"
     },
     {
-      "nama": "Muhammad Luthfi Jamal",
-      "jabatan": "Wakil Kepala Dinas Kominfo",
-      "angkatan": "Teknik Informatika Bilingual 2022",
+      "name": "Muhammad Luthfi Jamal",
+      "position": "Wakil Kepala Dinas Kominfo",
+      "gen": "Teknik Informatika Bilingual 2022",
       "instagram": "luthfi.jamal",
       "email": "luthfijamal4@gmail.com"
     },
     {
-      "nama": "Nabila Nurhasana Yap",
-      "jabatan": "Kepala Divisi Humas",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Nabila Nurhasana Yap",
+      "position": "Kepala Divisi Humas",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "nabila.ny_",
       "email": "nabilanurhusnayap@gmail.com"
     },
     {
-      "nama": "Mohammad Fahrezi",
-      "jabatan": "Kepala Divisi Multimedia",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Mohammad Fahrezi",
+      "position": "Kepala Divisi Multimedia",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "moh.fahrezi",
       "email": "mohfahrezi93@gmail.com"
     }
@@ -32,137 +32,137 @@
   "staff": [
     [
       {
-        "nama": "Andini Marsha Daniswara",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Bilingual 2023",
+        "name": "Andini Marsha Daniswara",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Bilingual 2023",
         "instagram": "andinimdanis",
         "email": "andinimdanis@gmail.com"
       },
       {
-        "nama": "Pingkan Nadia Windari",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Pingkan Nadia Windari",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "pingkandiaa",
         "email": "pingkannadia21@gmail.com"
       },
       {
-        "nama": "Muhammad Zakaa Shahzada",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Muhammad Zakaa Shahzada",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "boeng_djaka",
         "email": "zakaashahzada3@gmail.com"
       },
       {
-        "nama": "Sazkia Erlina",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Sazkia Erlina",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "sz.ki.e",
         "email": "szkiaerln@gmail.com"
       },
       {
-        "nama": "Rizki Pebrian",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Rizki Pebrian",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "kikriyuki",
         "email": "rizki2pebrian2@gmail.com"
       },
       {
-        "nama": "Iqbal Octavinsya Ramadhan",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Iqbal Octavinsya Ramadhan",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "iqbaloctavinsya",
         "email": "iqbalocta13@gmail.com"
       },
       {
-        "nama": "Muhammad Arya Hatta",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Muhammad Arya Hatta",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "aryahatta_",
         "email": "aryahatta367@gmail.com"
       },
       {
-        "nama": "Samuel Haposan Tua Batubara",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Bilingual 2023",
+        "name": "Samuel Haposan Tua Batubara",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Bilingual 2023",
         "instagram": "sammyslammy_",
         "email": "samuelbatubara05@gmail.com"
       },
       {
-        "nama": "Muhammad Suheil Ichma Putra",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Bilingual 2023",
+        "name": "Muhammad Suheil Ichma Putra",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Bilingual 2023",
         "instagram": "suheilputraa",
         "email": "Suheilputra03@gmail.com"
       },
       {
-        "nama": "Hakan Ilyasa",
-        "jabatan": "Staff Mulmed",
-        "angkatan": "Teknik Informatika Bilingual 2023",
+        "name": "Hakan Ilyasa",
+        "position": "Staff Mulmed",
+        "gen": "Teknik Informatika Bilingual 2023",
         "instagram": "hakan.ilyasa",
         "email": "hakan.ilyasa123@gmail.com"
       }
     ],
     [
       {
-        "nama": "Lyen Septryanti",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Lyen Septryanti",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "lyen.s",
         "email": "lyenseptryanti@gmail.com"
       },
       {
-        "nama": "Nandika Aqsa Almuntaha",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Nandika Aqsa Almuntaha",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "aqs.ka",
         "email": "nandikaaqsa20@gmail.com"
       },
       {
-        "nama": "Putri Amelia Az-zahrah",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2023",
+        "name": "Putri Amelia Az-zahrah",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2023",
         "instagram": "azzahrahputtt",
         "email": "azzahrahputri381@gmail.com"
       },
       {
-        "nama": "Adityo Pangestu",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Adityo Pangestu",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "pangestu.adityo",
         "email": "adityopangestu01@gmail.com"
       },
       {
-        "nama": "Fauzia Tuzzahra",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Fauzia Tuzzahra",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "fauziazzhra",
         "email": "fauziatuzzahra99@gmail.com"
       },
       {
-        "nama": "Nathania Calista Hallatu",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Nathania Calista Hallatu",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "calystacl",
         "email": "clneeyaa@gmail.com"
       },
       {
-        "nama": "Zsa Zsa Aulia Az Zahrah",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Zsa Zsa Aulia Az Zahrah",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "zsacaca",
         "email": "zsacaca545@gmail.com"
       },
       {
-        "nama": "Mevika Vania",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Mevika Vania",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "mevikavania",
         "email": "mevikavania16@gmail.com"
       },
       {
-        "nama": "Inayah Khofifah Danis",
-        "jabatan": "Staff Humas",
-        "angkatan": "Teknik Informatika Reguler 2022",
+        "name": "Inayah Khofifah Danis",
+        "position": "Staff Humas",
+        "gen": "Teknik Informatika Reguler 2022",
         "instagram": "inaakdd",
         "email": "inayahkhofifahdanis@gmail.com"
       }

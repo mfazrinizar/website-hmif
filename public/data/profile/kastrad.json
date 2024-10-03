@@ -1,0 +1,140 @@
+{
+  "core": [
+    {
+      "name": "Ayu Puspita Sari",
+      "position": "Kepala Dinas Kastrad",
+      "gen": "Teknik Informatika Reguler 2022",
+      "instagram": "pitakyutt_",
+      "email": "puspitasaria012@gmail.com"
+    },
+    {
+      "name": "Ahmad Bintara Mansur",
+      "position": "Wakil Kepala Dinas Kastrad",
+      "gen": "Teknik Informatika Reguler 2022",
+      "instagram": "jazhardcore",
+      "email": "bintaramansur9@gmail.com"
+    },
+    {
+      "name": "Syavira Amalia",
+      "position": "Kepala Divisi Polpro",
+      "gen": "Teknik Informatika Bilingual 2022",
+      "instagram": "syvra.aml",
+      "email": "syaviraamalia53@gmail.com"
+    },
+    {
+      "name": "Akif Ramadhan Annasaby",
+      "position": "Kepala Divisi Adkam",
+      "gen": "Teknik Informatika Bilingual 2022",
+      "instagram": "ar.annasaby",
+      "email": "akifsakti9@gmail.com"
+    }
+  ],
+  "staff": [
+    [
+      {
+        "name": "Prahara Ari Nugroho",
+        "position": "Staff Polpro",
+        "gen": "Teknik Informatika Reguler 2022",
+        "instagram": "zagi5.015",
+        "email": "praharaari15@gmail.com"
+      },
+      {
+        "name": "Moza Gina Aliya",
+        "position": "Staff Polpro",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "mozaginaa",
+        "email": "mozaginaalya@gmail.com"
+      },
+      {
+        "name": "Fadhil Rahman",
+        "position": "Staff Polpro",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "fadhil_rahmn26",
+        "email": "rahmanfadil274@gmail.com"
+      },
+      {
+        "name": "Ahmad Afif",
+        "position": "Staff Polpro",
+        "gen": "Teknik Informatika Bilingual 2022",
+        "instagram": "afif_186",
+        "email": "afifahmad186186@gmail.com"
+      },
+      {
+        "name": "Jeanne Septiani L. Toruan",
+        "position": "Staff Polpro",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "jeanneseptianii",
+        "email": "jeanneseptiani262@gmail.com"
+      },
+      {
+        "name": "Nabil Pasha",
+        "position": "Staff Polpro",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "nbyl.26",
+        "email": "nabilpasha230606@gmail.com"
+      }
+    ],
+    [
+      {
+        "name": "Miranti",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "miranti9867",
+        "email": "miranti9867@gmail.com"
+      },
+      {
+        "name": "Stanley Gilbert Lionardi",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "stanley_glbert",
+        "email": "stanleyq75@gmail.com"
+      },
+      {
+        "name": "Charlistio Aditirta Wijaya",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "charlistioo",
+        "email": "charlistyo1@gmail.com"
+      },
+      {
+        "name": "Muhamad Irsyad Rizki Pratama",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "irsyadrp_",
+        "email": "irsyadrizkip14@gmail.com"
+      },
+      {
+        "name": "Aditya Akmal Agym",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "adityaakmalagym",
+        "email": "adityaakmal35@gmail.com"
+      },
+      {
+        "name": "Nurul Adhaini Nasution",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "nurul_anst",
+        "email": "nuruladhaininasution02@gmail.com"
+      },
+      {
+        "name": "M. Rajab Fadhly Hartawibawa",
+        "position": "Staff Adkam",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "rajabfadh",
+        "email": "rajabfadh@gmail.com"
+      }
+    ]
+  ],
+  "title": "kastrad",
+  "infoTitle": [
+    "KAJIAN STRATEGI DAN ADVOKASI",
+    "Divisi Politik dan Propaganda",
+    "Divisi Advokasi Kampus"
+  ],
+  "infoDesc": [
+    "Dinas Kajian Strategi dan Advokasi atau Dinas Kastrad adalah dinas yang nantinya akan mengurus hal-hal yang berkenaan dengan Propaganda serta Advokasi kampus, seperti mengkaji isu-isu terkini, menampung aspirasi, serta menjadi wadah demi terwujudnya AKSI (Aksi, Kritis, Sejahtera, Inovatif).",
+    "Divisi Politik dan Propaganda (POLPRO) adalah divisi yang berfokus pada kegiatan mengamati, meneliti serta mengkaji isu-isu yang ada didalam kampus demi terwujudnya kampus yang adil dan sejahtera bagi seluruh warga kampus.",
+    "Divisi Advokasi Kampus (ADKAM) adalah divisi yang berkenaan tentang kegiatan-kegiatan advokasi didalam kampus, seperti penggalian informasi tentang hal yang menyangkut kesejahteraan Mahasiswa serta menampung aspirasi mahasiswa."
+  ]
+}
