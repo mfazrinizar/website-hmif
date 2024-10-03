@@ -1,44 +1,44 @@
 {
   "core": [
     {
-      "nama": "M Dzawil Fadhol Abidullah",
-      "jabatan": "Ketua Himpunan",
-      "angkatan": "Teknik Informatika Bilingual 2022",
+      "name": "M Dzawil Fadhol Abidullah",
+      "position": "Ketua Himpunan",
+      "gen": "Teknik Informatika Bilingual 2022",
       "instagram": "em_dizi",
       "email": "dzafa50@gmail.com"
     },
     {
-      "nama": "Feri Irawan",
-      "jabatan": "Wakil Ketua Himpunan",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Feri Irawan",
+      "position": "Wakil Ketua Himpunan",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "feri_irawan2112",
       "email": "Feri909192@gmail.com"
     },
     {
-      "nama": "Fildzah Nur Izzati",
-      "jabatan": "Sekretaris Umum 1",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Fildzah Nur Izzati",
+      "position": "Sekretaris Umum 1",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "fildzahnr_",
       "email": "fildzahnurizzati9@gmail.com"
     },
     {
-      "nama": "Vellanindhita Noorprameswari Yudoyono",
-      "jabatan": "Sekretaris Umum 2",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Vellanindhita Noorprameswari Yudoyono",
+      "position": "Sekretaris Umum 2",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "vellandth",
       "email": "vellanindhita.npr@gmail.com"
     },
     {
-      "nama": "Annisa Reida Raheima",
-      "jabatan": "Bendahara Umum 1",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Annisa Reida Raheima",
+      "position": "Bendahara Umum 1",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "annisa_reida",
       "email": "annisaheyy@gmail.com"
     },
     {
-      "nama": "Revalina Ramadhani",
-      "jabatan": "Bendahara Umum 2",
-      "angkatan": "Teknik Informatika Reguler 2022",
+      "name": "Revalina Ramadhani",
+      "position": "Bendahara Umum 2",
+      "gen": "Teknik Informatika Reguler 2022",
       "instagram": "revalinaramadhanii",
       "email": "revalinarmdhni@gmail.com"
     }

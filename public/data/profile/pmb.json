@@ -1,0 +1,133 @@
+{
+  "core": [
+    {
+      "name": "Bagas Ramandari",
+      "position": "Kepala Dinas PMB",
+      "gen": "Teknik Informatika Reguler 2022",
+      "instagram": "bagasramandari",
+      "email": "bagasramandari2018@gmail.com"
+    },
+    {
+      "name": "Naufal Nazhif Almaulidzar",
+      "position": "Wakil Kepala Dinas PMB",
+      "gen": "Teknik Informatika Bilingual 2022",
+      "instagram": "naufalnazhiff_",
+      "email": "naufalnazhif3@gmail.com"
+    },
+    {
+      "name": "Rizki Naufal Hafizh",
+      "position": "Kepala Divisi Olahraga",
+      "gen": "Teknik Informatika Reguler 2022",
+      "instagram": "rizkinaufaal_",
+      "email": "rizkianaufal019@gmail.com"
+    },
+    {
+      "name": "Dimas Putra Mufazzal",
+      "position": "Kepala Divisi Seni",
+      "gen": "Teknik Informatika Bilingual 2022",
+      "instagram": "__adimms",
+      "email": "dimasputramufazzal@gmail.com"
+    }
+  ],
+  "staff": [
+    [
+      {
+        "name": "M. Yoan Haira Kerca",
+        "position": "Staff Olahraga",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "hairakerca",
+        "email": "myoanhairakerca@gmail.com"
+      },
+      {
+        "name": "Akram Ziyad Ramadhan",
+        "position": "Staff Olahraga",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "krammzr",
+        "email": "cantiktiara55@gmail.com"
+      },
+      {
+        "name": "Muhammad Naufal Dzaki",
+        "position": "Staff Olahraga",
+        "gen": "Teknik Informatika Bilingual 2022",
+        "instagram": "naufaaldz",
+        "email": "mnaufaldzaki25@gmail.com"
+      },
+      {
+        "name": "Muhammad Alif Berri Rossi",
+        "position": "Staff Olahraga",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "life.ro_",
+        "email": "malifberrirossi76@gmail.com"
+      },
+      {
+        "name": "Muhammad Kaka Ramdhani",
+        "position": "Staff Olahraga",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "mkr_kakaa",
+        "email": "kakabta26@gmail.com"
+      },
+      {
+        "name": "Muhammad Raihan Nabil",
+        "position": "Staff Olahraga",
+        "gen": "Teknik Informatika Bilingual 2022",
+        "instagram": "mraihan186",
+        "email": "mraihannabil6@gmail.com"
+      }
+    ],
+    [
+      {
+        "name": "Nayla Intan Salsabila",
+        "position": "Staff Seni",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "naylaies",
+        "email": "naylais323@gmail.com"
+      },
+      {
+        "name": "M. Radikal Gymnastiar",
+        "position": "Staff Seni",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "will_dy02",
+        "email": "dycalgym@gmail.com"
+      },
+      {
+        "name": "Surya Andika Tandranparang",
+        "position": "Staff Seni",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "surya.and",
+        "email": "suryaandikat8@gmail.com"
+      },
+      {
+        "name": "Muhd Ramadan Saputra",
+        "position": "Staff Seni",
+        "gen": "Teknik Informatika Bilingual 2022",
+        "instagram": "ramadan_saputra09",
+        "email": "madonjr95@gmail.com"
+      },
+      {
+        "name": "M Harry Mahardhika T",
+        "position": "Staff Seni",
+        "gen": "Teknik Informatika Bilingual 2022",
+        "instagram": "harr.mt",
+        "email": "harrymahardikatamara@gmail.com"
+      },
+      {
+        "name": "Putri Alisya Zhafirah",
+        "position": "Staff Seni",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "lisyazfr",
+        "email": "Putrialisyazhafirah@gmail.com"
+      }
+    ]
+  ],
+  "title": "pmb",
+  "infoTitle": [
+    "PENGEMBANGAN MINAT DAN BAKAT",
+    "Divisi Olahraga",
+    "Divisi Seni"
+  ],
+  "infoDesc": [
+    "Dinas Pengembangan Minat dan Bakat atau Dinas PMB adalah dinas yang berfokus terhadap pengembangan minat bakat mahasiswa Teknik Informatika UNSRI. Dinas ini juga berperan sebagai wadah pengembangan dan penyaluran minat bakat mahasiswa sesuai dengan bidang yang diinginkan.",
+    "Divisi Olahraga memiliki tanggung jawab untuk memfasilitasi minat mahasiswa dalam bidang olahraga.",
+    "Divisi Seni memiliki tanggung jawab untuk memfasilitasi minat dan bakat mahasiswa dalam bidang seni."
+  ]
+}

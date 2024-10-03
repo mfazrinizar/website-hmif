@@ -1,0 +1,83 @@
+{
+  "core": [
+    {
+      "name": "Meri Putri Andriyani",
+      "position": "Kepala Dinas KWU",
+      "gen": "Teknik Informatika Reguler 2022",
+      "instagram": "meri.andryni",
+      "email": "meryprabu17@gmail.com"
+    },
+    {
+      "name": "Radia Rahmadia Razita",
+      "position": "Wakil Kepala Dinas KWU",
+      "gen": "Teknik Informatika Reguler 2022",
+      "instagram": "rrhmdiarzt",
+      "email": "radiabae22@gmail.com"
+    }
+  ],
+  "staff": [
+    [
+      {
+        "name": "Ibrahim Ryansyah Putra",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "baim.rp",
+        "email": "ibrahimrp311@gmail.com"
+      },
+      {
+        "name": "Reynaldi Ashari",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Reguler 2022",
+        "instagram": "aldiashari_",
+        "email": "reynaldiashari2306@gmail.com"
+      },
+      {
+        "name": "Davinco",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "davinco_",
+        "email": "jerikojeriko8@gmail.com"
+      },
+      {
+        "name": "M. Raka Wilantara",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "rakawilantara",
+        "email": "rakawilantara33@gmail.com"
+      },
+      {
+        "name": "Fransisca Stevanie Ekawati",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Bilingual 2023",
+        "instagram": "frnscavanie",
+        "email": "vanifransisca2005@gmail.com"
+      },
+      {
+        "name": "Fadilah Rahmadiah",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "fadilah.rahmadiah",
+        "email": "rahmadiahfadilah@gmail.com"
+      },
+      {
+        "name": "Alisa Ramadaniah Lingga",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Reguler 2023",
+        "instagram": "aeliesa_",
+        "email": "alisalingga@gmail.com"
+      },
+      {
+        "name": "M Haikal Ash Shiddiq",
+        "position": "Staff KWU",
+        "gen": "Teknik Informatika Bilingual 2022",
+        "instagram": "frxhaikal_plg",
+        "email": "haikalashshiddiq12@gmail.com"
+      }
+    ]
+  ],
+  "title": "kwu",
+  "infoTitle": ["KEWIRAUSAHAAN"],
+  "infoDesc": [
+    "Dinas Kewirausahaan atau Dinas KWU adalah dinas yang bertanggung jawab dalam hal pendanaan untuk mendukung kegiatan HMIF serta berfokus dalam menanggung jawabi produksi penjualan produk HMIF. Dinas Kewirausahaan juga menjadi wadah untuk Mahasiswa Teknik Informatika untuk mengembangkan potensi kewirausahaan yang dimiliki."
+  ]
+}

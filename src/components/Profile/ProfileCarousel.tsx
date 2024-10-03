@@ -35,9 +35,9 @@ export default function ProfileCarousel({ dinas }: Props) {
           <CarouselContent>
             {core.map((item, key) => (
               <ProfileCarouselItem
-                nama={item["nama"]}
-                jabatan={item["jabatan"]}
-                angkatan={item["angkatan"]}
+                name={item["name"]}
+                position={item["position"]}
+                gen={item["gen"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
                 dinas={dinas}
@@ -50,7 +50,7 @@ export default function ProfileCarousel({ dinas }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${dinas}/${item["nama"]}.png`}
+                src={`/img/profile/${dinas}/${item["name"]}.png`}
               />
             ))}
           </div>
@@ -64,9 +64,9 @@ export default function ProfileCarousel({ dinas }: Props) {
           <CarouselContent>
             {staff[0].map((item, key) => (
               <ProfileCarouselItem
-                nama={item["nama"]}
-                jabatan={item["jabatan"]}
-                angkatan={item["angkatan"]}
+                name={item["name"]}
+                position={item["position"]}
+                gen={item["gen"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
                 dinas={dinas}
@@ -79,7 +79,7 @@ export default function ProfileCarousel({ dinas }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${dinas}/${item["nama"]}.png`}
+                src={`/img/profile/${dinas}/${item["name"]}.png`}
               />
             ))}
           </div>
@@ -90,9 +90,9 @@ export default function ProfileCarousel({ dinas }: Props) {
           <CarouselContent>
             {staff[1].map((item, key) => (
               <ProfileCarouselItem
-                nama={item["nama"]}
-                jabatan={item["jabatan"]}
-                angkatan={item["angkatan"]}
+                name={item["name"]}
+                position={item["position"]}
+                gen={item["gen"]}
                 instagram={item["instagram"]}
                 email={item["email"]}
                 dinas={dinas}
@@ -105,7 +105,7 @@ export default function ProfileCarousel({ dinas }: Props) {
               <CarouselImg
                 key={item["instagram"] + key}
                 index={key}
-                src={`/img/profile/${dinas}/${item["nama"]}.png`}
+                src={`/img/profile/${dinas}/${item["name"]}.png`}
               />
             ))}
           </div>
