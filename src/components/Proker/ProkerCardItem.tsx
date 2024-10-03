@@ -16,7 +16,7 @@ export default function ProkerCardItem({eventFormat, name, date, description, di
       <img
         src={`img/proker/${dinas}/${name}.png`}
         alt={`${name}`}
-        className="mb-4 w-full h-1/2 md:w-1/3 md:mb-0 lg:w-1/4 md:h-full object-cover"
+        className="mb-4 w-full h-1/2 md:w-1/3 md:mb-0 lg:w-1/4 md:h-full object-cover rounded-md"
       />
       <div className="flex flex-col gap-2 justify-between items-start md:pl-8 lg:pl-14">
       <p className="inline-block rounded bg-primary px-2 py-1 text-white">
@@ -30,10 +30,13 @@ export default function ProkerCardItem({eventFormat, name, date, description, di
         </div>
         <div className="flex gap-2 items-center justify-center text-primary text-sm">
           <Clock/>
-          <p>{date}</p>
-          <p>| {dinas}</p>
+          <div className="flex flex-row flex-wrap gap-1 text-start">
+            <p>{date}</p>
+            <p>| {dinas}</p>
+          </div>
+
         </div>
-        <div className="pb-5 pt-2 w-fit max-h-32 overflow-hidden text-ellipsis line-clamp-5">
+        <div className="pb-5 pt-2 w-fit min-h-32 max-h-32 overflow-hidden text-ellipsis line-clamp-5">
           <p className="text-left">
             {description}
           </p>
