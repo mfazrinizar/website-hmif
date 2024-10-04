@@ -1,0 +1,28 @@
+{
+  "proker": [
+    {
+      "name": "Secangkir Teh Bersama Kajur",
+      "date": "2 Maret 2024",
+      "eventFormat": "Offline",
+      "description": "Pertemuan antara Internal HMIF dengan Kepala Jurusan Teknik Informatika, yang akan mendiskusikan terkait program kerja tiap dinas HMIF selama satu periode kepengurusan serta tanggapan dari kajur dan membahas isu-isu yang perlu dibicarakan."
+    },
+    {
+      "name": "Kastrad Peduli Kasih",
+      "date": "24 Maret 2024",
+      "eventFormat": "Offline",
+      "description": "Kegiatan dimana seluruh Internal HMIF mengunjungi dan memberi bantuan logistik serta ilmu pendidikan kepada panti asuhan."
+    },
+    {
+      "name": "Informatics Caring (IF Caring)",
+      "date": "Termasuk Proker Rutin",
+      "eventFormat": "Online",
+      "description": "Wadah penyaluran keluh kesah dari seluruh mahasiswa informatika yang ditujukan kepada seluruh elemen informatika."
+    },
+    {
+      "name": "Informasi Advokasi Mahasiswa",
+      "date": "Proker Mingguan",
+      "eventFormat": "Online",
+      "description": "Info Adkam merupakan penyebaran informasi melalui social media mengenai info-info penting terkini yang berhubungan dengan mahasiswa Teknik Informatika Fasilkom Unsri."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "proker": [
+    {
+      "name": "IF Cup",
+      "date": "25-27 Agustus 2024",
+      "eventFormat": "Offline",
+      "description": "Merupakan proker utama dari divisi olahraga dimana merupakan wadah ajang kompetisi olahraga untuk menunjukan kemampuan dan skill dalam berbagai bidang olahraga."
+    },
+    {
+      "name": "IF Legion",
+      "date": "Minggu Ganjil (1 dan 3) Olahraga & Minggu Genap (2 dan 4) Seni",
+      "eventFormat": "Offline",
+      "description": "Sebuah program kerja yang dimana berfokus terhadap pengembangan minat bakat mahasiswa Informatika baik itu di seni dan olahraga. Bentuk realisasi dari kegiatan ini adalah kegiatan rutin pelatihan dari masing-masing divisi."
+    },
+    {
+      "name": "IF Fest",
+      "date": "Minggu Ganjil (1 dan 3) Olahraga & Minggu Genap (2 dan 4) Seni",
+      "eventFormat": "Offline",
+      "description": "Proker utama dari PMB divisi Seni dengan mengadakan event perlombaan seperti band,solo vocal,fotografi,videografi,design grafis."
+    },
+    {
+      "name": "IF Pedia",
+      "date": "Share Info : 2 minggu sekali & Podcast : 1/2 bulan sekali",
+      "eventFormat": "Online",
+      "description": "Proker yang berisi tentang penyampaian informasi berbagai kegiatan yang berada dalam lingkup olahraga dan seni, juga memberikan informasi terkait perlombaan yang ada. Proker ini memiliki program baru yang mengusung tema podcast yang masihberkaitan dengan seni dan olahraga dengan berbagai pembahasan yang menarik."
+    },
+    {
+      "name": "IF Jersey"
+    }
+  ]
+}

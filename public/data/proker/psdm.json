@@ -1,0 +1,52 @@
+{
+  "proker": [
+    {
+      "name": "Seblak (Sharing Blak-blakan)",
+      "date": "Bukber, Makrab, & Demisioner",
+      "eventFormat": "Offline",
+      "description": "Kegiatan berformat pengisian form anonim dengan tujuan mengurangi kecanggungan antar anggota kabinet. Selain itu, Seblak ini juga berfungsi sebagai wadah komunikasi dan tempat berbagi keluh kesah antar anggota."
+    },
+    {
+      "name": "Staff of The Month (SOTM)",
+      "date": "dilaksanakan setiap akhir bulan",
+      "eventFormat": "Online",
+      "description": "bentuk apresiasi terhadap staf yang memiliki kinerja baik setiap bulannya."
+    },
+    {
+      "name": "Open Recruitment Staff HMIF",
+      "date": "19 Januari 2024 - 2 Februari 2024",
+      "eventFormat": "Offline",
+      "description": "Kegiatan perekrutan staf BPH dilakukan untuk menjaga ketersediaan SDM HMIF setiap periode kepengurusan. Dilaksanakan secara offline dan online, terdiri dari sesi LGD (Leaderless Group Discussion) dan wawancara."
+    },
+    {
+      "name": "Upgrading Staff",
+      "date": "25 Februari 2024",
+      "eventFormat": "Offline",
+      "description": "Kegiatan yang berisi sesi talkshow dan sesi game. Sesi talkshow memberikan pembekalan materi sebagai panduan awal berorganisasi untuk staf. Kemudian, sesi game bertujuan untuk mempererat hubungan antar anggota HMIF, sehingga mereka dapat saling mengenal dan mengurangi kecanggungan."
+    },
+    {
+      "name": "Malam Keakraban (MAKRAB)",
+      "date": "16 Maret 2024",
+      "eventFormat": "Offline",
+      "description": "Kegiatan ini bertujuan untuk mempererat hubungan antar anggota kabinet HMIF. Diharapkan, melalui kegiatan ini, anggota HMIF dapat saling bercerita dan menjadi lebih akrab, baik dengan anggota di dalam dinas maupun di luar dinas yang bersangkutan."
+    },
+    {
+      "name": "Buka Bersama (BUKBER)",
+      "date": "16 - 17 Maret 2024",
+      "eventFormat": "Offline",
+      "description": "Kegiatan ini merupakan sarana untuk mempererat silaturahmi antar anggota serta menyediakan waktu untuk refleksi diri selama bulan suci Ramadhan. Melalui acara ini, anggota diharapkan dapat memperkuat hubungan kebersamaan dan memperdalam makna spiritual Ramadhan bersama-sama."
+    },
+    {
+      "name": "Pemilihan Ketua Angkatan",
+      "date": "Rencana dilaksanakan pada bulan Oktober 2024",
+      "eventFormat": "Offline",
+      "description": "Memilih Ketua Angkatan Teknik Informatika 2024. Kegiatan Pemilihan Ketua Angkatan ini diselenggarakan bersamaan dengan event Ngobrol dan Sharing “NGODING” Bareng Alumni."
+    },
+    {
+      "name": "Demisioner",
+      "date": "Rencana dilaksanakan pada bulan Desember 2024",
+      "eventFormat": "Offline",
+      "description": "Kegiatan ini merupakan kegiatan akhir atau sebagai penutup dari periode kepengurusan BPH HMIF 2024."
+    }
+  ]
+}
