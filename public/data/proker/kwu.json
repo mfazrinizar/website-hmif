@@ -1,0 +1,46 @@
+{
+    "proker" : [
+        {
+            "name": "Bazar Ramadhan",
+            "date": "23 Maret - 24 Maret 2024",
+            "eventFormat": "Offline",
+            "description": "Mengadakan bazar penjualan makanan, minuman secara langsung di Kambang Iwak, TVRI, dan tempat yang memungkinkan lainnya untuk pemasukan keuangan HMIF. Serta menjual makanan ringan untuk berbuka puasa dan kegiatan amal bersama selama hari Ramadhan dimana dana hasil penjualan akan didonasikan untuk amal."
+        }, 
+        {
+            "name": "Bazar Festival",
+            "date": "Agustus 2024",
+            "eventFormat": "Offline",
+            "description": "Mengadakan bazar penjualan makanan, minuman secara langsung di fasilkom untuk pemasukan keuangan HMIF."
+        },
+        {
+            "name": "Jaket dan Id Card Staff Himpunan Teknik Informatika",
+            "date": "April - Juni 2024",
+            "eventFormat": "Offline",
+            "description": "Mengadakan penjualan dan mengurus jaket dan id card untuk mahasiswa informatika sebagai upaya kebersamaan dalam identitas atau almamater tambahan di jurusan Teknik informatika."
+        },
+        {
+            "name": "Id Card BPH Himpunan Teknik Informatika",
+            "date": "Februari 2024",
+            "eventFormat": "Offline",
+            "description": "Mengadakan penjualan dan mengurus id card untuk bph himpunan informatika sebagai identitas di jurusan Teknik informatika."
+        },
+        {
+            "name": "Baju Angkatan 2024",
+            "date": "Januari - April 2024",
+            "eventFormat": "Offline",
+            "description": "Mengadakan penjualan dan mengurus baju angkatan untuk mahasiswa baru sebagai upaya kebersamaan dalam identitas atau almamater tambahan di jurusan Teknik informatika dan sebagai identitas Angkatan Teknik Informatika."
+        },
+        {
+            "name": "Open PO Makanan",
+            "date": "Maret 2024",
+            "eventFormat": "Online",
+            "description": "Mengadakan penjualan makanan, minuman, merchandise secara online dengan sistem pre-order untuk pemasukan keuangan HMIF. Serta menu makanan secara online akan tersedia juga pada bazar festival."
+        },
+        {
+            "name": "Open PO Tumbler HMIF",
+            "date": "Maret - April 2024",
+            "eventFormat": "Online",
+            "description": "Mengadakan penjualan tumbler secara online dengan sistem pre-order untuk pemasukan keuangan HMIF."
+        }
+    ]
+}
