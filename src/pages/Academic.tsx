@@ -1,29 +1,14 @@
 import { useState } from "react";
-import AcademicBeasiswa from "@/components/Academic/AcademicBeasiswa";
-import AcademicCompetition from "@/components/Academic/AcademicCompetition";
-import AcademicSeminar from "@/components/Academic/AcademicSeminar";
+import AcademicCards from "@/components/Academic/AcademicCards";
 import AcademicHero from "@/components/Academic/AcademicHero";
 
 export default function Academic() {
   const [activeContent, setActiveContent] = useState("beasiswa");
 
-  const renderContent = () => {
-    switch (activeContent) {
-      case "beasiswa":
-        return <AcademicBeasiswa />;
-      case "competition":
-        return <AcademicCompetition />;
-      case "seminar":
-        return <AcademicSeminar />;
-      default:
-        return <AcademicBeasiswa />;
-    }
-  };
-
   return (
     <section>
       <section className="mb-10">
-        <AcademicHero></AcademicHero>
+        <AcademicHero />
       </section>
       <section className="flex flex-col text-center sm:text-start md:flex-row">
         {/* Sidebar */}
@@ -57,7 +42,9 @@ export default function Academic() {
         </div>
 
         {/* Konten Utama */}
-        <div className="w-full">{renderContent()}</div>
+        <div className="w-full">
+          <AcademicCards dataUrl={`/data/academic/${activeContent}.json`} />
+        </div>
       </section>
     </section>
   );

@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Webinar AI dalam Bisnis",
+    "category": "Online",
+    "date": "28 September 2024",
+    "description": "Artificial intelligence adalah software komputer yang dapat belajar, menganalisis data, membuat beberapa keputusan dan mengatasi masalah seperti halnya manusia. Lalu bagaimana penerapan artificial intelligence ini dalam bisnis?",
+    "img": "img/webinar_AI.png"
+  },
+  {
+    "title": "Webinar Investasi 2024",
+    "category": "Online",
+    "date": "6 September 2024",
+    "description": "Pengen tahu bagaimana cara menghasilkan keuntungan besar dari tren investasi terbaru? Aa Pram ada info webinar nih, yuk ikuti webinar \"Memanfaatkan Peluang Cuan Jutaan Dari Cryptocurrency\".",
+    "img": "img/webinar_investasi.png"
+  },
+  {
+    "title": "Webinar and Workshop",
+    "category": "Hybrid",
+    "date": "14 - 17 September 2024",
+    "description": "The 2024 AICOMS-Q dilaksanakan selama 4 hari berturut-turut mulai Sabtu, 14 September 2024 hingga Selasa, 17 September 2024, secara Hybrid (Online dan Offline) dari Telkom University dan Institut Teknologi, Bandung.",
+    "img": "img/webinar_workshop.png"
+  }
+]

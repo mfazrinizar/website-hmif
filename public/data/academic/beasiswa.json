@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Beasiswa Bakti BCA",
+    "category": "Undergraduate",
+    "date": "July - August 2024",
+    "description": "Beasiswa Bakti BCA merupakan program unggulan dari BCA yang telah berlangsung sejak tahun 1999. Program ini bertujuan untuk memberikan dukungan kepada mahasiswa/i Indonesia yang berprestasi, baik di bidang akademis maupun non-akademis.",
+    "img": "img/beasiswa_bca.png"
+  },
+  {
+    "title": "Pendidikan Ayo Pintar 2024",
+    "category": "Undergraduate",
+    "date": "13 August - 27 December 2024",
+    "description": "Beasiswa Pendidikan Ayo Pintar merupakan program beasiswa yang ditawarkan oleh Ayo Pintar dan ditujukan untuk Pelajar, Gap Year serta Mahasiswa. Tujuan program adalah untuk mendukung pendidikan generasi muda dapat berprestasi dan berinovasi.",
+    "img": "img/beasiswa_ayopintar.png"
+  },
+  {
+    "title": "BSI Scholarship 2024",
+    "category": "Undergraduate",
+    "date": "2 September - 13 October 2024",
+    "description": "Beasiswa BSI 2024 menawarkan bantuan biaya kuliah dan uang saku untuk mahasiswa tahun ke-2 dengan prestasi akademik atau non-akademik, serta pelatihan dan magang di industri ekonomi syariah.",
+    "img": "img/beasiswa_bsi.png"
+  }
+]

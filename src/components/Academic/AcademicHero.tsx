@@ -24,7 +24,7 @@ export default function AcademicHero() {
       </div>
 
       {/* Bagian Kanan (Gambar) */}
-      <div className="flex w-full justify-center lg:w-3/5 lg:justify-end">
+      <div className="hidden w-full justify-center md:flex lg:w-3/5 lg:justify-end">
         <img
           src="img/academic_preview.png"
           alt="academic_preview"
