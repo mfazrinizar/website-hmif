@@ -1,9 +1,42 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AcademicCards from "@/components/Academic/AcademicCards";
 import AcademicHero from "@/components/Academic/AcademicHero";
 
 export default function Academic() {
   const [activeContent, setActiveContent] = useState("beasiswa");
+  const [visibleCards, setVisibleCards] = useState(3);
+  const [data, setData] = useState<any[]>([]);
+
+  // Reset visible cards to 3 when activeContent changes
+  useEffect(() => {
+    setVisibleCards(3);
+
+    // Fetch data based on active content
+    let dataUrl = "";
+    switch (activeContent) {
+      case "beasiswa":
+        dataUrl = "/data/academic/beasiswa.json";
+        break;
+      case "competition":
+        dataUrl = "/data/academic/competition.json";
+        break;
+      case "seminar":
+        dataUrl = "/data/academic/seminar.json";
+        break;
+      default:
+        dataUrl = "/data/academic/beasiswa.json";
+    }
+
+    // Fetch the JSON data
+    fetch(dataUrl)
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, [activeContent]);
+
+  const handleSeeMore = () => {
+    setVisibleCards((prevVisibleCards) => prevVisibleCards + 3);
+  };
 
   return (
     <section>
@@ -43,7 +76,11 @@ export default function Academic() {
 
         {/* Konten Utama */}
         <div className="w-full">
-          <AcademicCards dataUrl={`/data/academic/${activeContent}.json`} />
+          <AcademicCards
+            data={data.slice(0, visibleCards)}
+            handleSeeMore={handleSeeMore}
+            canSeeMore={visibleCards < data.length}
+          />
         </div>
       </section>
     </section>

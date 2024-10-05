@@ -1,46 +1,44 @@
-import { useEffect, useState } from "react";
-import AcademicCardsItem from "@/components/Academic/AcademicCardsItem";
-
-interface CardData {
-  title: string;
-  category: string;
-  date: string;
-  description: string;
-  img: string;
-}
+import { Button } from "@/components/ui/button";
+import AcademicCardsItem from "./AcademicCardsItem";
 
 interface AcademicCardsProps {
-  dataUrl: string;
+  data: Array<{
+    title: string;
+    category: string;
+    date: string;
+    description: string;
+    img: string;
+  }>;
+  handleSeeMore: () => void;
+  canSeeMore: boolean;
 }
 
-export default function AcademicCards({ dataUrl }: AcademicCardsProps) {
-  const [cards, setCards] = useState<CardData[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(dataUrl);
-      const data = await response.json();
-      setCards(data);
-    };
-
-    fetchData();
-  }, [dataUrl]);
-
+export default function AcademicCards({
+  data,
+  handleSeeMore,
+  canSeeMore,
+}: AcademicCardsProps) {
   return (
     <div>
-      {cards.map((card, index) => (
+      {data.map((item, index) => (
         <AcademicCardsItem
           key={index}
-          title={card.title}
-          category={card.category}
-          date={card.date}
-          description={card.description}
-          img={card.img}
+          title={item.title}
+          category={item.category}
+          date={item.date}
+          description={item.description}
+          img={item.img}
         />
       ))}
-      <button className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-3 text-lg font-medium text-primary md:w-11/12">
-        See more
-      </button>
+
+      {canSeeMore && (
+        <Button
+          onClick={handleSeeMore}
+          className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary md:w-11/12"
+        >
+          See more
+        </Button>
+      )}
     </div>
   );
 }
