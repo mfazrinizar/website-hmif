@@ -14,6 +14,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const formSchema = z.object({
   name: z.string().min(1).max(50),
@@ -33,10 +37,18 @@ export function FormAspiration() {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+
+    const { name, email, message } = values;
+
+    await setDoc(doc(db, "messages", name), {
+      name: name,
+      email: email,
+      message: message,
+    });
   }
 
   return (
@@ -78,7 +90,7 @@ export function FormAspiration() {
             <FormItem>
               <FormLabel className="text-xl">Message</FormLabel>
               <FormControl>
-                <Input {...field} />
+                <Textarea {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

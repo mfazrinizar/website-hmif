@@ -2,7 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { clientConfig } from "././config";
+import { clientConfig } from "./config";
 import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 // import { getAnalytics } from "firebase/analytics";
