@@ -3,6 +3,9 @@ import ProfileInfo from "./ProfileInfo";
 import ProfileCarousel from "@/components/Profile/ProfileCarousel";
 import NavTabs from "../NavTabs";
 
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 const dinas = [
   "inti",
   "kominfo",
@@ -15,16 +18,25 @@ const dinas = [
 ];
 
 export default function ProfileTabs() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get(`/data/profile.json`).then((res) => {
+      setData(res.data.data);
+      console.log(data);
+    });
+  }, []);
+
   return (
     <Tabs defaultValue="inti" className="text-center">
       <h1 className="mb-8 text-center text-2xl font-bold text-primary xl:text-4xl">
         Our Kabinet
       </h1>
       <NavTabs />
-      {dinas.map((item) => (
-        <TabsContent value={item}>
-          <ProfileInfo dinas={item} />
-          <ProfileCarousel dinas={item} />
+      {dinas.map((item, key) => (
+        <TabsContent value={item} id={item} key={item}>
+          <ProfileInfo dinas={item} item={data[key]} />
+          <ProfileCarousel dinas={item} item={data[key]} />
         </TabsContent>
       ))}
     </Tabs>

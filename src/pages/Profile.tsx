@@ -1,4 +1,7 @@
 import ProfileTabs from "@/components/Profile/ProfileTabs";
+import ProgramCard from "@/components/ProgramCard";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function Profile() {
   return (
@@ -38,6 +41,22 @@ export default function Profile() {
       >
         <ProfileTabs />
       </section>
+      {/* <section id="profile-programs" className="">
+        <h1 className="mb-8 text-center text-2xl font-bold text-primary xl:text-4xl">
+          OUR PROGRAMS
+        </h1>
+        <div className="flex">
+          <ProgramCard />
+          <ProgramCard />
+          <ProgramCard />
+        </div>
+        <Link
+          to="/proker"
+          className="flex items-center justify-center gap-2 text-3xl font-bold text-primary"
+        >
+          See More About Program Kerja PMB <ArrowRight className="size-8" />
+        </Link>
+      </section> */}
     </section>
   );
 }
