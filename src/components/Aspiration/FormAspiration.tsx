@@ -15,9 +15,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
+import { submitAspiration } from "@/lib/networks/aspirationQueries";
+import { Aspiration } from "@/lib/types/aspirationType";
+import { RateLimiter } from "@/lib/rateLimiter";
 
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+const rateLimiter = new RateLimiter({ windowSize: 10000, maxRequests: 2 });
 
 const formSchema = z.object({
   name: z.string().min(1).max(50),
@@ -37,18 +39,19 @@ export function FormAspiration() {
   });
 
   // 2. Define a submit handler.
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: Aspiration) {
+    // Apply rate limiting
+    if (rateLimiter.limit()) {
+      alert("Mohon tunggu sebelum mengirim aspirasi lagi.");
+      return;
+    }
 
-    const { name, email, message } = values;
-
-    await setDoc(doc(db, "messages", name), {
-      name: name,
-      email: email,
-      message: message,
-    });
+    const aspirationResp = await submitAspiration(values);
+    if (aspirationResp === "success") {
+      alert("Aspirasi Anda berhasil terkirim!");
+    } else {
+      alert("Ada kesalahan saat mengirim aspirasi.");
+    }
   }
 
   return (
