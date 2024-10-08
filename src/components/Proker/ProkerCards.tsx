@@ -1,33 +1,41 @@
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 import ProkerCardItem from "./ProkerCardItem";
-import axios from "axios";
+import { Button } from "../ui/button";
 
 type Props = {
-    dinas: string
+    dinas: any,
+    item: any,
 }
 
-export default function ProkerCards({ dinas } : Props) {
+export default function ProkerCards({ dinas, item } : Props) {
     const [proker, setProker] = useState([]);
     const [sliced, setSliced] = useState(3);
 
     useEffect(() => {
-        axios.get(`/data/proker/${dinas}.json`).then((res) => {
-          setProker(res.data.proker);
-        });
-      }, []);
+        if(item){
+          setProker(item || null);
+          console.log(item);
+        }
+    }, [item]);
 
-      function showMoreItems(){
-        setSliced(sliced+3);
-      }
+    function showMoreItems(){
+      setSliced(sliced+3);
+    }
+
+    console.log(proker);
 
   return (
     <div className="flex justify-center items-center flex-col w-full">
-        {
-            proker.slice(0, sliced).map((proker, key) => (
-                <ProkerCardItem key={key} name={proker["name"]} eventFormat={proker["eventFormat"]} date={proker["date"]} description={proker["description"]} dinas={dinas}/>
-            ))
-        }
+      {
+        dinas == "all" ?
+        proker.flat().slice(0, sliced).map((proker, key) => 
+          <ProkerCardItem key={key} eventFormat={proker["eventFormat"]} name={proker["name"]} date={proker["date"]} description={proker["description"]} dinas={proker["dinas"]}/>
+        )
+        :
+        proker.slice(0, sliced).map((proker, key) => 
+          <ProkerCardItem key={key} eventFormat={proker["eventFormat"]} name={proker["name"]} date={proker["date"]} description={proker["description"]} dinas={proker["dinas"]}/>
+        ) 
+      }
 
     {/* See more Button */}
     {
@@ -41,7 +49,6 @@ export default function ProkerCards({ dinas } : Props) {
          ) 
         : ""
     }
-    
     </div>
   )
 }

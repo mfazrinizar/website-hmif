@@ -7,6 +7,7 @@ import Academic from "./pages/Academic";
 import Profile from "./pages/Profile";
 import Proker from "./pages/Proker";
 import Aspiration from "./pages/Aspiration";
+import ProkerDetail from "./pages/ProkerDetail";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -32,9 +33,13 @@ const RouterBuilder = () => {
       element: <Proker />,
     },
     {
+      path: "/proker/:dinas/:prokerName",
+      element: <ProkerDetail />,
+    },
+    {
       path: "/aspiration",
       element: <Aspiration />,
-    },
+    }
   ];
 
   const routes = createBrowserRouter([

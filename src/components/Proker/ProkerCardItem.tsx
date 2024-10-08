@@ -1,5 +1,6 @@
 import { Clock } from "lucide-react";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   eventFormat: string,
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export default function ProkerCardItem({eventFormat, name, date, description, dinas} : Props) {
+  const navigate = useNavigate();
+
   return (
     <div className="mb-7 flex w-full h-fit md:h-auto rounded-2xl border border-black p-4 md:p-7 lg:w-11/12">
       <div className="flex flex-col w-full h-fit md:h-auto md:flex-row gap-6 md:gap-0">
@@ -42,7 +45,7 @@ export default function ProkerCardItem({eventFormat, name, date, description, di
           </p>
         </div>
         </div>
-          <Button className="border-2 border-primary bg-[#F5F5F5] text-primary">
+          <Button onClick={() => navigate(`/proker/${dinas}/${name}`)} className="border-2 border-primary bg-[#F5F5F5] text-primary">
             Learn more
           </Button>
         </div>

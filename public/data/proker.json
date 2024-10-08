@@ -1,0 +1,302 @@
+{
+  "data" : [
+    [
+      {
+          "name": "Training Camp",
+          "date": "Termasuk Proker Rutin",
+          "eventFormat": "Hybrid",
+          "description": "Proker ini merupakan kegiatan pelatihan pada tiap-tiap anggota ditunjukan untuk meningkatkan nilai SDM agar berkualitas dan berintegrasi tinggi yang terfokus pada dinas / bidang masing-masing. Proker ini juga merupakan bentuk wadah pendekatan antar anggota agar tercipta ekosistem organisasi yang baik.",
+          "dinas": "inti"
+      }, 
+      {
+          "name": "IF Pedia",
+          "date": "Termasuk Proker Rutin",
+          "eventFormat": "Online",
+          "description": "Proker ini merupakan bentuk penyediaan sarana media informasi sebagai wadah komunikasi dan diskusi terkait akademik maupun non-akademik. IFPEDIA meliputi pembuatan artikel pada website HMIF, mading jurusan, dan media lain. IFPEDIA menyediakan podcast yang menjadi wadah komunikasi dan diskusi mahasiswa tentang masalah ataupun isu di dalam kampus maupun diluar",
+          "dinas": "inti"
+      }
+    ]
+  ,
+   [
+      {
+          "name": "Post Hari Besar",
+          "date": "Sesuai Hari Besar",
+          "eventFormat": "Online",
+          "description": "Proker 'Ucapan Hari Besar di Feed dan Story Instagram' bertujuan untuk memperingati dan merayakan berbagai hari besar nasional maupun internasional melalui platform media sosial HMIF. Kegiatan ini dirancang untuk memberikan ucapan selamat, pesan moral, serta informasi penting terkait hari-hari besar tersebut kepada seluruh pengikut akun Instagram HMIF. Tidak hanya bertujuan memperingati, program ini juga berfungsi sebagai bentuk edukasi ringan untuk meningkatkan awareness serta rasa kebersamaan antar anggota dan masyarakat.",
+          "dinas": "kominfo"
+      }, 
+      {
+          "name": "UMAT (Ucapan Selamat)",
+          "date": "Sesuai dengan yang berulang tahun & mendapatkan prestasi",
+          "eventFormat": "Online",
+          "description": "Ucapan hari - hari besar di feed dan story instagram.",
+          "dinas": "kominfo"
+      },
+      {
+          "name": "NGODE (Ngoding Dewekan)",
+          "date": "Satu bulan sekali",
+          "eventFormat": "Online",
+          "description": "Post code soal Alpro 1 atau yang berhubungan dengan mata kuliah yang ada.",
+          "dinas": "kominfo"
+      },
+      {
+          "name": "Seminar Design",
+          "date": "21 September 2024",
+          "eventFormat": "Online",
+          "description": "Seminar Design merupakan seminar yang membahas tentang desain dengan membawa narasumber dari luar. Seminar ini Dapat menambah wawasan mengenai dunia design yang diajarkan langsung oleh orang yang sudah ahli",
+          "dinas": "kominfo"
+      }
+    ],
+    [
+      {
+          "name": "IF Festival",
+          "date": "1 Mei 2024",
+          "eventFormat": "Offline",
+          "description": "IF FEST AKADEMIK - SENI adalah salah satu ajang perlombaan internal Teknik Informatika Fakultas Ilmu Komputer Universitas Sriwijaya yang bertujuan untuk meningkatkan kemampuan dan nalar pada setiap peserta dalam dunia Teknologi dan Informasi.",
+          "dinas": "akademik"
+      }, 
+      {
+          "name": "Seminar Konsentrasi Bidang Riset",
+          "date": "6 Juli 2024",
+          "eventFormat": "Online",
+          "description": "Seminar berisi arahan dan informasi bagi mahasiswa terutama semester atas untuk bereksplorasi dan menentukan bidang ilmu pilihannya di bidang Teknik Informatika.",
+          "dinas": "akademik"
+      },
+      {
+          "name": "Webdev Pioneer",
+          "date": "Selama Kabinet Antavarta Menjabat",
+          "eventFormat": "Online",
+          "description": "Belajar bareng mengenai basic of web dev mulai dari HTML, CSS, Tailwind dan basic JS.",
+          "dinas": "akademik"
+      },
+      {
+          "name": "PKKMB Jurusan",
+          "date": "8 Agustus 2024",
+          "eventFormat": "Offline",
+          "description": "Proker tahunan bekerjasama dengan pihak jurusan dan fakultas untuk menerima mahasiswa baru, guna memberikan gambaran umum proses perkuliahan kepada mahasiswa baru.",
+          "dinas": "akademik"
+      },
+      {
+          "name": "Sriwijaya Informatics Exhibition (SRIFOTON)",
+          "date": "-",
+          "eventFormat": "Hybrid",
+          "description": "-",
+          "dinas": "akademik"
+      },
+      {
+          "name": "Ngoding X Pemilihan Ketua Angkatan 2024",
+          "date": "28 September 2024",
+          "eventFormat": "Online",
+          "description": "Proker mengundang Alumni Universitas Sriwijaya berperan sebagai platform pertukaran informasi dan koordinasi antara mantan mahasiswa untuk menerapkan pengetahuan mereka. Dan juga menentukan Ketua Angkatan untuk Angkatan 2024.",
+          "dinas": "akademik"
+      },
+      {
+          "name": "Pelatihan Pemrograman Mahasiswa Angkatan 2024",
+          "date": "5 Oktober - 16 November 2024",
+          "eventFormat": "Online",
+          "description": "Memperkenalkan keterampilan pemrograman esensial bagi mahasiswa Teknik Informatika angkatan 2024 melalui pendekatan praktis dan kolaboratif.",
+          "dinas": "akademik"
+      },
+      {
+          "name": "Code League",
+          "date": "Satu bulan sekali",
+          "eventFormat": "Online",
+          "description": "Proker bulanan akademik yang merupakan lomba competitive programming bagi seluruh mahasiswa jurusan Teknik Informatika, guna memberikan pemahaman terhadap algoritma dan problem solving kepada mahasiswa.",
+          "dinas": "akademik"
+      },
+      {
+          "name": "Website HMIF",
+          "date": "Selama HMIF masih beroperasi",
+          "eventFormat": "Online",
+          "description": "Membuat web buatan Himpunan Mahasiswa Informatika, yang berisi tentang struktur kepengurusan HMIF dan terdapat laman berita dan info2 dari Dinas PMB, Kominfo, Kastrad.",
+          "dinas": "akademik"
+      }
+    ],
+ [
+  {
+    "name": "Seblak (Sharing Blak-blakan)",
+    "date": "Bukber, Makrab, & Demisioner",
+    "eventFormat": "Offline",
+    "description": "Kegiatan berformat pengisian form anonim dengan tujuan mengurangi kecanggungan antar anggota kabinet. Selain itu, Seblak ini juga berfungsi sebagai wadah komunikasi dan tempat berbagi keluh kesah antar anggota.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Staff of The Month (SOTM)",
+    "date": "dilaksanakan setiap akhir bulan",
+    "eventFormat": "Online",
+    "description": "bentuk apresiasi terhadap staf yang memiliki kinerja baik setiap bulannya.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Open Recruitment Staff HMIF",
+    "date": "19 Januari 2024 - 2 Februari 2024",
+    "eventFormat": "Offline",
+    "description": "Kegiatan perekrutan staf BPH dilakukan untuk menjaga ketersediaan SDM HMIF setiap periode kepengurusan. Dilaksanakan secara offline dan online, terdiri dari sesi LGD (Leaderless Group Discussion) dan wawancara.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Upgrading Staff",
+    "date": "25 Februari 2024",
+    "eventFormat": "Offline",
+    "description": "Kegiatan yang berisi sesi talkshow dan sesi game. Sesi talkshow memberikan pembekalan materi sebagai panduan awal berorganisasi untuk staf. Kemudian, sesi game bertujuan untuk mempererat hubungan antar anggota HMIF, sehingga mereka dapat saling mengenal dan mengurangi kecanggungan.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Malam Keakraban (MAKRAB)",
+    "date": "16 Maret 2024",
+    "eventFormat": "Offline",
+    "description": "Kegiatan ini bertujuan untuk mempererat hubungan antar anggota kabinet HMIF. Diharapkan, melalui kegiatan ini, anggota HMIF dapat saling bercerita dan menjadi lebih akrab, baik dengan anggota di dalam dinas maupun di luar dinas yang bersangkutan.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Buka Bersama (BUKBER)",
+    "date": "16 - 17 Maret 2024",
+    "eventFormat": "Offline",
+    "description": "Kegiatan ini merupakan sarana untuk mempererat silaturahmi antar anggota serta menyediakan waktu untuk refleksi diri selama bulan suci Ramadhan. Melalui acara ini, anggota diharapkan dapat memperkuat hubungan kebersamaan dan memperdalam makna spiritual Ramadhan bersama-sama.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Pemilihan Ketua Angkatan",
+    "date": "Rencana dilaksanakan pada bulan Oktober 2024",
+    "eventFormat": "Offline",
+    "description": "Memilih Ketua Angkatan Teknik Informatika 2024. Kegiatan Pemilihan Ketua Angkatan ini diselenggarakan bersamaan dengan event Ngobrol dan Sharing “NGODING” Bareng Alumni.",
+    "dinas": "psdm"
+  },
+  {
+    "name": "Demisioner",
+    "date": "Rencana dilaksanakan pada bulan Desember 2024",
+    "eventFormat": "Offline",
+    "description": "Kegiatan ini merupakan kegiatan akhir atau sebagai penutup dari periode kepengurusan BPH HMIF 2024.",
+    "dinas": "psdm"
+  }
+],
+[
+  {
+    "name": "IF Cup",
+    "date": "25-27 Agustus 2024",
+    "eventFormat": "Offline",
+    "description": "Merupakan proker utama dari divisi olahraga dimana merupakan wadah ajang kompetisi olahraga untuk menunjukan kemampuan dan skill dalam berbagai bidang olahraga.",
+    "dinas": "pmb"
+  },
+  {
+    "name": "IF Legion",
+    "date": "Minggu Ganjil (1 dan 3) Olahraga & Minggu Genap (2 dan 4) Seni",
+    "eventFormat": "Offline",
+    "description": "Sebuah program kerja yang dimana berfokus terhadap pengembangan minat bakat mahasiswa Informatika baik itu di seni dan olahraga. Bentuk realisasi dari kegiatan ini adalah kegiatan rutin pelatihan dari masing-masing divisi.",
+    "dinas": "pmb"
+  },
+  {
+    "name": "IF Fest",
+    "date": "Minggu Ganjil (1 dan 3) Olahraga & Minggu Genap (2 dan 4) Seni",
+    "eventFormat": "Offline",
+    "description": "Proker utama dari PMB divisi Seni dengan mengadakan event perlombaan seperti band,solo vocal,fotografi,videografi,design grafis.",
+    "dinas": "pmb"
+  },
+  {
+    "name": "IF Pedia",
+    "date": "Share Info : 2 minggu sekali & Podcast : 1/2 bulan sekali",
+    "eventFormat": "Online",
+    "description": "Proker yang berisi tentang penyampaian informasi berbagai kegiatan yang berada dalam lingkup olahraga dan seni, juga memberikan informasi terkait perlombaan yang ada. Proker ini memiliki program baru yang mengusung tema podcast yang masihberkaitan dengan seni dan olahraga dengan berbagai pembahasan yang menarik.",
+    "dinas": "pmb"
+  },
+  {
+    "name": "IF Jersey",
+    "date": "-",
+    "eventFormat": "Offline",
+    "description": "-",
+    "dinas": "pmb"
+  }
+],
+[
+      {
+          "name": "Bazar Ramadhan",
+          "date": "23 Maret - 24 Maret 2024",
+          "eventFormat": "Offline",
+          "description": "Mengadakan bazar penjualan makanan, minuman secara langsung di Kambang Iwak, TVRI, dan tempat yang memungkinkan lainnya untuk pemasukan keuangan HMIF. Serta menjual makanan ringan untuk berbuka puasa dan kegiatan amal bersama selama hari Ramadhan dimana dana hasil penjualan akan didonasikan untuk amal.",
+          "dinas": "kwu"
+      }, 
+      {
+          "name": "Bazar Festival",
+          "date": "Agustus 2024",
+          "eventFormat": "Offline",
+          "description": "Mengadakan bazar penjualan makanan, minuman secara langsung di fasilkom untuk pemasukan keuangan HMIF.",
+          "dinas": "kwu"
+      },
+      {
+          "name": "Jaket dan Id Card Staff Himpunan Teknik Informatika",
+          "date": "April - Juni 2024",
+          "eventFormat": "Offline",
+          "description": "Mengadakan penjualan dan mengurus jaket dan id card untuk mahasiswa informatika sebagai upaya kebersamaan dalam identitas atau almamater tambahan di jurusan Teknik informatika.",
+          "dinas": "kwu"
+      },
+      {
+          "name": "Id Card BPH Himpunan Teknik Informatika",
+          "date": "Februari 2024",
+          "eventFormat": "Offline",
+          "description": "Mengadakan penjualan dan mengurus id card untuk bph himpunan informatika sebagai identitas di jurusan Teknik informatika.",
+          "dinas": "kwu"
+      },
+      {
+          "name": "Baju Angkatan 2024",
+          "date": "Januari - April 2024",
+          "eventFormat": "Offline",
+          "description": "Mengadakan penjualan dan mengurus baju angkatan untuk mahasiswa baru sebagai upaya kebersamaan dalam identitas atau almamater tambahan di jurusan Teknik informatika dan sebagai identitas Angkatan Teknik Informatika.",
+          "dinas": "kwu"
+      },
+      {
+          "name": "Open PO Makanan",
+          "date": "Maret 2024",
+          "eventFormat": "Online",
+          "description": "Mengadakan penjualan makanan, minuman, merchandise secara online dengan sistem pre-order untuk pemasukan keuangan HMIF. Serta menu makanan secara online akan tersedia juga pada bazar festival.",
+          "dinas": "kwu"
+      },
+      {
+          "name": "Open PO Tumbler HMIF",
+          "date": "Maret - April 2024",
+          "eventFormat": "Online",
+          "description": "Mengadakan penjualan tumbler secara online dengan sistem pre-order untuk pemasukan keuangan HMIF.",
+          "dinas": "kwu"
+      }
+  ],
+  [
+  {
+    "name": "Secangkir Teh Bersama Kajur",
+    "date": "2 Maret 2024",
+    "eventFormat": "Offline",
+    "description": "Pertemuan antara Internal HMIF dengan Kepala Jurusan Teknik Informatika, yang akan mendiskusikan terkait program kerja tiap dinas HMIF selama satu periode kepengurusan serta tanggapan dari kajur dan membahas isu-isu yang perlu dibicarakan.",
+    "dinas": "kastrad"
+  },
+  {
+    "name": "Kastrad Peduli Kasih",
+    "date": "24 Maret 2024",
+    "eventFormat": "Offline",
+    "description": "Kegiatan dimana seluruh Internal HMIF mengunjungi dan memberi bantuan logistik serta ilmu pendidikan kepada panti asuhan.",
+    "dinas": "kastrad"
+  },
+  {
+    "name": "Informatics Caring (IF Caring)",
+    "date": "Termasuk Proker Rutin",
+    "eventFormat": "Online",
+    "description": "Wadah penyaluran keluh kesah dari seluruh mahasiswa informatika yang ditujukan kepada seluruh elemen informatika.",
+    "dinas": "kastrad"
+  },
+  {
+    "name": "Informasi Advokasi Mahasiswa",
+    "date": "Proker Mingguan",
+    "eventFormat": "Online",
+    "description": "Info Adkam merupakan penyebaran informasi melalui social media mengenai info-info penting terkini yang berhubungan dengan mahasiswa Teknik Informatika Fasilkom Unsri.",
+    "dinas": "kastrad"
+  }
+]
+,
+ [
+  {
+      "name": "Webinar Ready for Professional",
+      "date": "2 Maret 2024",
+      "eventFormat": "Online",
+      "description": "Merupakan Program Kerja dari Dinas Administrasi, webinar ini diadakan untuk persiapan Mahasiswa Teknik Informatika dalam menghadapi Kerja Praktik, webinar ini diisi oleh dua orang pembicara yang terdiri dari dosen dan Mahasiswa Teknik Informatika.",
+      "dinas": "adm"
+  }
+]
+  ]
+}
