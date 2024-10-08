@@ -38,8 +38,8 @@ return (
     }
 
   {/* See more Button */}
-  {
-      proker.length >= 3 ? ( 
+  { sliced < proker.length &&
+      ( 
       <div className="w-full">
       <Button onClick={showMoreItems} className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary lg:w-11/12">
           See more
@@ -47,7 +47,6 @@ return (
       </div>
 
        ) 
-      : ""
     }
     </div>
   )
