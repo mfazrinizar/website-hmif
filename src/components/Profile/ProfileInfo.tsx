@@ -9,18 +9,19 @@ import {
 
 type Props = {
   dinas: string;
+  item: any;
 };
 
-export default function ProfileInfo({ dinas }: Props) {
+export default function ProfileInfo({ dinas, item }: Props) {
   const [infoDesc, setInfoDesc] = useState([]);
   const [infoTitle, setInfoTitle] = useState([]);
 
   useEffect(() => {
-    axios.get(`/data/profile/${dinas}.json`).then((res) => {
-      setInfoTitle(res.data.infoTitle);
-      setInfoDesc(res.data.infoDesc);
-    });
-  }, []);
+    if (item) {
+      setInfoDesc(item.infoDesc || null);
+      setInfoTitle(item.infoTitle || null);
+    }
+  }, [item]);
 
   return (
     <section

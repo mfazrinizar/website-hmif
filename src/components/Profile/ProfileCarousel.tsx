@@ -10,20 +10,23 @@ import axios from "axios";
 
 type Props = {
   dinas: string;
+  item: any;
 };
 
-export default function ProfileCarousel({ dinas }: Props) {
+export default function ProfileCarousel({ dinas, item }: Props) {
   const [core, setCore] = useState([]);
   const [staff, setStaff] = useState([[]]);
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    axios.get(`/data/profile/${dinas}.json`).then((res) => {
-      setCore(res.data.core);
-      if (res.data.staff) setStaff(res.data.staff);
-      setTitle(res.data.title);
-    });
-  }, []);
+    if (item) {
+      setCore(item.core);
+      if (item.staff) setStaff(item.staff);
+      setTitle(item.title);
+    }
+  }, [item]);
+
+  console.log(item);
 
   return (
     <section id="profile-carousel" className="space-y-8">
