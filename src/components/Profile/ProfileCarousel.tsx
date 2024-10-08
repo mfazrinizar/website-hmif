@@ -6,7 +6,6 @@ import {
 import ProfileCarouselItem from "./ProfileCarouselItem";
 
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 type Props = {
   dinas: string;
