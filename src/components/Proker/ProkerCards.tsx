@@ -5,9 +5,10 @@ import { Button } from "../ui/button";
 type Props = {
     dinas: string,
     item: any,
+    nav: string,
 }
 
-export default function ProkerCards({ dinas, item } : Props) {
+export default function ProkerCards({ dinas, item, nav } : Props) {
   const [proker, setProker] = useState([]);
   const [sliced, setSliced] = useState(3);
 
@@ -29,11 +30,11 @@ return (
     {
       dinas == "all" ?
       proker.flat().slice(0, sliced).map((proker, key) => 
-        <ProkerCardItem key={key} eventFormat={proker["eventFormat"]} name={proker["name"]} date={proker["date"]} description={proker["description"]} dinas={proker["dinas"]}/>
+        <ProkerCardItem key={key} eventFormat={proker["eventFormat"]} name={proker["name"]} date={proker["date"]} description={proker["description"]} dinas={proker["dinas"]} nav={nav}/>
       )
       :
       proker.slice(0, sliced).map((proker, key) => 
-        <ProkerCardItem key={key} eventFormat={proker["eventFormat"]} name={proker["name"]} date={proker["date"]} description={proker["description"]} dinas={proker["dinas"]}/>
+        <ProkerCardItem key={key} eventFormat={proker["eventFormat"]} name={proker["name"]} date={proker["date"]} description={proker["description"]} dinas={proker["dinas"]} nav={nav}/>
       ) 
     }
 

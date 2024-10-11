@@ -33,7 +33,7 @@ const RouterBuilder = () => {
       element: <Proker />,
     },
     {
-      path: "/proker/:dinas/:prokerName",
+      path: "/proker/:nav/:prokerName",
       element: <ProkerDetail />,
     },
     {

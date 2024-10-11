@@ -22,7 +22,7 @@ export default function ProgramCard({
         {eventFormat}
       </p>
       <img
-        src={`img/proker/${dinas}/${name}.png`}
+        src={`/img/proker/${dinas}/${name}.png`}
         alt={`${name}`}
         className="mb-4 max-h-60 w-full rounded-t-2xl object-cover md:mb-0 md:h-full"
       />

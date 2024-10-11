@@ -45,12 +45,12 @@ export default function ProkerTabs() {
       </NavTabs>
 
       <TabsContent value={"all"}>
-        <ProkerCards key={9} dinas={"all"} item={data} />
+        <ProkerCards key={9} dinas={"all"} item={data}  nav={"all"}/>
       </TabsContent>
 
       {dinas.map((item, key) => (
         <TabsContent key={key} value={item}>
-          <ProkerCards key={key} dinas={item} item={data[key]} />
+          <ProkerCards key={key} dinas={item} item={data[key]} nav={item}/>
         </TabsContent>
       ))}
     </Tabs>

@@ -1,11 +1,11 @@
 import ProkerDetailItem from '@/components/Proker/ProkerDetailItem';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 export default function ProkerDetail() {
     const [proker, setProker] = useState([]);
-    let { dinas, prokerName } = useParams();
+    const { nav, prokerName } = useParams();
 
     useEffect(() => {
         axios.get(`/data/proker.json`).then((res) => {
@@ -17,8 +17,12 @@ export default function ProkerDetail() {
     <div>
       {
         proker.flat().map((proker, key) => {
-          if(proker["name"] == prokerName){
-            return <ProkerDetailItem key={key} name={proker["name"]} />
+          if(proker["name"] == prokerName && proker){
+            return (
+            <section id="prokerDetail">
+              <ProkerDetailItem key={key} name={proker["name"]} nav={nav} eventFormat={proker["eventFormat"]} dinas={proker["dinas"]} date={proker["date"]} description={proker["description"]} benefits={proker["benefits"]}/>
+            </section>
+            )
           }
         })
       }

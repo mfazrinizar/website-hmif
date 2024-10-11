@@ -3,11 +3,12 @@ import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
-  eventFormat: string;
-  name: string;
-  date: any;
-  description: string;
-  dinas: string;
+  eventFormat: string,
+  name: string,
+  date: any,
+  description: string,
+  dinas: string,
+  nav: string
 };
 
 export default function ProkerCardItem({
@@ -16,17 +17,18 @@ export default function ProkerCardItem({
   date,
   description,
   dinas,
+  nav
 }: Props) {
   const navigate = useNavigate();
 
   return (
     <div className="mb-7 flex h-fit w-full rounded-2xl border border-black p-4 md:h-auto md:p-7 lg:w-11/12">
-      <div className="flex h-fit w-full flex-col gap-6 md:h-auto md:flex-row md:gap-0">
-        <img
-          src={`img/proker/${dinas}/${name}.png`}
-          alt={`${name}`}
-          className="mb-4 h-1/2 w-full rounded-md object-cover md:mb-0 md:h-full md:w-1/3 lg:w-1/4"
-        />
+      <div className="flex h-fit w-full flex-col md:flex-row gap-6 md:h-auto md:gap-0">
+          <img
+            src={`img/proker/${dinas}/${name}.png`}
+            alt={`${name}`}
+            className="mb-4 md:mb-0 rounded-lg object-cover  w-full md:w-1/3 lg:w-1/4"
+          />
         <div className="flex flex-col items-start justify-between gap-2 md:pl-8 lg:pl-14">
           <p className="inline-block rounded bg-primary px-2 py-1 text-white">
             {eventFormat}
@@ -49,7 +51,7 @@ export default function ProkerCardItem({
             </div>
           </div>
           <Button
-            onClick={() => navigate(`/proker/${dinas}/${name}`)}
+            onClick={() => navigate(`/proker/${nav}/${name}`)}
             className="border-2 border-primary bg-[#F5F5F5] text-primary"
           >
             Learn more

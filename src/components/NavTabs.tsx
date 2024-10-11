@@ -1,4 +1,4 @@
-import { TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TabsList } from "@/components/ui/tabs";
 import { ReactNode } from "react";
 
 type Props = {
