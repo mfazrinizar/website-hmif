@@ -34,13 +34,15 @@ export default function Navbar() {
         </div>
       </div>
       <ul className="hidden gap-2 lg:flex xl:gap-4">
-        {" "}
         {navItems.map((item) => (
           <NavLink
             key={item.path + item.name}
             to={item.path}
             className={cn("px-1 text-base xl:text-lg", {
-              "border-b-2 border-primary text-primary": pathname === item.path,
+              "border-b-2 border-primary text-primary":
+                pathname.length > 11
+                  ? pathname.slice(0, item.path.length) === item.path
+                  : pathname === item.path,
             })}
           >
             {item.name}
