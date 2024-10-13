@@ -212,6 +212,39 @@ const CarouselImg = ({ src, index }: CarouselDotProps) => {
 };
 CarouselImg.displayName = "CarouselImg";
 
+const CarouselDots = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }) => {
+  const { selectedIndex, scrollTo, api } = useCarousel();
+  console.log(selectedIndex);
+  return (
+    <div
+      className={cn(
+        "embla__dots z-50 mt-4 flex items-center justify-center gap-4",
+        className,
+      )}
+      {...props}
+    >
+      {api
+        ?.scrollSnapList()
+        .map((_, index) => (
+          <Button
+            key={index}
+            className={cn(
+              "embla__dot h-4 w-2 rounded-full",
+              index === selectedIndex
+                ? "embla__dot--selected"
+                : "bg-primary-foreground",
+            )}
+            onClick={() => scrollTo(index)}
+          />
+        ))}
+    </div>
+  );
+});
+CarouselDots.displayName = "CarouselDots";
+
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
@@ -274,6 +307,7 @@ export {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselDots,
   CarouselNext,
   CarouselPrevious,
   CarouselImg,
