@@ -39,15 +39,21 @@ return (
     }
 
   {/* See more Button */}
-  { sliced < proker.length &&
-      ( 
+  {
+      dinas == "all" ?
+      sliced < proker.flat().length && ( 
       <div className="w-full">
       <Button onClick={showMoreItems} className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary lg:w-11/12">
           See more
       </Button>
-      </div>
-
-       ) 
+      </div> ) 
+      :
+      sliced < proker.length && ( 
+      <div className="w-full">
+      <Button onClick={showMoreItems} className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary lg:w-11/12">
+          See more
+      </Button>
+      </div>) 
     }
     </div>
   )
