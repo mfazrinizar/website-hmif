@@ -40,7 +40,7 @@ export default function Navbar() {
             to={item.path}
             className={cn("px-1 text-base xl:text-lg", {
               "border-b-2 border-primary text-primary":
-                pathname.length > 11
+                pathname.length > 11 && item.path != "/"
                   ? pathname.slice(0, item.path.length) === item.path
                   : pathname === item.path,
             })}
