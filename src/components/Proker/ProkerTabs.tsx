@@ -3,6 +3,7 @@ import NavTabs from "../NavTabs";
 import { Tabs, TabsContent, TabsTrigger } from "../ui/tabs";
 import ProkerCards from "./ProkerCards";
 import axios from "axios";
+import { getBreadCrumb } from "@/lib/networks/breadCrumbQueries";
 
 export default function ProkerTabs() {
   const [data, setData] = useState([]);
@@ -24,7 +25,7 @@ export default function ProkerTabs() {
   }, []);
 
   return (
-    <Tabs defaultValue="all" className="text-center">
+    <Tabs defaultValue={getBreadCrumb() ?? "all"} className="text-center">
       <h1 className="mb-8 pt-0 text-center text-2xl font-bold text-primary md:pt-8 lg:pt-0 xl:text-4xl">
         Our Kabinet
       </h1>
@@ -45,12 +46,12 @@ export default function ProkerTabs() {
       </NavTabs>
 
       <TabsContent value={"all"}>
-        <ProkerCards key={9} dinas={"all"} item={data}  nav={"all"}/>
+        <ProkerCards key={9} dinas={"all"} item={data} nav={"all"} />
       </TabsContent>
 
       {dinas.map((item, key) => (
         <TabsContent key={key} value={item}>
-          <ProkerCards key={key} dinas={item} item={data[key]} nav={item}/>
+          <ProkerCards key={key} dinas={item} item={data[key]} nav={item} />
         </TabsContent>
       ))}
     </Tabs>
