@@ -5,12 +5,11 @@ import {
   BreadcrumbPage,
 } from "../ui/breadcrumb";
 import { ArrowRight, Clock } from "lucide-react";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import ProgramCard from "../ProgramCard";
 import BreadcrumpCard from "../BreadcrumpCard";
-import { ProkerLinkContext } from "@/context/ProkerLinkContext";
-import { setBreadCrumb, getBreadCrumb } from "@/lib/networks/breadCrumbQueries";
+import { setBreadCrumb } from "@/lib/networks/breadCrumbQueries";
 
 type Props = {
   name: string;

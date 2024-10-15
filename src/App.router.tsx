@@ -39,7 +39,7 @@ const RouterBuilder = () => {
     {
       path: "/aspiration",
       element: <Aspiration />,
-    }
+    },
   ];
 
   const routes = createBrowserRouter([
