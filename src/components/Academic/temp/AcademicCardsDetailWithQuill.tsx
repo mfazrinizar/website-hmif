@@ -191,7 +191,7 @@ export default function AcademicCardsDetail() {
 
           {/* Render HTML descriptionDetails */}
           <div
-            className="text-[#3E3E3E]"
+            className="whitespace-pre-wrap text-[#3E3E3E]"
             dangerouslySetInnerHTML={{
               __html: data.details.descriptionDetails,
             }}

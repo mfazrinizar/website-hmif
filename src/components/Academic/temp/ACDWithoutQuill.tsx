@@ -156,7 +156,7 @@ export default function AcademicCardsDetail() {
           </p>
           <p className="mb-5 text-xl font-medium">Event Details :</p>
           <div
-            className="text-[#3E3E3E]"
+            className="whitespace-pre-wrap text-[#3E3E3E]"
             dangerouslySetInnerHTML={{
               __html: data.details.descriptionDetails,
             }}
