@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsTrigger } from "../ui/tabs";
 import ProkerCards from "./ProkerCards";
 import axios from "axios";
 import { getBreadCrumb } from "@/lib/networks/breadCrumbQueries";
+import useLoadWindow from "@/hooks/useLoadWindow";
 
 export default function ProkerTabs() {
   const [data, setData] = useState([]);
@@ -23,6 +24,8 @@ export default function ProkerTabs() {
       setData(res.data.data);
     });
   }, []);
+
+  useLoadWindow();
 
   return (
     <Tabs defaultValue={getBreadCrumb() ?? "all"} className="text-center">
