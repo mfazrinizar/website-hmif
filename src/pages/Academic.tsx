@@ -15,7 +15,7 @@ export default function Academic() {
     let dataUrl = "";
     switch (activeContent) {
       case "beasiswa":
-        dataUrl = "/data/academic/beasiswa.json";
+        dataUrl = "/data/academic/scholarship.json";
         break;
       case "competition":
         dataUrl = "/data/academic/competition.json";
@@ -24,7 +24,7 @@ export default function Academic() {
         dataUrl = "/data/academic/seminar.json";
         break;
       default:
-        dataUrl = "/data/academic/beasiswa.json";
+        dataUrl = "/data/academic/scholarship.json";
     }
 
     // Fetch the JSON data

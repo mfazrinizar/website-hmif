@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import Proker from "./pages/Proker";
 import Aspiration from "./pages/Aspiration";
 import ProkerDetail from "./pages/ProkerDetail";
+import AcademicCardsDetail from "./components/Academic/AcademicCardsDetail";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -25,6 +26,10 @@ const RouterBuilder = () => {
       element: <Academic />,
     },
     {
+      path: "/academic/:type/:title",
+      element: <AcademicCardsDetail />,
+    },
+    {
       path: "/profile",
       element: <Profile />,
     },
@@ -39,7 +44,7 @@ const RouterBuilder = () => {
     {
       path: "/aspiration",
       element: <Aspiration />,
-    }
+    },
   ];
 
   const routes = createBrowserRouter([
@@ -48,8 +53,6 @@ const RouterBuilder = () => {
       children: generalRoutes,
     },
   ]);
-
-  // px-5 px-12 px-20
 
   return routes;
 };

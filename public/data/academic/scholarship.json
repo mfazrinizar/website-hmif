@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Beasiswa Bakti BCA",
+    "category": "Undergraduate",
+    "date": "July - August 2024",
+    "description": "Beasiswa Bakti BCA merupakan program unggulan dari BCA yang telah berlangsung sejak tahun 1999. Program ini bertujuan untuk memberikan dukungan kepada mahasiswa/i Indonesia yang berprestasi, baik di bidang akademis maupun non-akademis.",
+    "img": "img/academic/beasiswa/beasiswa_bca.png",
+    "type": "scholarship",
+    "details": {
+      "imgDetails": "/img/academic/beasiswa/beasiswa_bca_details.jpg",
+      "openRegister": "antara Juli - Agustus tiap tahun",
+      "category": "Fully Funded",
+      "availableTo": "3-4th semester students",
+      "presentedBy": "Bank Central Asia (BCA)",
+      "descriptionDetails": "<p>Beasiswa Bakti BCA merupakan program unggulan dari BCA yang telah berlangsung sejak tahun 1999. Program ini bertujuan untuk memberikan dukungan kepada mahasiswa/i Indonesia yang berprestasi, baik di bidang akademis maupun non-akademis. Berikut adalah beberapa informasi mengenai Beasiswa Bakti BCA:</p><p><br></p><p>Manfaat Beasiswa:</p><ul class=\"ms-5 list-disc\"><li>Dana Pendidikan: Penerima beasiswa akan mendapatkan bantuan dana pendidikan selama 1 tahun. Ini mencakup uang saku bulanan dan bantuan uang kuliah.</li><li>Program Pengembangan (Bakti Champions): Selama setahun, mahasiswa/i penerima beasiswa akan mengikuti program pengembangan yang mencakup topik seperti perencanaan keuangan, business impact plan, bootcamp, dan kunjungan ke kantor BCA.</li></ul><br /><p>Persyaratan Umum:</p><ul class=\"ms-5 list-disc\"><li>Mahasiswa/i jenjang sarjana (S1).</li><li>Berada di semester 5 saat menerima beasiswa.</li><li>IPK minimal 3,00.</li></ul><p><br></p><p>Seleksi dan Jadwal:</p><ul class=\"ms-5 list-disc\"><li>Pendaftaran melalui kemahasiswaan biasanya dilakukan pada bulan Juli.</li><li>Seleksi administrasi akan mengumumkan hasil melalui e-mail pada bulan Agustus.</li></ul>"
+    }
+  },
+  {
+    "title": "Pendidikan Ayo Pintar 2024",
+    "category": "Undergraduate",
+    "date": "13 August - 27 December 2024",
+    "description": "Beasiswa Pendidikan Ayo Pintar merupakan program beasiswa yang ditawarkan oleh Ayo Pintar dan ditujukan untuk Pelajar, Gap Year serta Mahasiswa. Tujuan program adalah untuk mendukung pendidikan generasi muda dapat berprestasi dan berinovasi.",
+    "img": "img/academic/beasiswa/beasiswa_ayopintar.png",
+    "type": "scholarship",
+    "details": {
+      "imgDetails": "/img/academic/beasiswa/beasiswa_ayopintar.png",
+      "openRegister": "13 August - 27 December 2024",
+      "category": "Merid – based",
+      "availableTo": "All semester",
+      "presentedBy": "Ayo Pintar",
+      "descriptionDetails": "Beasiswa Pendidikan Ayo Pintar merupakan program beasiswa yang ditawarkan oleh Ayo Pintar. Tujuan program adalah untuk mendukung pendidikan generasi muda dari berbagai kalangan sehingga mereka dapat terus berprestasi, berinovasi, dan berkontribusi pada kemajuan negara Indonesia"
+    }
+  },
+  {
+    "title": "BSI Scholarship 2024",
+    "category": "Undergraduate",
+    "date": "2 September - 13 October 2024",
+    "description": "Beasiswa BSI 2024 menawarkan bantuan biaya kuliah dan uang saku untuk mahasiswa tahun ke-2 dengan prestasi akademik atau non-akademik, serta pelatihan dan magang di industri ekonomi syariah.",
+    "img": "img/academic/beasiswa/beasiswa_bsi.png",
+    "type": "scholarship",
+    "details": {
+      "imgDetails": "/img/academic/beasiswa/beasiswa_bca_details.jpg",
+      "openRegister": "antara Juli - Agustus tiap tahun",
+      "category": "Fully Funded",
+      "availableTo": "3-4th semester students",
+      "presentedBy": "Bank Central Asia (BCA)",
+      "descriptionDetails": "Beasiswa Bakti BCA merupakan program unggulan dari BCA yang telah berlangsung sejak tahun 1999. Program ini bertujuan untuk memberikan dukungan kepada mahasiswa/i Indonesia yang berprestasi, baik di bidang akademis maupun non-akademis. Berikut adalah beberapa informasi mengenai Beasiswa Bakti BCA:"
+    }
+  },
+  {
+    "title": "GPT-U 2024",
+    "category": "Undergraduate",
+    "date": "1 October - 30 November 2024",
+    "description": "GPT-U 2024 menyediakan beasiswa penuh, pelatihan eksklusif, mentorship, dan magang untuk mahasiswa di bidang teknologi dan kecerdasan buatan.",
+    "img": "img/academic/beasiswa/beasiswa_gpt.png",
+    "type": "scholarship",
+    "details": {
+      "imgDetails": "/img/academic/beasiswa/beasiswa_bca_details.jpg",
+      "openRegister": "antara Juli - Agustus tiap tahun",
+      "category": "Fully Funded",
+      "availableTo": "3-4th semester students",
+      "presentedBy": "Bank Central Asia (BCA)",
+      "descriptionDetails": "Beasiswa Bakti BCA merupakan program unggulan dari BCA yang telah berlangsung sejak tahun 1999. Program ini bertujuan untuk memberikan dukungan kepada mahasiswa/i Indonesia yang berprestasi, baik di bidang akademis maupun non-akademis. Berikut adalah beberapa informasi mengenai Beasiswa Bakti BCA:"
+    }
+  }
+]

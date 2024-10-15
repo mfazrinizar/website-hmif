@@ -1,5 +1,7 @@
 import { Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 interface CardProps {
   title: string;
@@ -7,6 +9,7 @@ interface CardProps {
   date: string;
   description: string;
   img: string;
+  type: string;
 }
 
 export default function AcademicCardsItem({
@@ -15,7 +18,15 @@ export default function AcademicCardsItem({
   date,
   description,
   img,
+  type,
 }: CardProps) {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    const formattedTitle = title.toLowerCase().split(" ").join("-"); // Format title untuk URL
+    navigate(`/academic/${type.toLowerCase()}/${formattedTitle}`); // Gunakan title sebagai bagian dari URL
+  };
+
   return (
     <div className="mb-7 flex w-full flex-col rounded-2xl border border-black p-7 md:w-11/12 md:flex-row">
       <img src={img} alt={title} className="mb-4 w-full md:mb-0 md:w-1/4" />
@@ -29,7 +40,10 @@ export default function AcademicCardsItem({
           <p className="pl-2 text-primary">{date}</p>
         </div>
         <p className="pb-5 pt-2">{description}</p>
-        <Button className="border-2 border-primary bg-[#F5F5F5] text-primary">
+        <Button
+          onClick={handleLearnMore}
+          className="border-2 border-primary bg-[#F5F5F5] text-primary"
+        >
           Learn more
         </Button>
       </div>

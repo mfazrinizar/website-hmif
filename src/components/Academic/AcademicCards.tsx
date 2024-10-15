@@ -8,6 +8,7 @@ interface AcademicCardsProps {
     date: string;
     description: string;
     img: string;
+    type: string;
   }>;
   handleSeeMore: () => void;
   canSeeMore: boolean;
@@ -28,6 +29,7 @@ export default function AcademicCards({
           date={item.date}
           description={item.description}
           img={item.img}
+          type={item.type}
         />
       ))}
 

@@ -4,27 +4,67 @@
     "category": "Online",
     "date": "28 September 2024",
     "description": "Artificial intelligence adalah software komputer yang dapat belajar, menganalisis data, membuat beberapa keputusan dan mengatasi masalah seperti halnya manusia. Lalu bagaimana penerapan artificial intelligence ini dalam bisnis?",
-    "img": "img/academic/seminar/webinar_AI.png"
+    "img": "img/academic/seminar/webinar_AI.png",
+    "type": "seminar",
+    "details": {
+      "imgDetails": "",
+      "date": "Saturday, 28 September 2024",
+      "time": "13.00 - 15.00 WIB",
+      "media": "Zoom Meeting",
+      "openTo": "Everyone",
+      "presentedBy": "Mounev Academy",
+      "descriptionDetails": "[Free Webinar: Implementasi Artificial Intelligence dalam Bisnis]\n\nArtificial intelligence adalah software komputer yang dapat belajar, menganalisis data, membuat beberapa keputusan dan mengatasi masalah seperti halnya manusia. Secara garis besar, AI dapat terbagi menjadi dua, yaitu machine learning dan deep learning. Lalu bagaimana penerapan artificial intelligence ini dalam bisnis?"
+    }
   },
   {
     "title": "Webinar Investasi 2024",
     "category": "Online",
     "date": "6 September 2024",
     "description": "Pengen tahu bagaimana cara menghasilkan keuntungan besar dari tren investasi terbaru? Aa Pram ada info webinar nih, yuk ikuti webinar \"Memanfaatkan Peluang Cuan Jutaan Dari Cryptocurrency\".",
-    "img": "img/academic/seminar/webinar_investasi.png"
+    "img": "img/academic/seminar/webinar_investasi.png",
+    "type": "seminar",
+    "details": {
+      "imgDetails": "",
+      "date": "Saturday, 28 September 2024",
+      "time": "13.00 - 15.00 WIB",
+      "media": "Zoom Meeting",
+      "openTo": "Everyone",
+      "presentedBy": "Mounev Academy",
+      "descriptionDetails": "[Free Webinar: Implementasi Artificial Intelligence dalam Bisnis]\n\nArtificial intelligence adalah software komputer yang dapat belajar, menganalisis data, membuat beberapa keputusan dan mengatasi masalah seperti halnya manusia. Secara garis besar, AI dapat terbagi menjadi dua, yaitu machine learning dan deep learning. Lalu bagaimana penerapan artificial intelligence ini dalam bisnis?"
+    }
   },
   {
     "title": "Webinar and Workshop",
     "category": "Hybrid",
     "date": "14 - 17 September 2024",
     "description": "The 2024 AICOMS-Q dilaksanakan selama 4 hari berturut-turut mulai Sabtu, 14 September 2024 hingga Selasa, 17 September 2024, secara Hybrid (Online dan Offline) dari Telkom University dan Institut Teknologi, Bandung.",
-    "img": "img/academic/seminar/webinar_workshop.png"
+    "img": "img/academic/seminar/webinar_workshop.png",
+    "type": "seminar",
+    "details": {
+      "imgDetails": "",
+      "date": "Saturday, 28 September 2024",
+      "time": "13.00 - 15.00 WIB",
+      "media": "Zoom Meeting",
+      "openTo": "Everyone",
+      "presentedBy": "Mounev Academy",
+      "descriptionDetails": "[Free Webinar: Implementasi Artificial Intelligence dalam Bisnis]\n\nArtificial intelligence adalah software komputer yang dapat belajar, menganalisis data, membuat beberapa keputusan dan mengatasi masalah seperti halnya manusia. Secara garis besar, AI dapat terbagi menjadi dua, yaitu machine learning dan deep learning. Lalu bagaimana penerapan artificial intelligence ini dalam bisnis?"
+    }
   },
   {
     "title": "Webinar Beasiswa 2024",
     "category": "Hybrid",
     "date": "6 September 2024",
     "description": "BEM KM Fasilkom Unsri mengadakan Webinar Beasiswa dengan tema “Building a Network and Getting Support for Scholarships”",
-    "img": "img/academic/seminar/webinar_beasiswa.jpg"
+    "img": "img/academic/seminar/webinar_beasiswa.jpg",
+    "type": "seminar",
+    "details": {
+      "imgDetails": "",
+      "date": "Saturday, 28 September 2024",
+      "time": "13.00 - 15.00 WIB",
+      "media": "Zoom Meeting",
+      "openTo": "Everyone",
+      "presentedBy": "Mounev Academy",
+      "descriptionDetails": "[Free Webinar: Implementasi Artificial Intelligence dalam Bisnis]\n\nArtificial intelligence adalah software komputer yang dapat belajar, menganalisis data, membuat beberapa keputusan dan mengatasi masalah seperti halnya manusia. Secara garis besar, AI dapat terbagi menjadi dua, yaitu machine learning dan deep learning. Lalu bagaimana penerapan artificial intelligence ini dalam bisnis?"
+    }
   }
 ]
