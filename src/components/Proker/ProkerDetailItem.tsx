@@ -140,6 +140,7 @@ export default function ProkerDetailItem({
                 date={item["date"]}
                 description={item["description"]}
                 dinas={item["dinas"]}
+                src={undefined}
               />
             ))}
           </div>

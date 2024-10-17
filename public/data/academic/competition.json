@@ -4,7 +4,7 @@
     "category": "Online",
     "date": "1 - 27 September 2024",
     "description": "Invofest (Informatics Vocational Festival) adalah festival tahunan yang bertujuan untuk menginspirasi dan memberdayakan Indonesia muda dalam menghadapi era digital. Dengan mengusung tema “AI for a Sustainable Future: The Role of Generation Z in the Digital Era”.",
-    "img": "img/academic/competition/competition_invofest.png",
+    "img": "/img/academic/competition/competition_invofest.png",
     "type": "competition",
     "details": {
       "imgDetails": "/img/academic/competition/competition_invofest_details.png",
@@ -20,7 +20,7 @@
     "category": "Hybrid",
     "date": "September 2024",
     "description": "SRIFOTON 2024 adalah sebuah kompetisi nasional tahunan di bidang IT yang mewadahi mahasiswa IT se-Indonesia untuk mengembangkan serta menyalurkan minat dan bakat mereka dalam dunia IT. SRIFOTON 2024 mengusung tema “Digital Innovation for a Sustainable Future”.",
-    "img": "img/academic/competition/competition_srifoton.png",
+    "img": "/img/academic/competition/competition_srifoton.png",
     "type": "competition",
     "details": {
       "imgDetails": "/img/academic/competition/competition_srifoton_details.png",
@@ -36,7 +36,7 @@
     "category": "Hybrid",
     "date": "1 - 15 September 2024",
     "description": "Techphoria merupakan serangkaian acara IT tahunan dengan fokus kompetisi yang diperuntukan Universitas se-Indonesia untuk meningkatkan kesadaran tentang peranan IT serta meningkatkan nilai keilmuan dan komprehensif di bidang ilmu teknologi informasi komputer.",
-    "img": "img/academic/competition/competition_techpo.png",
+    "img": "/img/academic/competition/competition_techpo.png",
     "type": "competition",
     "details": {
       "imgDetails": "/img/academic/competition/competition_techpo_details.png",
@@ -52,7 +52,7 @@
     "category": "Online",
     "date": "26 August - 20 September 2024",
     "description": "FIKFAIR NON - ACADEMIC COMPETITION present to support students interested in academic talent. This FIKFAIR holds competitions in Competitive Programming.",
-    "img": "img/academic/competition/competition_fik.png",
+    "img": "/img/academic/competition/competition_fik.png",
     "type": "competition",
     "details": {
       "imgDetails": "/img/academic/competition/competition_fik_details.png",

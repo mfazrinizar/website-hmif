@@ -4,7 +4,7 @@
     "category": "Undergraduate",
     "date": "July - August 2024",
     "description": "Beasiswa Bakti BCA merupakan program unggulan dari BCA yang telah berlangsung sejak tahun 1999. Program ini bertujuan untuk memberikan dukungan kepada mahasiswa/i Indonesia yang berprestasi, baik di bidang akademis maupun non-akademis.",
-    "img": "img/academic/beasiswa/beasiswa_bca.png",
+    "img": "/img/academic/beasiswa/beasiswa_bca.png",
     "type": "scholarship",
     "details": {
       "imgDetails": "/img/academic/beasiswa/beasiswa_bca_details.jpg",
@@ -20,7 +20,7 @@
     "category": "Undergraduate",
     "date": "13 August - 27 December 2024",
     "description": "Beasiswa Pendidikan Ayo Pintar merupakan program beasiswa yang ditawarkan oleh Ayo Pintar dan ditujukan untuk Pelajar, Gap Year serta Mahasiswa. Tujuan program adalah untuk mendukung pendidikan generasi muda dapat berprestasi dan berinovasi.",
-    "img": "img/academic/beasiswa/beasiswa_ayopintar.png",
+    "img": "/img/academic/beasiswa/beasiswa_ayopintar.png",
     "type": "scholarship",
     "details": {
       "imgDetails": "/img/academic/beasiswa/beasiswa_ayopintar_details.png",
@@ -36,7 +36,7 @@
     "category": "Undergraduate",
     "date": "2 September - 13 October 2024",
     "description": "Beasiswa BSI 2024 menawarkan bantuan biaya kuliah dan uang saku untuk mahasiswa tahun ke-2 dengan prestasi akademik atau non-akademik, serta pelatihan dan magang di industri ekonomi syariah.",
-    "img": "img/academic/beasiswa/beasiswa_bsi.png",
+    "img": "/img/academic/beasiswa/beasiswa_bsi.png",
     "type": "scholarship",
     "details": {
       "imgDetails": "/img/academic/beasiswa/beasiswa_bsi_details.png",
@@ -52,7 +52,7 @@
     "category": "Undergraduate",
     "date": "1 October - 30 November 2024",
     "description": "GPT-U 2024 menyediakan beasiswa penuh, pelatihan eksklusif, mentorship, dan magang untuk mahasiswa di bidang teknologi dan kecerdasan buatan.",
-    "img": "img/academic/beasiswa/beasiswa_gpt.png",
+    "img": "/img/academic/beasiswa/beasiswa_gpt.png",
     "type": "scholarship",
     "details": {
       "imgDetails": "/img/academic/beasiswa/beasiswa_gpt_details.png",
@@ -68,7 +68,7 @@
     "category": "Everyone",
     "date": "13 Oktober 2024",
     "description": "Indonesia Mengabdi & didukung @SejutaCita.id menyediakan beasiswa pendidikan, uang saku serta volunteering trip ke Labuan Bajo.",
-    "img": "img/academic/beasiswa/beasiswa_indomengabdi.jpg",
+    "img": "/img/academic/beasiswa/beasiswa_indomengabdi.jpg",
     "type": "scholarship",
     "details": {
       "imgDetails": "/img/academic/beasiswa/beasiswa_indomengabdi.jpg",

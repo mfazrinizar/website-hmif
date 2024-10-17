@@ -2,10 +2,12 @@ import { useParams, useNavigate } from "react-router-dom"; // Tambahkan useNavig
 import { useEffect, useState } from "react";
 import { Calendar, ArrowRight, Mail, Users } from "lucide-react";
 import { Button } from "../ui/button";
+import ProgramCard from "../ProgramCard";
 
 export default function AcademicCardsDetail() {
   const { type, title } = useParams();
   const [data, setData] = useState<any>(null);
+  const [event, setEvent] = useState([]);
   const navigate = useNavigate(); // Inisialisasi useNavigate
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function AcademicCardsDetail() {
             item.title.toLowerCase().split(" ").join("-") === title,
         );
         setData(selectedData);
+        setEvent(fetchedData);
       });
   }, [type, title]);
 
@@ -174,7 +177,22 @@ export default function AcademicCardsDetail() {
           dan pengalaman akademis di berbagai kampus, serta menemukan beragam
           peluang beasiswa yang tersedia untuk Anda!”
         </p>
-        <div></div>
+        <div className="flex flex-col lg:flex-row">
+          {event
+            .filter((e: any) => e["title"] != data.title)
+            .slice(0, 3)
+            .map((item: any, key: any) => (
+              <ProgramCard
+                key={key}
+                eventFormat={item["category"]}
+                name={item["title"]}
+                date={item["date"]}
+                description={item["description"]}
+                dinas={item["type"]}
+                src={item["img"]}
+              />
+            ))}
+        </div>
       </div>
     </div>
   );

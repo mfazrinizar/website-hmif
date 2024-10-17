@@ -7,6 +7,7 @@ type Props = {
   date: any;
   description: string;
   dinas: string;
+  src: string | undefined;
 };
 
 export default function ProgramCard({
@@ -15,6 +16,7 @@ export default function ProgramCard({
   date,
   description,
   dinas,
+  src,
 }: Props) {
   return (
     <div className="relative mb-7 h-fit w-full rounded-2xl p-4 md:h-auto md:p-7 lg:w-1/3">
@@ -22,7 +24,7 @@ export default function ProgramCard({
         {eventFormat}
       </p>
       <img
-        src={`/img/proker/${dinas}/${name}.png`}
+        src={src ? src : `/img/proker/${dinas}/${name}.png`}
         alt={`${name}`}
         className="mb-4 max-h-60 w-full rounded-t-2xl object-cover md:mb-0 md:h-full"
       />
