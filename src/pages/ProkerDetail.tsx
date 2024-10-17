@@ -20,7 +20,7 @@ export default function ProkerDetail() {
           if(proker["name"] == prokerName && proker){
             return (
             <section id="prokerDetail">
-              <ProkerDetailItem key={key} name={proker["name"]} nav={nav} eventFormat={proker["eventFormat"]} dinas={proker["dinas"]} date={proker["date"]} description={proker["description"]} benefits={proker["benefits"]}/>
+              <ProkerDetailItem key={key} name={proker["name"]} nav={nav} eventFormat={proker["eventFormat"]} dinas={proker["dinas"]} date={proker["date"]} description={proker["description"]} benefits={proker["benefits"]} assets={proker["assets"]}/>
             </section>
             )
           }

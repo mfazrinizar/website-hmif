@@ -155,7 +155,7 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflo">
+    <div ref={carouselRef} className="overflow-hidden">
       <div
         ref={ref}
         className={cn(
@@ -232,10 +232,10 @@ const CarouselDots = React.forwardRef<
           <Button
             key={index}
             className={cn(
-              "embla__dot h-4 w-2 rounded-full",
+              "embla__dot h-4 w-4 rounded-full px-0 py-0 hover:bg-[#636363]",
               index === selectedIndex
-                ? "embla__dot--selected"
-                : "bg-primary-foreground",
+                ? "embla__dot--selected w-8 bg-[#636363]"
+                : "bg-[#F2F2F2]",
             )}
             onClick={() => scrollTo(index)}
           />

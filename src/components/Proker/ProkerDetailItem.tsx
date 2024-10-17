@@ -10,6 +10,12 @@ import axios from "axios";
 import ProgramCard from "../ProgramCard";
 import BreadcrumpCard from "../BreadcrumpCard";
 import { setBreadCrumb } from "@/lib/networks/breadCrumbQueries";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDots,
+  CarouselItem,
+} from "../ui/carousel";
 
 type Props = {
   name: string;
@@ -19,6 +25,7 @@ type Props = {
   date: string;
   description: string;
   benefits: any;
+  assets: any;
 };
 
 export default function ProkerDetailItem({
@@ -29,6 +36,7 @@ export default function ProkerDetailItem({
   date,
   description,
   benefits,
+  assets,
 }: Props) {
   const [prokerDinas, setProkerDinas] = useState<any[]>([]);
 
@@ -74,11 +82,24 @@ export default function ProkerDetailItem({
         </div>
         <div className="flex w-full items-center justify-center">
           <div className="flex w-full flex-col gap-4 lg:w-3/4">
-            <img
-              src={`/img/proker/${dinas}/${name}.png`}
-              alt={name}
-              className="h-[500px] w-full object-cover"
-            />
+            <Carousel>
+              <CarouselContent>
+                {assets
+                  .filter((e: any, key: any) => key >= 1)
+                  .map((asset: any, key: number) => (
+                    <CarouselItem key={key} className="flex max-w-full">
+                      <div className="flex w-full">
+                        <img
+                          src={`/img/proker/${dinas}/${asset}`}
+                          alt={asset}
+                          className="h-[500px] w-full object-cover"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+              </CarouselContent>
+              <CarouselDots />
+            </Carousel>
             <div className="flex w-full flex-col gap-2">
               <div className="flex justify-start gap-2 py-2 text-primary">
                 <Clock />
