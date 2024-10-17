@@ -22,8 +22,29 @@ import {
 } from "@/components/ui/accordion";
 
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ProgramCard from "@/components/ProgramCard";
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const [event, setEvent] = useState<any[]>([]);
+
+  useEffect(() => {
+    const temp: any[] = [];
+    axios.get(`/data/proker.json`).then((res) => {
+      console.log(res.data.data);
+      temp.push(res.data.data[2][4]);
+      temp.push(res.data.data[2][0]);
+      temp.push(res.data.data[4][0]);
+      setEvent(temp);
+    });
+
+    console.log(event);
+  }, []);
+
   return (
     <section id="home" className="space-y-24 lg:space-y-32 xl:space-y-40">
       <section
@@ -56,9 +77,15 @@ export default function Home() {
           />
           <div className="flex items-center justify-center gap-4">
             <p className="text-xl text-primary">Follow Us</p>
-            <Youtube className="text-primary" />
-            <Instagram className="text-primary" />
-            <Linkedin className="rounded-md bg-primary p-1 text-white" />
+            <Link to={"https://www.youtube.com/@hmiffasilkomunsri6922"}>
+              <Youtube className="text-primary" />
+            </Link>
+            <Link to={"https://www.instagram.com/hmif.unsri/"}>
+              <Instagram className="text-primary" />
+            </Link>
+            <Link to={"https://id.linkedin.com/company/hmif-unsri"}>
+              <Linkedin className="rounded-md bg-primary p-1 text-white" />
+            </Link>
           </div>
         </div>
       </section>
@@ -98,7 +125,12 @@ export default function Home() {
               <p>Terdapat banyak Program Kerja Keren</p>
             </li>
           </ul>
-          <Button variant={"outline"} size={"lg"}>
+
+          <Button
+            variant={"outline"}
+            size={"lg"}
+            onClick={() => navigate("/proker")}
+          >
             More Info
           </Button>
         </div>
@@ -115,22 +147,22 @@ export default function Home() {
           peserta dalam petualangan mereka menjelajahi dunia teknologi yang
           luas. Event Card
         </p>
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="overflow-hidden"
-        >
-          <CarouselContent className="gap-8">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <EventCard />
-              </CarouselItem>
+        <div className="flex">
+          {event &&
+            event.map((item: any, key: number) => (
+              <ProgramCard
+                eventFormat={item["eventFormat"]}
+                name={item["name"]}
+                date={item["date"]}
+                description={item["description"]}
+                dinas={item["dinas"]}
+                src={undefined}
+              />
             ))}
-          </CarouselContent>
-        </Carousel>
+        </div>
+
         <Link
-          to="/about"
+          to="/proker"
           className="flex items-center gap-4 text-sm font-medium text-primary duration-300 hover:text-2xl lg:text-2xl"
         >
           <p>See More About Program Kerja HMIF</p>
