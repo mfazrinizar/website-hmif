@@ -107,7 +107,15 @@
           "Meningkatkan kesiapan karier dan akademik"
         ],
         "dinas": "akademik",
-        "assets": ["Seminar Konsentrasi Bidang Riset.png"]
+        "assets": [
+          "Seminar Konsentrasi Bidang Riset.png",
+          "Seminar Konsentrasi Bidang Riset1.png",
+          "Seminar Konsentrasi Bidang Riset2.png",
+          "Seminar Konsentrasi Bidang Riset3.png",
+          "Seminar Konsentrasi Bidang Riset4.png",
+          "Seminar Konsentrasi Bidang Riset5.png",
+          "Seminar Konsentrasi Bidang Riset6.png"
+        ]
       },
       {
         "name": "Webdev Pioneer",
@@ -133,7 +141,7 @@
           "Menjalin relasi dan memperkuat rasa kebersamaan"
         ],
         "dinas": "akademik",
-        "assets": ["PKKMB Jurusan.png"]
+        "assets": ["PKKMB Jurusan.png", "PKKMB Jurusan1.png"]
       },
       {
         "name": "Sriwijaya Informatics Exhibition (SRIFOTON)",
@@ -146,7 +154,10 @@
           "Membangun jaringan dan kolaborasi"
         ],
         "dinas": "akademik",
-        "assets": ["Sriwijaya Informatics Exhibition (SRIFOTON).png"]
+        "assets": [
+          "Sriwijaya Informatics Exhibition (SRIFOTON).png",
+          "Sriwijaya Informatics Exhibition (SRIFOTON)1.png"
+        ]
       },
       {
         "name": "Ngoding X Pemilihan Ketua Angkatan 2024",
@@ -159,7 +170,10 @@
           "Memperkuat jaringan dan hubungan antar angkatan"
         ],
         "dinas": "akademik",
-        "assets": ["Ngoding X Pemilihan Ketua Angkatan 2024.png"]
+        "assets": [
+          "Ngoding X Pemilihan Ketua Angkatan 2024.png",
+          "Ngoding X Pemilihan Ketua Angkatan 20241.png"
+        ]
       },
       {
         "name": "Pelatihan Pemrograman Mahasiswa Angkatan 2024",
@@ -174,7 +188,8 @@
         "dinas": "akademik",
         "assets": [
           "Pelatihan Pemrograman Mahasiswa Angkatan 2024.png",
-          "Pelatihan Pemrograman Mahasiswa Angkatan 20241.png"
+          "Pelatihan Pemrograman Mahasiswa Angkatan 20241.png",
+          "Pelatihan Pemrograman Mahasiswa Angkatan 20242.png"
         ]
       },
       {
@@ -188,7 +203,7 @@
           "Mendorong semangat kompetisi dan kolaborasi"
         ],
         "dinas": "akademik",
-        "assets": ["Code League.png", "Code League1.png"]
+        "assets": ["Code League.png", "Code League1.png", "Code League2.png"]
       },
       {
         "name": "Website HMIF",
@@ -201,7 +216,7 @@
           "Membangun identitas dan branding HMIF"
         ],
         "dinas": "akademik",
-        "assets": ["Website HMIF.png"]
+        "assets": ["Website HMIF.png", "Website HMIF1.png"]
       }
     ],
     [
@@ -218,7 +233,8 @@
         "dinas": "psdm",
         "assets": [
           "Seblak (Sharing Blak-blakan).png",
-          "Seblak (Sharing Blak-blakan)1.png"
+          "Seblak (Sharing Blak-blakan)1.png",
+          "Seblak (Sharing Blak-blakan)2.png"
         ]
       },
       {
@@ -271,7 +287,8 @@
           "Upgrading Staff.png",
           "Upgrading Staff1.png",
           "Upgrading Staff2.png",
-          "Upgrading Staff3.png"
+          "Upgrading Staff3.png",
+          "Upgrading Staff4.png"
         ]
       },
       {
@@ -288,6 +305,7 @@
         "assets": [
           "Malam Keakraban (MAKRAB).png",
           "Malam Keakraban (MAKRAB)1.png",
+          "Malam Keakraban (MAKRAB)2.png",
           "Malam Keakraban (MAKRAB)2.png"
         ]
       },
@@ -321,7 +339,8 @@
         "dinas": "psdm",
         "assets": [
           "Pemilihan Ketua Angkatan.png",
-          "Pemilihan Ketua Angkatan1.png"
+          "Pemilihan Ketua Angkatan1.png",
+          "Pemilihan Ketua Angkatan2.png"
         ]
       },
       {
@@ -339,7 +358,8 @@
           "Demisioner.png",
           "Demisioner1.png",
           "Demisioner2.png",
-          "Demisioner3.png"
+          "Demisioner3.png",
+          "Demisioner4.png"
         ]
       }
     ],
@@ -384,7 +404,7 @@
         "assets": ["IF Fest.png", "IF Fest1.png"]
       },
       {
-        "name": "IF Pedia ",
+        "name": "IF Pedia",
         "date": "Share Info : 2 minggu sekali & Podcast : 1/2 bulan sekali",
         "eventFormat": "Online",
         "description": "Proker yang berisi tentang penyampaian informasi berbagai kegiatan yang berada dalam lingkup olahraga dan seni, juga memberikan informasi terkait perlombaan yang ada. Proker ini memiliki program baru yang mengusung tema podcast yang masihberkaitan dengan seni dan olahraga dengan berbagai pembahasan yang menarik.",
