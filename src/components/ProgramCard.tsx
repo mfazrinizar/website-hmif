@@ -1,5 +1,6 @@
 import { Clock } from "lucide-react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   eventFormat: string;
@@ -8,6 +9,7 @@ type Props = {
   description: string;
   dinas: string;
   src: string | undefined;
+  type: string;
 };
 
 export default function ProgramCard({
@@ -17,7 +19,15 @@ export default function ProgramCard({
   description,
   dinas,
   src,
+  type,
 }: Props) {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    const formattedTitle = name.toLowerCase().split(" ").join("-"); // Format title untuk URL
+    navigate(`/${type}/${dinas.toLowerCase()}/${formattedTitle}`); // Gunakan title sebagai bagian dari URL
+  };
+
   return (
     <div className="relative mb-7 h-fit w-full rounded-2xl p-4 md:h-auto md:p-7 lg:w-1/3">
       <p className="absolute left-10 top-10 rounded bg-primary px-2 py-1 text-white">
@@ -45,7 +55,7 @@ export default function ProgramCard({
             <p className="line-clamp-5 text-left">{description}</p>
           </div>
         </div>
-        <Button className="" type="submit">
+        <Button className="" type="submit" onClick={handleLearnMore}>
           More Info
         </Button>
       </div>

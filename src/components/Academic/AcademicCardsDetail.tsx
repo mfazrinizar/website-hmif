@@ -196,6 +196,7 @@ export default function AcademicCardsDetail() {
               description={item["description"]}
               dinas={item["type"]}
               src={item["img"]}
+              type={"academic"}
             />
           ))}
         </div>

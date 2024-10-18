@@ -21,6 +21,11 @@ export default function ProkerCardItem({
 }: Props) {
   const navigate = useNavigate();
 
+  const handleLearnMore = () => {
+    const formattedTitle = name.toLowerCase().split(" ").join("-"); // Format title untuk URL
+    navigate(`/proker/${nav.toLowerCase()}/${formattedTitle}`); // Gunakan title sebagai bagian dari URL
+  };
+
   return (
     <div className="mb-7 flex h-fit w-full rounded-2xl border border-black p-4 md:h-auto md:p-7 lg:w-11/12">
       <div className="flex h-fit w-full flex-col gap-6 md:h-auto md:flex-row md:gap-0">
@@ -51,7 +56,7 @@ export default function ProkerCardItem({
             </div>
           </div>
           <Button
-            onClick={() => navigate(`/proker/${nav}/${name}`)}
+            onClick={handleLearnMore}
             className="border-2 border-primary bg-[#F5F5F5] text-primary"
           >
             Learn more
