@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { Calendar, ArrowRight, Mail, Users } from "lucide-react";
 import { Button } from "../ui/button";
 import ProgramCard from "../ProgramCard";
+import { rndImage } from "@/lib/genImage";
 
 export default function AcademicCardsDetail() {
   const { type, title } = useParams();
   const [data, setData] = useState<any>(null);
   const [event, setEvent] = useState([]);
+  const [programs, setPrograms] = useState<any[]>([]);
   const navigate = useNavigate(); // Inisialisasi useNavigate
 
   useEffect(() => {
@@ -29,6 +31,13 @@ export default function AcademicCardsDetail() {
         setEvent(fetchedData);
       });
   }, [type, title]);
+
+  useEffect(() => {
+    if (event.length > 3) setPrograms(rndImage({ array: event }));
+    else setPrograms(event);
+  }, [event]);
+
+  console.log(programs);
 
   if (!data) return <p>Loading...</p>;
 
@@ -178,20 +187,17 @@ export default function AcademicCardsDetail() {
           peluang beasiswa yang tersedia untuk Anda!”
         </p>
         <div className="flex flex-col lg:flex-row">
-          {event
-            .filter((e: any) => e["title"] != data.title)
-            .slice(0, 3)
-            .map((item: any, key: any) => (
-              <ProgramCard
-                key={key}
-                eventFormat={item["category"]}
-                name={item["title"]}
-                date={item["date"]}
-                description={item["description"]}
-                dinas={item["type"]}
-                src={item["img"]}
-              />
-            ))}
+          {programs.flat().map((item: any, key: any) => (
+            <ProgramCard
+              key={key}
+              eventFormat={item["category"]}
+              name={item["title"]}
+              date={item["date"]}
+              description={item["description"]}
+              dinas={item["type"]}
+              src={item["img"]}
+            />
+          ))}
         </div>
       </div>
     </div>

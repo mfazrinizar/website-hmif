@@ -16,6 +16,7 @@ import {
   CarouselDots,
   CarouselItem,
 } from "../ui/carousel";
+import { rndImage } from "@/lib/genImage";
 
 type Props = {
   name: string;
@@ -39,6 +40,7 @@ export default function ProkerDetailItem({
   assets,
 }: Props) {
   const [prokerDinas, setProkerDinas] = useState<any[]>([]);
+  const [programs, setPrograms] = useState<any[]>([]);
 
   useEffect(() => {
     axios.get(`/data/proker.json`).then((res) => {
@@ -48,6 +50,11 @@ export default function ProkerDetailItem({
       setProkerDinas(filteredProker);
     });
   }, []);
+
+  useEffect(() => {
+    if (prokerDinas.length > 3) setPrograms(rndImage({ array: prokerDinas }));
+    else setPrograms(prokerDinas);
+  }, [prokerDinas]);
 
   return (
     <section className="flex flex-col gap-8">
@@ -87,14 +94,12 @@ export default function ProkerDetailItem({
                 {assets
                   .filter((e: any, key: any) => key >= 1)
                   .map((asset: any, key: number) => (
-                    <CarouselItem key={key} className="flex max-w-full">
-                      <div className="flex w-full">
-                        <img
-                          src={`/img/proker/${dinas}/${asset}`}
-                          alt={asset}
-                          className="h-[500px] w-full object-cover"
-                        />
-                      </div>
+                    <CarouselItem key={key} className="max-w-full">
+                      <img
+                        src={`/img/proker/${dinas}/${asset}`}
+                        alt={asset}
+                        className="h-[500px] w-full object-cover"
+                      />
                     </CarouselItem>
                   ))}
               </CarouselContent>
@@ -132,17 +137,20 @@ export default function ProkerDetailItem({
             temukan berbagai kesempatan yang menanti Anda!”
           </p>
           <div className="flex flex-col lg:flex-row">
-            {prokerDinas.slice(0, 3).map((item: any, key: any) => (
-              <ProgramCard
-                key={key}
-                eventFormat={item["eventFormat"]}
-                name={item["name"]}
-                date={item["date"]}
-                description={item["description"]}
-                dinas={item["dinas"]}
-                src={undefined}
-              />
-            ))}
+            {programs &&
+              programs
+                .flat()
+                .map((item: any, key: any) => (
+                  <ProgramCard
+                    key={key}
+                    eventFormat={item["eventFormat"]}
+                    name={item["name"]}
+                    date={item["date"]}
+                    description={item["description"]}
+                    dinas={item["dinas"]}
+                    src={undefined}
+                  />
+                ))}
           </div>
           <Link
             to={"/proker"}

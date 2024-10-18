@@ -25,8 +25,6 @@ export default function ProfileCarousel({ dinas, item }: Props) {
     }
   }, [item]);
 
-  console.log(item);
-
   return (
     <section id="profile-carousel" className="space-y-8">
       {core && (
