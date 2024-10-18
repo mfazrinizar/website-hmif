@@ -61,6 +61,7 @@ export default function ProfileTabs() {
             <h1 className="mb-8 text-center text-2xl font-bold text-primary xl:text-4xl">
               Our Programs
             </h1>
+
             <div className="flex flex-col lg:flex-row">
               {proker &&
                 proker[key]
@@ -73,6 +74,7 @@ export default function ProfileTabs() {
                       date={item["date"]}
                       description={item["description"]}
                       dinas={item["dinas"]}
+                      src={undefined}
                     />
                   ))}
             </div>

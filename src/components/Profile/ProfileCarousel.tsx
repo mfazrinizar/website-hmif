@@ -47,7 +47,7 @@ export default function ProfileCarousel({ dinas, item }: Props) {
               />
             ))}
           </CarouselContent>
-          <div className="embla__dots no-scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap lg:mt-0 lg:w-1/2">
+          <div className="embla__dots scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap py-6 lg:mt-0 lg:w-1/2">
             {core.map((item, key) => (
               <CarouselImg
                 key={item["instagram"] + key}
@@ -76,7 +76,7 @@ export default function ProfileCarousel({ dinas, item }: Props) {
               />
             ))}
           </CarouselContent>
-          <div className="embla__dots no-scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap lg:mt-0 lg:w-1/2">
+          <div className="embla__dots scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap py-6 lg:mt-0 lg:w-1/2">
             {staff[0].map((item, key) => (
               <CarouselImg
                 key={item["instagram"] + key}
@@ -102,7 +102,7 @@ export default function ProfileCarousel({ dinas, item }: Props) {
               />
             ))}
           </CarouselContent>
-          <div className="embla__dots no-scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap lg:mt-0 lg:w-1/2">
+          <div className="embla__dots scrollbar relative mt-8 flex items-center gap-8 self-end overflow-scroll overflow-y-hidden whitespace-nowrap py-6 lg:mt-0 lg:w-1/2">
             {staff[1].map((item, key) => (
               <CarouselImg
                 key={item["instagram"] + key}

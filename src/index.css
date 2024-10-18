@@ -69,12 +69,23 @@
 
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+
+  .scrollbar::-webkit-scrollbar {
+    height: 4px;
   }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+
+  /* Track */
+  .scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #6363;
+  }
+
+  /* Handle on hover */
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #004972;
   }
 }

@@ -28,7 +28,10 @@ export default function ProkerTabs() {
   useLoadWindow();
 
   return (
-    <Tabs defaultValue={getBreadCrumb() ?? "all"} className="text-center">
+    <Tabs
+      defaultValue={getBreadCrumb() ?? "all"}
+      className="overflow-hidden text-center"
+    >
       <h1 className="mb-8 pt-0 text-center text-2xl font-bold text-primary md:pt-8 lg:pt-0 xl:text-4xl">
         Our Kabinet
       </h1>
@@ -38,9 +41,9 @@ export default function ProkerTabs() {
           <TabsTrigger value="inti">inti</TabsTrigger>
           <TabsTrigger value="kominfo">kominfo</TabsTrigger>
           <TabsTrigger value="akademik">akademik</TabsTrigger>
-          <TabsTrigger value="psdm">psdm</TabsTrigger>
         </div>
         <div className="flex">
+          <TabsTrigger value="psdm">psdm</TabsTrigger>
           <TabsTrigger value="pmb">pmb</TabsTrigger>
           <TabsTrigger value="kwu">kwu</TabsTrigger>
           <TabsTrigger value="kastrad">kastrad</TabsTrigger>
