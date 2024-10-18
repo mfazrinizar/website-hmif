@@ -12,7 +12,7 @@
           "Membangun kebersamaan dan kerja sama"
         ],
         "dinas": "inti",
-        "assets": ["Training Camp.png"]
+        "assets": ["Training Camp.png", "Training Camp1.png"]
       },
       {
         "name": "Informatics Pedia (IF Pedia)",
@@ -57,7 +57,7 @@
           "Mengedukasi pengikut tentang hari-hari besar"
         ],
         "dinas": "kominfo",
-        "assets": ["UMAT (Ucapan Selamat).png"]
+        "assets": ["UMAT (Ucapan Selamat).png", "UMAT (Ucapan Selamat)1.png"]
       },
       {
         "name": "NGODE (Ngoding Dewekan)",
@@ -83,7 +83,7 @@
           "Memperluas jaringan dan kesempatan kolaborasi"
         ],
         "dinas": "kominfo",
-        "assets": ["Seminar Design.png"]
+        "assets": ["Seminar Design.png", "Seminar Design1.png"]
       }
     ],
     [
@@ -392,7 +392,7 @@
           "Membangun komunitas yang kuat"
         ],
         "dinas": "pmb",
-        "assets": ["IF Legion.png"]
+        "assets": ["IF Legion.png", "IF Legion1.png"]
       },
       {
         "name": "IF Fest",
@@ -418,7 +418,7 @@
           "Fasilitasi diskusi dan interaksi"
         ],
         "dinas": "pmb",
-        "assets": ["IF Pedia.png"]
+        "assets": ["IF Pedia .png", "IF Pedia 1.png"]
       },
       {
         "name": "IF Jersey",
@@ -431,7 +431,7 @@
           "Mendukung kegiatan olahraga dan seni"
         ],
         "dinas": "pmb",
-        "assets": ["IF Jersey.png"]
+        "assets": ["IF Jersey.png", "IF Jersey1.png"]
       }
     ],
     [
@@ -463,7 +463,7 @@
           "Meningkatkan kerjasama antar anggota"
         ],
         "dinas": "kwu",
-        "assets": ["Bazar Festival.png"]
+        "assets": ["Bazar Festival.png", "Bazar Festival1.png"]
       },
       {
         "name": "Jaket dan Id Card Staff Himpunan Teknik Informatika",
@@ -476,7 +476,10 @@
           "Memudahkan pengenalan anggota"
         ],
         "dinas": "kwu",
-        "assets": ["Jaket dan Id Card Staff Himpunan Teknik Informatika.png"]
+        "assets": [
+          "Jaket dan Id Card Staff Himpunan Teknik Informatika.png",
+          "Jaket dan Id Card Staff Himpunan Teknik Informatika1.png"
+        ]
       },
       {
         "name": "Id Card BPH Himpunan Teknik Informatika",
@@ -489,7 +492,10 @@
           "Identifikasi resmi anggota BPH"
         ],
         "dinas": "kwu",
-        "assets": ["Id Card BPH Himpunan Teknik Informatika.png"]
+        "assets": [
+          "Id Card BPH Himpunan Teknik Informatika.png",
+          "Id Card BPH Himpunan Teknik Informatika1.png"
+        ]
       },
       {
         "name": "Baju Angkatan 2024",
@@ -502,7 +508,7 @@
           "Mendorong partisipasi dalam kegiatan"
         ],
         "dinas": "kwu",
-        "assets": ["Baju Angkatan 2024.png"]
+        "assets": ["Baju Angkatan 2024.png", "Baju Angkatan 20241.png"]
       },
       {
         "name": "Open PO Makanan",
@@ -515,7 +521,7 @@
           "Meningkatkan keterlibatan dan promosi"
         ],
         "dinas": "kwu",
-        "assets": ["Open PO Makanan.png"]
+        "assets": ["Open PO Makanan.png", "Open PO Makanan1.png"]
       },
       {
         "name": "Open PO Tumbler HMIF",
@@ -528,7 +534,7 @@
           "Memperkuat identitas HMIF"
         ],
         "dinas": "kwu",
-        "assets": ["Open PO Tumbler HMIF.png"]
+        "assets": ["Open PO Tumbler HMIF.png", "Open PO Tumbler HMIF1.png"]
       }
     ],
     [
@@ -564,7 +570,8 @@
         "assets": [
           "Kastrad Peduli Kasih.png",
           "Kastrad Peduli Kasih1.png",
-          "Kastrad Peduli Kasih2.png"
+          "Kastrad Peduli Kasih2.png",
+          "Kastrad Peduli Kasih3.png"
         ]
       },
       {
@@ -580,6 +587,7 @@
         "dinas": "kastrad",
         "assets": [
           "Informatics Caring (IF Caring).png",
+          "Informatics Caring (IF Caring)1.png",
           "Informatics Caring (IF Caring)1.png"
         ]
       },

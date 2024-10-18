@@ -10,8 +10,7 @@ export default function AcademicCardsDetail() {
   const [data, setData] = useState<any>(null);
   const [event, setEvent] = useState([]);
   const [programs, setPrograms] = useState<any[]>([]);
-  const navigate = useNavigate(); // Inisialisasi useNavigate
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!title) {
       console.error("Title is undefined. Redirecting...");
@@ -37,12 +36,10 @@ export default function AcademicCardsDetail() {
     else setPrograms(event);
   }, [event]);
 
-  console.log(programs);
-
   if (!data) return <p>Loading...</p>;
 
   const handleRefresh = () => {
-    window.location.reload(); // Fungsi untuk refresh halaman
+    window.location.reload();
   };
 
   return (
