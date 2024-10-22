@@ -145,11 +145,11 @@ export default function Home() {
         <p className="text-center text-lg">
           Lewat acara kami, kami ingin memberikan pengalaman tak terlupakan bagi
           peserta dalam petualangan mereka menjelajahi dunia teknologi yang
-          luas. Event Card
+          luas.
         </p>
         <div className="flex">
           {event &&
-            event.map((item: any, key: number) => (
+            event.map((item: any) => (
               <ProgramCard
                 eventFormat={item["eventFormat"]}
                 name={item["name"]}
