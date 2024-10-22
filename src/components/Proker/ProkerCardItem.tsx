@@ -1,6 +1,7 @@
 import { Clock } from "lucide-react";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
+import { FollowerPointerCard } from "../ui/following-pointer";
 
 type Props = {
   eventFormat: string;
@@ -33,7 +34,7 @@ export default function ProkerCardItem({
     <div className="mb-7 flex h-fit w-full rounded-2xl border border-black p-4 md:h-auto md:p-7 lg:w-11/12">
       <div className="flex h-fit w-full flex-col gap-6 md:h-auto md:flex-row md:gap-0">
         <div
-          className={`mb-4 h-auto w-full rounded-lg bg-cover bg-center md:mb-0 md:w-1/3 lg:h-80 lg:w-1/4`}
+          className={`mb-4 w-full rounded-lg bg-cover bg-center md:mb-0 md:w-1/3 lg:w-1/4`}
           style={{
             backgroundImage: `url('/img/proker/${dinas}/${name}.png')`,
           }}
