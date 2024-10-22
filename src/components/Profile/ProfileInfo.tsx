@@ -25,7 +25,7 @@ export default function ProfileInfo({ dinas, item }: Props) {
   return (
     <section
       id="profile-info"
-      className="flex flex-col items-center justify-between gap-6 md:flex-row"
+      className="flex flex-col items-center gap-16 md:flex-row lg:gap-32"
     >
       <img
         src={`/img/profile/${dinas}/logo.png`}

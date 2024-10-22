@@ -43,7 +43,7 @@ export default function Academic() {
       <section className="mb-10">
         <AcademicHero />
       </section>
-      <section className="flex flex-col text-center sm:text-start md:flex-row">
+      <section className="flex flex-col justify-between text-center sm:text-start md:flex-row">
         {/* Sidebar */}
         <div className="mb-8 pt-1 md:mb-0 md:w-1/4">
           <div>

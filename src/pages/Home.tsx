@@ -157,6 +157,7 @@ export default function Home() {
                 description={item["description"]}
                 dinas={item["dinas"]}
                 src={undefined}
+                type={"proker"}
               />
             ))}
         </div>

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function Aspiration() {
   return (
-    <section id="aspiration" className="mx-auto space-y-12 text-center">
+    <section id="aspiration" className="mx-auto space-y-24 text-center">
       <div className="mx-auto space-y-8 text-center md:w-3/4">
         <div className="mx-auto space-y-8 md:w-3/4">
           <h1 className="text-3xl font-bold text-primary xl:text-4xl">
@@ -33,7 +33,7 @@ export default function Aspiration() {
           <h1 className="text-2xl font-bold text-primary xl:text-4xl">
             Have any questions?
           </h1>
-          <p className="text-justify text-lg">
+          <p className="text-left text-lg">
             Beberapa pertanyaan mengenai HMIF Fasilkom UNSRI disini, jika ada
             pertanyaan lebih lanjut silahkan hubungi email kami di{" "}
             <Link to="/about" className="text-primary">
