@@ -40,6 +40,7 @@ export default function ProfilePrograms({ proker }: Props) {
                 description={item["description"]}
                 dinas={item["dinas"]}
                 src={undefined}
+                type={"proker"}
               />
             ))}
       </div>
