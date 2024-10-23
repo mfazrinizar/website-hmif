@@ -28,7 +28,7 @@ export default function AcademicCardsItem({
   };
 
   return (
-    <div className="mb-7 flex w-full flex-col rounded-2xl border border-black p-7 md:w-11/12 md:flex-row">
+    <div className="mb-7 flex w-full flex-col rounded-2xl border border-black p-7 md:w-full md:flex-row md:text-start">
       <img src={img} alt={title} className="mb-4 w-full md:mb-0 md:w-1/4" />
       <div className="pl-0 pt-3 md:pl-14">
         <p className="inline-block rounded bg-primary px-2 py-1 text-white">

@@ -20,7 +20,7 @@ export default function AcademicCards({
   canSeeMore,
 }: AcademicCardsProps) {
   return (
-    <div className="flex flex-col items-end">
+    <div className="flex flex-col">
       {data.map((item, index) => (
         <AcademicCardsItem
           key={index}

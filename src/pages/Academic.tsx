@@ -38,21 +38,37 @@ export default function Academic() {
     setVisibleCards((prevVisibleCards) => prevVisibleCards + 3);
   };
 
+  function titleAcademic() {
+    switch (activeContent) {
+      case "beasiswa":
+        return "Explore Scholarship";
+        break;
+      case "competition":
+        return "Preparing Competition";
+        break;
+      case "seminar":
+        return "Founding Seminar";
+        break;
+      default:
+        return "Explore Scholarship";
+    }
+  }
+
   return (
     <section>
       <section className="mb-10">
         <AcademicHero />
       </section>
-      <section className="flex flex-col justify-between text-center sm:text-start md:flex-row">
+      <section className="mt-24 flex flex-col justify-between space-y-8 text-center lg:flex-row lg:text-start">
         {/* Sidebar */}
-        <div className="mb-8 pt-1 md:mb-0 md:w-1/4">
+        <div className="pt-1 md:mb-0 lg:w-1/4">
           <div>
-            <p>What we serve</p>
-            <h1 className="inline-block border-b-2 border-primary py-2 text-2xl font-bold text-primary">
+            <p className="text-lg">What we serve</p>
+            <h1 className="inline-block border-b-2 border-primary py-2 text-3xl font-bold text-primary">
               Our Main Menu
             </h1>
           </div>
-          <div className="pt-7">
+          <div className="pt-7 text-xl">
             <p
               className={`cursor-pointer pb-3 text-[#636363] ${activeContent === "beasiswa" ? "font-medium text-primary" : ""}`}
               onClick={() => setActiveContent("beasiswa")}
@@ -75,7 +91,10 @@ export default function Academic() {
         </div>
 
         {/* Konten Utama */}
-        <div className="w-full">
+        <div className="flex w-full flex-col justify-between space-y-8 lg:pl-12">
+          <h1 className="inline-block py-2 text-3xl font-bold text-primary">
+            {titleAcademic()}
+          </h1>
           <AcademicCards
             data={data.slice(0, visibleCards)}
             handleSeeMore={handleSeeMore}
