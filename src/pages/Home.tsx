@@ -20,12 +20,46 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProgramCard from "@/components/ProgramCard";
+
+const testimonials = [
+  {
+    quote: "Kuatkan Formasi Wujudkan Inovasi",
+    text: "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+    name: "Charles Dickens",
+    title: "A Tale of Two Cities",
+  },
+  {
+    quote: "Kuatkan Formasi Wujudkan Inovasi",
+    text: "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+    name: "William Shakespeare",
+    title: "Hamlet",
+  },
+  {
+    quote: "Kuatkan Formasi Wujudkan Inovasi",
+    text: "All that we see or seem is but a dream within a dream.",
+    name: "Edgar Allan Poe",
+    title: "A Dream Within a Dream",
+  },
+  {
+    quote: "Kuatkan Formasi Wujudkan Inovasi",
+    text: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+    name: "Jane Austen",
+    title: "Pride and Prejudice",
+  },
+  {
+    quote: "Kuatkan Formasi Wujudkan Inovasi",
+    text: "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+    name: "Herman Melville",
+    title: "Moby-Dick",
+  },
+];
 
 export default function Home() {
   const navigate = useNavigate();
@@ -177,7 +211,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-primary xl:text-4xl">
           What do They say?
         </h1>
-        <Carousel
+        {/* <Carousel
           opts={{
             align: "start",
           }}
@@ -191,6 +225,12 @@ export default function Home() {
             ))}
           </CarouselContent>
         </Carousel>
+         */}
+        <InfiniteMovingCards
+          items={testimonials}
+          direction="right"
+          speed="slow"
+        />
       </section>
       <section
         id="home-faq"
