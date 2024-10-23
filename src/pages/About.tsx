@@ -1,3 +1,5 @@
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+
 export default function About() {
   return (
     <section id="about" className="space-y-24 lg:space-y-32 xl:space-y-40">
@@ -123,8 +125,8 @@ export default function About() {
       </section>
       <section id="about-gallery" className="space-y-4">
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
-          <div className="grid space-y-4 overflow-hidden">
-            <div className="space-y-4">
+          <div className="grid space-y-4 overflow-hidden md:w-1/2">
+            <div className="w-full space-y-4">
               <h1 className="text-3xl font-bold text-primary xl:text-4xl">
                 OUR GALLERY
               </h1>
@@ -134,19 +136,40 @@ export default function About() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 self-end">
-              <img src="img/gallery-1.png" alt="gallery-1" />
-              <img src="img/gallery-2.png" alt="gallery-2" />
+              <DirectionAwareHover imageUrl={`img/gallery-1.png`}>
+                <p className="text-xl font-bold"></p>
+              </DirectionAwareHover>
+              <DirectionAwareHover imageUrl={`img/gallery-2.png`}>
+                <p className="text-xl font-bold"></p>
+              </DirectionAwareHover>
             </div>
           </div>
-          <img src="img/gallery-3.png" alt="gallery-3" className="md:w-1/2" />
+          <div className="md:w-1/2">
+            <DirectionAwareHover
+              className="h-full"
+              imageUrl={`img/gallery-3.png`}
+            >
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
+          </div>
         </div>
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
-          <img src="img/gallery-4.png" alt="gallery-4" className="md:w-1/2" />
+          <DirectionAwareHover imageUrl={`img/gallery-4.png`}>
+            <p className="text-xl font-bold"></p>
+          </DirectionAwareHover>
           <div className="grid grid-cols-2 gap-4">
-            <img src="img/gallery-5.png" alt="gallery-5" />
-            <img src="img/gallery-6.png" alt="gallery-6" />
-            <img src="img/gallery-7.png" alt="gallery-7" />
-            <img src="img/gallery-8.png" alt="gallery-8" />
+            <DirectionAwareHover imageUrl={`img/gallery-5.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
+            <DirectionAwareHover imageUrl={`img/gallery-6.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
+            <DirectionAwareHover imageUrl={`img/gallery-7.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
+            <DirectionAwareHover imageUrl={`img/gallery-8.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
           </div>
         </div>
       </section>

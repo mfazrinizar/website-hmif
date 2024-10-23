@@ -28,6 +28,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProgramCard from "@/components/ProgramCard";
+import { FloatingDock } from "@/components/ui/floating-dock";
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const testimonials = [
   {
@@ -130,12 +132,20 @@ export default function Home() {
       >
         <div className="flex gap-6 lg:w-2/5">
           <div className="mt-6 space-y-6">
-            <img src="img/home-about-1.png" alt="home-about-1" className="" />
-            <img src="img/home-about-2.png" alt="home-about-2" className="" />
+            <DirectionAwareHover imageUrl={`img/home-about-1.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
+            <DirectionAwareHover imageUrl={`img/home-about-2.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
           </div>
           <div className="space-y-6">
-            <img src="img/home-about-3.png" alt="home-about-3" className="" />
-            <img src="img/home-about-4.png" alt="home-about-4" className="" />
+            <DirectionAwareHover imageUrl={`img/home-about-3.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
+            <DirectionAwareHover imageUrl={`img/home-about-4.png`}>
+              <p className="text-xl font-bold"></p>
+            </DirectionAwareHover>
           </div>
         </div>
         <div className="space-y-4 lg:w-1/2">
@@ -146,7 +156,7 @@ export default function Home() {
             bidang Akademik maupun Non-Akademik yang dapat menjadi wadah bagi
             para Mahasiswa Jurusan Teknik Informatika
           </p>
-          <ul className="space-y-4 text-xl">
+          <ul className="flex flex-col space-y-4 text-xl">
             <li className="flex items-center gap-4">
               <CircleCheckBig className="size-8 text-primary" />
               <p>HMIF sudah berdiri sejak tahun 2008</p>
