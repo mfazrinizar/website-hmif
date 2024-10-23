@@ -36,7 +36,8 @@ export default function AcademicCards({
       {canSeeMore && (
         <Button
           onClick={handleSeeMore}
-          className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary md:w-11/12"
+          className="w-full rounded-2xl py-6 text-lg text-primary lg:w-11/12"
+          variant={"outline"}
         >
           See more
         </Button>

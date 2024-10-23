@@ -40,10 +40,7 @@ export default function AcademicCardsItem({
           <p className="pl-2 text-primary">{date}</p>
         </div>
         <p className="pb-5 pt-2">{description}</p>
-        <Button
-          onClick={handleLearnMore}
-          className="border-2 border-primary bg-[#F5F5F5] text-primary"
-        >
+        <Button onClick={handleLearnMore} className="" variant={"outline"}>
           Learn more
         </Button>
       </div>
