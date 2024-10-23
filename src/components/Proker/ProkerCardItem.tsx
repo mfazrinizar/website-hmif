@@ -60,10 +60,7 @@ export default function ProkerCardItem({
               <p className="text-left">{description}</p>
             </div>
           </div>
-          <Button
-            onClick={handleLearnMore}
-            className="border-2 border-primary bg-[#F5F5F5] text-primary"
-          >
+          <Button onClick={handleLearnMore} variant={"outline"} className="">
             Learn more
           </Button>
         </div>

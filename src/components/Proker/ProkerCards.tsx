@@ -59,7 +59,8 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
             <div className="w-full">
               <Button
                 onClick={showMoreItems}
-                className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary lg:w-11/12"
+                className="w-full rounded-2xl py-6 text-lg text-primary lg:w-11/12"
+                variant={"outline"}
               >
                 See more
               </Button>
@@ -69,7 +70,8 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
             <div className="w-full">
               <Button
                 onClick={showMoreItems}
-                className="w-full rounded-2xl border-2 border-primary bg-[#F5F5F5] py-6 text-lg text-primary lg:w-11/12"
+                className="w-full rounded-2xl py-6 text-lg text-primary lg:w-11/12"
+                variant={"outline"}
               >
                 See more
               </Button>
