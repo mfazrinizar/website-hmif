@@ -21,6 +21,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -111,15 +112,15 @@ export default function Home() {
           />
           <div className="flex items-center justify-center gap-4">
             <p className="text-xl text-primary">Follow Us</p>
-            <Link to={"https://www.youtube.com/@hmiffasilkomunsri6922"}>
+            <LinkPreview url={"https://www.youtube.com/@hmiffasilkomunsri6922"}>
               <Youtube className="text-primary" />
-            </Link>
-            <Link to={"https://www.instagram.com/hmif.unsri/"}>
+            </LinkPreview>
+            <LinkPreview url={"https://www.instagram.com/hmif.unsri/"}>
               <Instagram className="text-primary" />
-            </Link>
-            <Link to={"https://id.linkedin.com/company/hmif-unsri"}>
+            </LinkPreview>
+            <LinkPreview url={"https://id.linkedin.com/company/hmif-unsri"}>
               <Linkedin className="rounded-md bg-primary p-1 text-white" />
-            </Link>
+            </LinkPreview>
           </div>
         </div>
       </section>

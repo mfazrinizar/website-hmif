@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { CarouselItem } from "../ui/carousel";
 import { Mail, Instagram } from "lucide-react";
+import { LinkPreview } from "../ui/link-preview";
 
 type Props = {
   name: string;
@@ -32,18 +33,18 @@ export default function ProfileCarouselItem({
         </h4>
         <p className="text-base font-medium md:text-xl">{name}</p>
         <p className="text-base font-normal md:text-xl">{gen}</p>
-        <Link
-          to={`https://www.instagram.com/${instagram}/`}
+        <LinkPreview
+          url={`https://www.instagram.com/${instagram}/`}
           className="flex items-center gap-2 text-base font-normal text-primary md:text-xl"
         >
           <Instagram /> <p>{instagram}</p>
-        </Link>
-        <Link
-          to={`https://mail.google.com/mail/u/0/?pli=1#search/${email}?compose=new`}
+        </LinkPreview>
+        <LinkPreview
+          url={`https://mail.google.com/mail/u/0/?pli=1#search/${email}?compose=new`}
           className="flex items-center gap-2 text-base font-normal text-primary md:text-xl"
         >
           <Mail /> <p>{email}</p>
-        </Link>
+        </LinkPreview>
       </div>
     </CarouselItem>
   );
