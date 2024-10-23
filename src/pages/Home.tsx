@@ -139,7 +139,7 @@ export default function Home() {
         id="home-event"
         className="flex flex-col items-center justify-between gap-8"
       >
-        <h1 className="text-2xl font-bold text-primary xl:text-4xl">
+        <h1 className="text-center text-2xl font-bold text-primary xl:text-4xl">
           Get to know our events and participate in it
         </h1>
         <p className="text-center text-lg">
@@ -147,7 +147,7 @@ export default function Home() {
           peserta dalam petualangan mereka menjelajahi dunia teknologi yang
           luas.
         </p>
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
           {event &&
             event.map((item: any) => (
               <ProgramCard
