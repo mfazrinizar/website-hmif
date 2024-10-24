@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export default function Aspiration() {
   return (
     <section id="aspiration" className="mx-auto space-y-24 text-center">
-      <div className="mx-auto space-y-8 text-center md:w-3/4">
+      <section className="mx-auto space-y-8 overflow-hidden text-center md:w-3/4">
         <div className="mx-auto space-y-8 md:w-3/4">
           <h1 className="text-3xl font-bold text-primary xl:text-4xl">
             Aspiration
@@ -24,7 +24,12 @@ export default function Aspiration() {
         <div className="rounded-xl border-2 border-muted">
           <FormAspiration />
         </div>
-      </div>
+      </section>
+      <img
+        src="/img/aspiration-ellipse-1.png"
+        alt="aspiration-ellipse-1"
+        className="absolute left-0 -z-50 w-1/4"
+      />
       <section
         id="aspiration-faq"
         className="flex flex-col justify-between gap-8 md:flex-row"
