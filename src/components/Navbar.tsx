@@ -55,7 +55,7 @@ export default function Navbar() {
         <SheetTrigger className="lg:hidden">
           <Menu className="text-primary" />
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className="space-y-8">
           <SheetTitle>Are you absolutely sure?</SheetTitle>
           <ul className="flex flex-col gap-8">
             {" "}

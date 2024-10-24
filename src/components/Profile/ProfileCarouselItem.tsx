@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { CarouselItem } from "../ui/carousel";
 import { Mail, Instagram } from "lucide-react";
 import { LinkPreview } from "../ui/link-preview";

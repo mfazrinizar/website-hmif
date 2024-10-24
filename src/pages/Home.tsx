@@ -6,14 +6,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import EventCard from "@/components/EventCard";
-import ReviewCard from "@/components/ReviewCard";
 import FellowInfo from "@/components/FellowInfo";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import {
   Accordion,
   AccordionContent,
@@ -28,7 +21,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProgramCard from "@/components/ProgramCard";
-import { FloatingDock } from "@/components/ui/floating-dock";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const testimonials = [
@@ -151,7 +143,7 @@ export default function Home() {
       <img
         src="/img/home-ellipse-1.png"
         alt="home-ellipse-1"
-        className="absolute left-0 -z-10 w-1/2 lg:w-5/12"
+        className="absolute left-0 -z-10 w-1/2 lg:w-1/3"
       />
       <section
         id="home-about"
@@ -172,14 +164,14 @@ export default function Home() {
             <DirectionAwareHover imageUrl={`img/home-about-4.png`}>
               <p className="text-xl font-bold"></p>
             </DirectionAwareHover> */}
-          <div className="mt-6 space-y-6">
+          <div className="mt-12 space-y-6">
             {images1.map((item) => (
               <DirectionAwareHover imageUrl={item.imageUrl}>
                 <p className="text-xl font-bold">{item.text}</p>
               </DirectionAwareHover>
             ))}
           </div>
-          <div className="mt-6 space-y-6">
+          <div className="space-y-6">
             {images2.map((item) => (
               <DirectionAwareHover imageUrl={item.imageUrl}>
                 <p className="text-xl font-bold">{item.text}</p>
@@ -275,7 +267,7 @@ export default function Home() {
       />
       <section
         id="home-faq"
-        className="flex flex-col justify-between gap-8 md:flex-row"
+        className="relative flex flex-col justify-between gap-8 md:flex-row"
       >
         <div className="space-y-8 md:w-2/5">
           <h1 className="text-2xl font-bold text-primary xl:text-4xl">

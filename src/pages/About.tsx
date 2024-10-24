@@ -27,7 +27,7 @@ export default function About() {
       <img
         src="img/about-ellipse-1.png"
         alt="about-ellipse-1"
-        className="absolute right-0 top-10 -z-50 w-1/3"
+        className="absolute right-0 top-10 -z-50 w-1/5"
       />
       <section id="about-visi-misi" className="space-y-10">
         <h1 className="text-center text-3xl font-bold text-primary xl:text-4xl">
@@ -154,7 +154,7 @@ export default function About() {
               className="h-full"
               imageUrl={`img/gallery-3.png`}
             >
-              <p className="text-xl font-bold">Gathering PSDM</p>
+              <p className="text-xl font-bold">Gathering HMIF</p>
             </DirectionAwareHover>
           </div>
         </div>

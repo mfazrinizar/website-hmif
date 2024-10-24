@@ -1,7 +1,6 @@
 import { Clock } from "lucide-react";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
-import { FollowerPointerCard } from "../ui/following-pointer";
 
 type Props = {
   eventFormat: string;
