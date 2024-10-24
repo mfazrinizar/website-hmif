@@ -126,6 +126,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <img
+        src="/img/home-ellipse-1.png"
+        alt="home-ellipse-1"
+        className="absolute left-0 -z-10 w-1/2 lg:w-5/12"
+      />
       <section
         id="home-about"
         className="flex flex-col items-center justify-between gap-6 lg:flex-row"
@@ -180,6 +185,7 @@ export default function Home() {
           </Button>
         </div>
       </section>
+
       <section
         id="home-event"
         className="flex flex-col items-center justify-between gap-8"
@@ -222,27 +228,17 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-primary xl:text-4xl">
           What do They say?
         </h1>
-        {/* <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="overflow-hidden"
-        >
-          <CarouselContent className="gap-8">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <ReviewCard />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-         */}
         <InfiniteMovingCards
           items={testimonials}
           direction="right"
           speed="slow"
         />
       </section>
+      <img
+        src="/img/home-ellipse-2.png"
+        alt="home-ellipse-2"
+        className="absolute left-0 -z-50 w-1/3 lg:w-1/4"
+      />
       <section
         id="home-faq"
         className="flex flex-col justify-between gap-8 md:flex-row"
@@ -312,10 +308,10 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-primary xl:text-4xl">
             Follow us on Instagram for the latest updates and fun activities!
           </h1>
-          <Link to="/about" className="flex items-center gap-2 text-xl">
+          <LinkPreview url="/about" className="flex items-center gap-2 text-xl">
             <Instagram className="size-8 text-primary" />{" "}
             <p className="font-medium text-primary">@hmif.unsri</p>
-          </Link>
+          </LinkPreview>
         </div>
         <div className="absolute -z-50 hidden h-1/2 w-full bg-[#74DBEF] md:block"></div>
       </section>

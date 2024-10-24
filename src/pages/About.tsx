@@ -25,8 +25,8 @@ export default function About() {
         />
       </section>
       <img
-        src="img/ellipse-4.png"
-        alt="ellipse-4"
+        src="img/about-ellipse-1.png"
+        alt="about-ellipse-1"
         className="absolute right-0 top-10 -z-50 w-1/3"
       />
       <section id="about-visi-misi" className="space-y-10">
@@ -123,6 +123,11 @@ export default function About() {
           </div>
         </div>
       </section>
+      <img
+        src="img/about-ellipse-2.png"
+        alt="about-ellipse-2"
+        className="absolute right-0 -z-50 w-1/3"
+      />
       <section id="about-gallery" className="space-y-4">
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
           <div className="grid space-y-4 overflow-hidden md:w-1/2">

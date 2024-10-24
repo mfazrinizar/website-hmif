@@ -30,7 +30,7 @@ export default function ProgramCard({
   };
 
   return (
-    <div className="relative mb-7 h-fit w-full rounded-2xl p-4 md:h-auto md:p-7 lg:w-1/3">
+    <div className="b relative mb-7 h-fit w-full rounded-2xl p-4 md:h-auto md:p-7 lg:w-1/3">
       {type === "profile" ? (
         <>
           <p className="absolute left-12 top-12 rounded bg-primary px-2 py-1 text-white">
@@ -41,7 +41,7 @@ export default function ProgramCard({
             alt={`${name}`}
             className="mb-4 max-h-60 w-full rounded-t-2xl object-cover md:mb-0 md:h-full"
           />
-          <div className="flex min-h-80 flex-col items-start justify-between gap-2 rounded-b-2xl border border-black p-6">
+          <div className="flex min-h-80 flex-col items-start justify-between gap-2 rounded-b-2xl border border-black bg-background p-6">
             <div className="flex flex-col items-start gap-3">
               <div className="flex items-center justify-center gap-2 text-sm text-primary">
                 <Clock />
@@ -80,7 +80,7 @@ export default function ProgramCard({
             alt={`${name}`}
             className="mb-4 max-h-60 w-full rounded-t-2xl object-cover md:mb-0 md:h-full"
           />
-          <div className="flex min-h-80 flex-col items-start justify-between gap-2 rounded-b-2xl border border-black p-6">
+          <div className="flex min-h-80 flex-col items-start justify-between gap-2 rounded-b-2xl border border-black bg-background p-6">
             <div className="flex flex-col items-start gap-3">
               <div className="flex items-center justify-center gap-2 text-sm text-primary">
                 <Clock />

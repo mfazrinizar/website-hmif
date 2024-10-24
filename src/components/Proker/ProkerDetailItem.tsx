@@ -162,6 +162,11 @@ export default function ProkerDetailItem({
           </Link>
         </section>
       )}
+      <img
+        src="/img/proker-ellipse-1.png"
+        alt="proker-ellipse-1"
+        className="absolute -bottom-[120%] right-0 -z-50 w-3/4 md:-bottom-[40%] md:w-1/2 lg:-bottom-[140%] lg:w-1/3"
+      />
     </section>
   );
 }

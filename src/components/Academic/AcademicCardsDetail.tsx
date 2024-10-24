@@ -172,7 +172,11 @@ export default function AcademicCardsDetail() {
           />
         </div>
       </div>
-
+      <img
+        src="/img/academic-ellipse-1.png"
+        alt="academic-ellipse-1"
+        className="absolute left-0 -z-10 w-1/5"
+      />
       {/* Upcoming Event */}
       <div className="text-center">
         <h1 className="mb-5 text-3xl font-bold text-primary">
@@ -183,6 +187,7 @@ export default function AcademicCardsDetail() {
           dan pengalaman akademis di berbagai kampus, serta menemukan beragam
           peluang beasiswa yang tersedia untuk Anda!”
         </p>
+
         <div className="flex flex-col lg:flex-row">
           {programs.flat().map((item: any, key: any) => (
             <ProgramCard
