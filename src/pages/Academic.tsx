@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import AcademicCards from "@/components/Academic/AcademicCards";
 import AcademicHero from "@/components/Academic/AcademicHero";
+import { supabase } from "@/lib/createClient";
+import { Database } from "database.types";
 
 export default function Academic() {
   const [activeContent, setActiveContent] = useState("beasiswa");
@@ -12,27 +14,38 @@ export default function Academic() {
     setVisibleCards(3);
 
     // Fetch data based on active content
-    let dataUrl = "";
     switch (activeContent) {
       case "beasiswa":
-        dataUrl = "/data/academic/scholarship.json";
+        fetchData("academic_beasiswa");
         break;
       case "competition":
-        dataUrl = "/data/academic/competition.json";
+        fetchData("academic_beasiswa");
         break;
       case "seminar":
-        dataUrl = "/data/academic/seminar.json";
+        fetchData("academic_beasiswa");
         break;
       default:
-        dataUrl = "/data/academic/scholarship.json";
+        fetchData("academic_beasiswa");
     }
-
-    // Fetch the JSON data
-    fetch(dataUrl)
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error("Error fetching data:", error));
   }, [activeContent]);
+
+  async function fetchData(tableName: keyof Database["public"]["Tables"]) {
+    try {
+      const { data: fetchedData, error } = await supabase
+        .from("academic_beasiswa")
+        .select("*")
+        .order("created_at", { ascending: true });
+
+      if (error) {
+        console.error("Error fetching data:", error);
+      } else {
+        setData(fetchedData);
+        console.log(fetchedData);
+      }
+    } catch (err) {
+      console.error("Error in fetchData:", err);
+    }
+  }
 
   const handleSeeMore = () => {
     setVisibleCards((prevVisibleCards) => prevVisibleCards + 3);

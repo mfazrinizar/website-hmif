@@ -75,7 +75,10 @@ export default function AcademicCardsDetail() {
           <div className="rounded-2xl border border-black">
             <img
               className="mb-8 w-full rounded-t-2xl object-cover"
-              src={data.details.imgDetails || data.img} // Gunakan imgDetails jika tersedia
+              src={
+                import.meta.env.VITE_SUPABASE_BUCKET_URL +
+                (data.details.imgDetails || data.img)
+              } // Gunakan imgDetails jika tersedia
               alt={data.title}
             />
             <div className="my-8">

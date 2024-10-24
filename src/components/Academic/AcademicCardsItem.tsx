@@ -23,13 +23,17 @@ export default function AcademicCardsItem({
   const navigate = useNavigate();
 
   const handleLearnMore = () => {
-    const formattedTitle = title.toLowerCase().split(" ").join("-"); // Format title untuk URL
-    navigate(`/academic/${type.toLowerCase()}/${formattedTitle}`); // Gunakan title sebagai bagian dari URL
+    const formattedTitle = title.toLowerCase().split(" ").join("-");
+    navigate(`/academic/${type.toLowerCase()}/${formattedTitle}`);
   };
 
   return (
     <div className="mb-7 flex w-full flex-col rounded-2xl border border-black p-7 md:w-full md:flex-row md:text-start">
-      <img src={img} alt={title} className="mb-4 w-full md:mb-0 md:w-1/4" />
+      <img
+        src={import.meta.env.VITE_SUPABASE_BUCKET_URL + img}
+        alt={title}
+        className="mb-4 w-full md:mb-0 md:w-1/4"
+      />
       <div className="pl-0 pt-3 md:pl-14">
         <p className="inline-block rounded bg-primary px-2 py-1 text-white">
           {category}
