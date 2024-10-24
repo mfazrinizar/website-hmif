@@ -142,10 +142,10 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4 self-end">
               <DirectionAwareHover imageUrl={`img/gallery-1.png`}>
-                <p className="text-xl font-bold"></p>
+                <p className="text-xl font-bold">Gathering HMIF</p>
               </DirectionAwareHover>
               <DirectionAwareHover imageUrl={`img/gallery-2.png`}>
-                <p className="text-xl font-bold"></p>
+                <p className="text-xl font-bold">Gathering PSDM</p>
               </DirectionAwareHover>
             </div>
           </div>
@@ -154,26 +154,26 @@ export default function About() {
               className="h-full"
               imageUrl={`img/gallery-3.png`}
             >
-              <p className="text-xl font-bold"></p>
+              <p className="text-xl font-bold">Gathering PSDM</p>
             </DirectionAwareHover>
           </div>
         </div>
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
           <DirectionAwareHover imageUrl={`img/gallery-4.png`}>
-            <p className="text-xl font-bold"></p>
+            <p className="text-xl font-bold">Bukber X Makrab</p>
           </DirectionAwareHover>
           <div className="grid grid-cols-2 gap-4">
             <DirectionAwareHover imageUrl={`img/gallery-5.png`}>
-              <p className="text-xl font-bold"></p>
+              <p className="text-xl font-bold">Gathering HMIF</p>
             </DirectionAwareHover>
             <DirectionAwareHover imageUrl={`img/gallery-6.png`}>
-              <p className="text-xl font-bold"></p>
+              <p className="text-xl font-bold">Secangkir Teh Bareng Kajur</p>
             </DirectionAwareHover>
             <DirectionAwareHover imageUrl={`img/gallery-7.png`}>
-              <p className="text-xl font-bold"></p>
+              <p className="text-xl font-bold">Futsal</p>
             </DirectionAwareHover>
             <DirectionAwareHover imageUrl={`img/gallery-8.png`}>
-              <p className="text-xl font-bold"></p>
+              <p className="text-xl font-bold">Open Recruitment Staff HMIF</p>
             </DirectionAwareHover>
           </div>
         </div>

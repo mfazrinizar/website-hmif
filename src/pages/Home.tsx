@@ -64,6 +64,28 @@ const testimonials = [
   },
 ];
 
+const images1 = [
+  {
+    imageUrl: "img/home-about-1.png",
+    text: "Kastrad Peduli Kasih",
+  },
+  {
+    imageUrl: "img/home-about-2.png",
+    text: "Pelatihan Manajemen Organisasi",
+  },
+];
+
+const images2 = [
+  {
+    imageUrl: "img/home-about-3.png",
+    text: "MinSoc",
+  },
+  {
+    imageUrl: "img/home-about-4.png",
+    text: "Gathering KOMINFO",
+  },
+];
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -136,8 +158,7 @@ export default function Home() {
         className="flex flex-col items-center justify-between gap-6 lg:flex-row"
       >
         <div className="flex gap-6 lg:w-2/5">
-          <div className="mt-6 space-y-6">
-            <DirectionAwareHover imageUrl={`img/home-about-1.png`}>
+          {/* <DirectionAwareHover imageUrl={`img/home-about-1.png`}>
               <p className="text-xl font-bold"></p>
             </DirectionAwareHover>
             <DirectionAwareHover imageUrl={`img/home-about-2.png`}>
@@ -150,7 +171,20 @@ export default function Home() {
             </DirectionAwareHover>
             <DirectionAwareHover imageUrl={`img/home-about-4.png`}>
               <p className="text-xl font-bold"></p>
-            </DirectionAwareHover>
+            </DirectionAwareHover> */}
+          <div className="mt-6 space-y-6">
+            {images1.map((item) => (
+              <DirectionAwareHover imageUrl={item.imageUrl}>
+                <p className="text-xl font-bold">{item.text}</p>
+              </DirectionAwareHover>
+            ))}
+          </div>
+          <div className="mt-6 space-y-6">
+            {images2.map((item) => (
+              <DirectionAwareHover imageUrl={item.imageUrl}>
+                <p className="text-xl font-bold">{item.text}</p>
+              </DirectionAwareHover>
+            ))}
           </div>
         </div>
         <div className="space-y-4 lg:w-1/2">
