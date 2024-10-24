@@ -25,34 +25,45 @@ import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 
 const testimonials = [
   {
-    quote: "Kuatkan Formasi Wujudkan Inovasi",
-    text: "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+    quote:
+      "Seperti padi yang tumbuh subur di sawah tidak akan tumbuh subur di gurun sahara, maka dari itu pilihlah dimana tempatmu seharusnya berada.",
+    text: "Selama di HMIF saya mendapatkan banyak sekali pengalaman begitu juga dengan bertambahnya relasi dan pertemanan membuat pengalaman yang didapat tidak hanya sebuah pengalaman pribadi, tapi juga pengalaman bersama. HMIF membuat saya merasakan rumah untuk berbagi kebersamaan dan kekeluargaan yang saling melengkapi satu sama lain, dan juga dapat memberikan ruang pengembangan diri yang baik dari segi profesionalitas.",
+    name: "M Dzawil Fadhol Abidullah",
+    title: "Ketua Himpunan",
   },
   {
-    quote: "Kuatkan Formasi Wujudkan Inovasi",
-    text: "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
+    quote:
+      "Jika ada keberhasilan maka ada pengorbanan, jika ingin sukses jangan sia-sia kan waktu anda.",
+    text: 'Himpunan mahasiswa informatika adalah wadah yang berarti bagi saya, awal tergabung di dalamnya hanya coba-coba, namun setelah di dalamnya aku menikmati semua yang ada pada HMIF. Suka, duka, canda dan tawa di dalamnya sangat berarti bagi hidup saya, HMIF juga berperan besar atas peningkatan diri saya, mulai dari memanajemen suatu hal, berkomunikasi dengan baik, cara berkemimpinan dan memiliki relasi yang luas. Jika saja saya tidak tergabung, mungkin saya tidak seperti sekarang, Terimakasih HMIF dan rekan" seperjuangan semoga sukses untuk kita semua.',
+    name: "Feri Irawan",
+    title: "Wakil Ketua Himpunan",
   },
   {
-    quote: "Kuatkan Formasi Wujudkan Inovasi",
-    text: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+    quote:
+      "Bukan nama organisasi yang menentukan kesuksesan, tapi seberapa besar keinginan anggotanya untuk terus belajar dan berkembang.",
+    text: "HMIF UNSRI merupakan tempat ternyaman bagi saya untuk menggali segala potensi dalam diri saya. Disini, saya melihat bagaimana solidaritas dan profesionalisme terbentuk dalam setiap proses yang dijalani. Di HMIF, setiap tantangan adalah peluang, dan setiap ide adalah langkah yang digunakan menuju masa depan yang lebih cerah. Lingkungan yang suportif ini menciptakan ikatan yang kuat di antara para anggota, di mana setiap suara didengar dan dihargai. Saya harap seluruh elemen HMIF UNSRI terus mendukung satu sama lain, menciptakan ruang di mana setiap orang merasa aman untuk berbagi gagasan dan mengambil inisiatif—untuk menjadi organisasi yang tidak hanya tumbuh dalam ilmu, tetapi juga dalam semangat kolaborasi dan inovasi.",
+    name: "Fildzah Nur Izzati",
+    title: "Sekretaris Umum 1",
   },
   {
-    quote: "Kuatkan Formasi Wujudkan Inovasi",
-    text: "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+    quote: "Jalani saja dulu, nanti juga bisa",
+    text: "Dari banyak organisasi yang saya ikuti, HMIF menjadi tempat saya mendapatkan banyak pengalaman untuk lingkungan yang lebih luas lagi. HMIF tidak hanya memberikan kesempatan untuk mendapatkan banyak pengalaman, tapi juga mengajarkan bagaimana caranya belajar dari kesalahan. Hal yang paling membuat saya nyaman adalah teman-teman di HMIF. Semoga kamu mendapatkan kesempatan bagus dengan bergabung HMIF.",
+    name: "Vellanindhita Noorprameswari Yudoyono",
+    title: "Sekretaris Umum 2",
   },
   {
-    quote: "Kuatkan Formasi Wujudkan Inovasi",
-    text: "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+    quote:
+      "HMIF bukan hanya tentang kode dan algoritma, tapi juga tentang membangun relasi, kepedulian, dan solusi untuk masyarakat.",
+    text: "Saya bangga menjadi bagian dari HMIF, Himpunan Mahasiswa Informatika Universitas Sriwijaya. Di sini, saya tidak hanya belajar tentang teknologi dan pemrograman, tetapi juga tumbuh dalam lingkungan yang mendukung kreativitas, kolaborasi, dan kepemimpinan. Bersama rekan-rekan yang penuh semangat, saya terus mengembangkan diri, berkontribusi dalam berbagai kegiatan, serta ikut serta dalam menciptakan solusi inovatif untuk masyarakat. HMIF adalah tempat di mana kami bukan hanya membentuk masa depan yang lebih baik melalui teknologi, tetapi juga memperkuat rasa persaudaraan dan kebersamaan.",
+    name: "Annisa Reida Raheima",
+    title: "Bendahara Umum 1",
+  },
+  {
+    quote:
+      "Tumbuh bersama dalam sebuah organisasi adalah tentang saling belajar dan mendukung satu sama lain.",
+    text: "Saya sangat bangga bisa menjadi bagian dari HMIF Unsri. Di sini, saya tidak hanya belajar banyak hal baru, tetapi juga bertemu dengan orang-orang hebat yang selalu mendukung satu sama lain. Suasana kebersamaan dan semangat kolaborasi yang ada membuat setiap pengalaman di HMIF terasa seru dan bermakna. Menjadi bagian dari keluarga besar HMIF memberikan saya kesempatan untuk berkembang, baik secara pribadi maupun profesional. Saya berharap bisa terus berkontribusi dan membawa manfaat bagi organisasi ini serta teman-teman semua.",
+    name: "Revalina Ramadhani",
+    title: "Bendahara Umum 2",
   },
 ];
 
@@ -258,7 +269,41 @@ export default function Home() {
           items={testimonials}
           direction="right"
           speed="slow"
+          className="hidden md:block"
         />
+        <ul className="no-scrollbar flex shrink-0 flex-nowrap gap-4 overflow-auto py-4 md:hidden">
+          {testimonials.map((item) => (
+            <li
+              className="relative w-[350px] max-w-full flex-shrink-0 rounded-2xl bg-white px-8 py-6 md:w-[450px]"
+              key={item.name}
+            >
+              <div className="flex h-full flex-col justify-between">
+                <div
+                  aria-hidden="true"
+                  className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                ></div>
+                <span className="relative z-20 text-base font-semibold leading-[1.6] text-primary">
+                  "{item.quote}"
+                </span>
+                <br />
+                <span className="relative z-20 line-clamp-6 text-xs font-normal leading-[1.6] text-black hover:line-clamp-none md:text-sm">
+                  {item.text}
+                </span>
+                <div className="relative z-20 mt-6 flex flex-row items-center gap-4">
+                  <img src="/img/review-dzawil.png" alt="review" />
+                  <span className="flex flex-col gap-1">
+                    <span className="text-md line-clamp-1 font-normal text-primary">
+                      {item.name}
+                    </span>
+                    <span className="text-md font-normal text-primary">
+                      {item.title}
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
       <img
         src="/img/home-ellipse-2.png"
