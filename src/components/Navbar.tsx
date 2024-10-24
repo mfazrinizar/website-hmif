@@ -18,21 +18,23 @@ export default function Navbar() {
       id="navbar"
       className="fixed left-0 right-0 z-50 flex items-center justify-between bg-white p-5 md:px-12 xl:px-20"
     >
-      <div className="flex gap-4">
-        <img
-          src="/img/logo-hmif.png"
-          alt="logo-hmif"
-          className="size-12 xl:size-16"
-        />
-        <div className="flex flex-col justify-center text-primary">
-          <h1 className="text-xl font-bold md:text-2xl xl:text-3xl">
-            HMIF UNSRI
-          </h1>
-          <p className="text-xs font-medium xl:text-sm">
-            Kuatkan Formasi Wujudkan Inovasi
-          </p>
+      <a href="/">
+        <div className="flex gap-4">
+          <img
+            src="/img/logo-hmif.png"
+            alt="logo-hmif"
+            className="size-12 xl:size-16"
+          />
+          <div className="flex flex-col justify-center text-primary">
+            <h1 className="text-xl font-bold md:text-2xl xl:text-3xl">
+              HMIF UNSRI
+            </h1>
+            <p className="text-xs font-medium xl:text-sm">
+              Kuatkan Formasi Wujudkan Inovasi
+            </p>
+          </div>
         </div>
-      </div>
+      </a>
       <ul className="hidden gap-2 lg:flex xl:gap-4">
         {navItems.map((item) => (
           <NavLink
