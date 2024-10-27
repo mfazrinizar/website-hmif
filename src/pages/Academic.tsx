@@ -5,7 +5,7 @@ import { supabase } from "@/lib/createClient";
 import { Database } from "database.types";
 
 export default function Academic() {
-  const [activeContent, setActiveContent] = useState("beasiswa");
+  const [activeContent, setActiveContent] = useState("scholarship");
   const [visibleCards, setVisibleCards] = useState(3);
   const [data, setData] = useState<any[]>([]);
 
@@ -15,24 +15,24 @@ export default function Academic() {
 
     // Fetch data based on active content
     switch (activeContent) {
-      case "beasiswa":
-        fetchData("academic_beasiswa");
+      case "scholarship":
+        fetchData("academic_scholarship");
         break;
       case "competition":
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
         break;
       case "seminar":
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
         break;
       default:
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
     }
   }, [activeContent]);
 
   async function fetchData(tableName: keyof Database["public"]["Tables"]) {
     try {
       const { data: fetchedData, error } = await supabase
-        .from("academic_beasiswa")
+        .from(`academic_scholarship`)
         .select("*")
         .order("created_at", { ascending: true });
 
@@ -53,7 +53,7 @@ export default function Academic() {
 
   function titleAcademic() {
     switch (activeContent) {
-      case "beasiswa":
+      case "scholarship":
         return "Explore Scholarship";
         break;
       case "competition":
@@ -83,8 +83,8 @@ export default function Academic() {
           </div>
           <div className="pt-7 text-xl">
             <p
-              className={`cursor-pointer pb-3 text-[#636363] ${activeContent === "beasiswa" ? "font-medium text-primary" : ""}`}
-              onClick={() => setActiveContent("beasiswa")}
+              className={`cursor-pointer pb-3 text-[#636363] ${activeContent === "scholarship" ? "font-medium text-primary" : ""}`}
+              onClick={() => setActiveContent("scholarship")}
             >
               Explore Scholarship
             </p>
