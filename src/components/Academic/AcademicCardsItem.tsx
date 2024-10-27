@@ -10,6 +10,7 @@ interface CardProps {
   description: string;
   img: string;
   type: string;
+  details_id: string;
 }
 
 export default function AcademicCardsItem({
@@ -19,12 +20,15 @@ export default function AcademicCardsItem({
   description,
   img,
   type,
+  details_id,
 }: CardProps) {
   const navigate = useNavigate();
 
   const handleLearnMore = () => {
     const formattedTitle = title.toLowerCase().split(" ").join("-");
-    navigate(`/academic/${type.toLowerCase()}/${formattedTitle}`);
+    navigate(`/academic/${type.toLowerCase()}/${formattedTitle}`, {
+      state: { details_id },
+    });
   };
 
   return (

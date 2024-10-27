@@ -6,6 +6,7 @@ import ProgramCard from "../ProgramCard";
 import { rndImage } from "@/lib/genImage";
 import { supabase } from "@/lib/createClient";
 import { Database } from "database.types";
+import { useLocation } from "react-router-dom";
 
 export default function AcademicCardsDetail() {
   const { type, title } = useParams();
@@ -13,6 +14,9 @@ export default function AcademicCardsDetail() {
   const [event, setEvent] = useState<any[]>([]);
   const [programs, setPrograms] = useState<any[]>([]);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { details_id } = location.state || {};
 
   useEffect(() => {
     if (!title) {
@@ -49,7 +53,7 @@ export default function AcademicCardsDetail() {
           title,
         );
     }
-  }, [type, title]);
+  }, [details_id]);
 
   async function fetchData(
     mainTable: keyof Database["public"]["Tables"],
@@ -67,17 +71,19 @@ export default function AcademicCardsDetail() {
             description,
             img,
             type,
-            details: ${detailsTable} (
-              description_details,
+            details_id,
+            details:${detailsTable} (
+              img_details,
               open_register,
               category,
-              presented_by,
               available_to,
+              presented_by,   
+              description_details
             )
           `,
         )
-        .eq("title", title.replace(/-/g, " "))
-        .single();
+        .eq("details_id", details_id)
+        .maybeSingle();
 
       setData(fetchedData);
 
@@ -86,10 +92,10 @@ export default function AcademicCardsDetail() {
       setEvent(eventList ?? []);
 
       if (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching data:", error.message);
       } else {
         setData(fetchedData);
-        console.log(fetchedData);
+        // console.log(fetchedData);
       }
     } catch (err) {
       console.error("Error in fetchData:", err);
@@ -139,10 +145,7 @@ export default function AcademicCardsDetail() {
           <div className="rounded-2xl border border-black">
             <img
               className="mb-8 w-full rounded-t-2xl object-cover"
-              src={
-                import.meta.env.VITE_SUPABASE_BUCKET_URL +
-                (data.details.imgDetails || data.img)
-              }
+              src={import.meta.env.VITE_SUPABASE_BUCKET_URL + data.img}
               alt={data.title}
             />
             <div className="my-8">
@@ -155,7 +158,7 @@ export default function AcademicCardsDetail() {
                 </div>
                 <p className="ms-11 text-[#3E3E3E]">
                   {type === "scholarship" || type === "competition"
-                    ? data.details.openRegister
+                    ? data.details.open_register
                     : data.details.time}
                 </p>
               </div>
@@ -195,8 +198,8 @@ export default function AcademicCardsDetail() {
                   {type === "competition"
                     ? data.details.announcement
                     : type === "seminar"
-                      ? data.details.openTo
-                      : data.details.availableTo}
+                      ? data.details.open_to
+                      : data.details.available_to}
                 </p>
               </div>
             </div>
@@ -224,13 +227,13 @@ export default function AcademicCardsDetail() {
             {data.title}
           </h1>
           <p className="mb-10 text-lg font-medium text-[#3E3E3E]">
-            Presented by {data.details.presentedBy}
+            Presented by {data.details.presented_by}
           </p>
           <p className="mb-5 text-xl font-medium">Event Details :</p>
           <div
             className="whitespace-pre-wrap text-[#3E3E3E]"
             dangerouslySetInnerHTML={{
-              __html: data.details.descriptionDetails,
+              __html: data.details.description_details,
             }}
           />
         </div>

@@ -9,6 +9,7 @@ interface AcademicCardsProps {
     description: string;
     img: string;
     type: string;
+    details_id: string;
   }>;
   handleSeeMore: () => void;
   canSeeMore: boolean;
@@ -30,6 +31,7 @@ export default function AcademicCards({
           description={item.description}
           img={item.img}
           type={item.type}
+          details_id={item.details_id}
         />
       ))}
 
