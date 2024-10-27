@@ -16,23 +16,23 @@ export default function Academic() {
     // Fetch data based on active content
     switch (activeContent) {
       case "beasiswa":
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
         break;
       case "competition":
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
         break;
       case "seminar":
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
         break;
       default:
-        fetchData("academic_beasiswa");
+        fetchData("academic_scholarship");
     }
   }, [activeContent]);
 
   async function fetchData(tableName: keyof Database["public"]["Tables"]) {
     try {
       const { data: fetchedData, error } = await supabase
-        .from("academic_beasiswa")
+        .from(tableName)
         .select("*")
         .order("created_at", { ascending: true });
 
