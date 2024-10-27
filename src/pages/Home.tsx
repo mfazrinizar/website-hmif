@@ -329,39 +329,74 @@ export default function Home() {
         </div>
         <Accordion type="single" collapsible className="space-y-8 md:w-1/2">
           <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>Apa itu HMIF ?</AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              HMIF adalah singkatan dari Himpunan Mahasiswa Informatika, yaitu
+              organisasi mahasiswa di lingkungan jurusan Teknik Informatika.
+              HMIF bertujuan untuk mendukung pengembangan akademik,
+              keterampilan, dan kesejahteraan mahasiswa Teknik Informatika serta
+              memfasilitasi berbagai kegiatan yang bermanfaat untuk mahasiswa.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>
+              Bagaimana cara bergabung di HMIF Fasilkom Unsri ?
+            </AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Anda dapat bergabung dengan HMIF dengan mengisi formulir
+              pendaftaran yang tersedia di website resmi kami atau menghubungi
+              panitia pendaftaran melalui kontak yang tertera di website
+              tersebut, jika masa penerimaan staf sudah dibuka. Mohon untuk
+              terus memantau informasi terbaru yang kami bagikan melalui akun
+              Instagram resmi HMIF.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>
+              Apa benefit menjadi anggota HMIF ?
+            </AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Bergabung dengan HMIF memberikan Anda kesempatan untuk
+              mengembangkan softskill, memperluas jaringan, serta mendapatkan
+              bantuan dana pendidikan dan uang saku. Selain itu, Anda juga dapat
+              berpartisipasi dalam berbagai kegiatan yang dapat meningkatkan
+              kompetensi dan pengalaman Anda.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>
+              Apa saja kegiatan yang diselenggarakan oleh HMIF ?
+            </AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              HMIF mengadakan berbagai kegiatan, seperti pelatihan teknis,
+              seminar, workshop, acara sosial, kompetisi, dan kegiatan keakraban
+              antar anggota. Kegiatan ini dirancang untuk mendukung pengembangan
+              kemampuan anggota dan memperkuat ikatan antar mahasiswa
+              Informatika.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>
+              Bagaimana cara mengetahui informasi terbaru dari HMIF ?
+            </AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Informasi terbaru dari HMIF, seperti berbagai program kerja,
+              kegiatan, dan info beasiswa, dapat diakses melalui akun Instagram
+              resmi di @hmif.unsri atau melalui website official HMIF Fasilkom
+              Unsri. Semua pengumuman akan disampaikan secara rutin melalui
+              kedua platform tersebut.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-6">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
+            <AccordionTrigger>
+              Apakah HMIF hanya untuk mahasiswa berprestasi ?
+            </AccordionTrigger>
             <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              YTidak. HMIF terbuka untuk semua mahasiswa Teknik Informatika,
+              baik yang memiliki prestasi akademik maupun yang ingin
+              mengembangkan kemampuan non-akademik. Tujuan HMIF adalah
+              memberikan wadah bagi semua mahasiswa untuk berkembang sesuai
+              minat dan bakatnya.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
