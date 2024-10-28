@@ -22,6 +22,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProgramCard from "@/components/ProgramCard";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const testimonials = [
   {
@@ -90,6 +92,10 @@ const images2 = [
 ];
 
 export default function Home() {
+  AOS.init({
+    once: true,
+  });
+
   const navigate = useNavigate();
 
   const [event, setEvent] = useState<any[]>([]);
@@ -113,7 +119,11 @@ export default function Home() {
         id="home-hero"
         className="flex flex-col items-center justify-between lg:flex-row"
       >
-        <div className="grid gap-8 lg:w-3/5">
+        <div
+          className="grid gap-8 lg:w-3/5"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h1 className="text-4xl font-bold text-primary xl:text-5xl">
             HMIF Fasilkom <br /> Universitas Sriwijaya
           </h1>
@@ -131,7 +141,11 @@ export default function Home() {
             <FellowInfo qty={120} text="Member HMIF 2024" />
           </div>
         </div>
-        <div className="hidden space-y-6 lg:block lg:w-1/3">
+        <div
+          className="hidden space-y-6 lg:block lg:w-1/3"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <img
             src="img/home-hero-img.png"
             alt="home-hero-img"
@@ -160,7 +174,11 @@ export default function Home() {
         id="home-about"
         className="flex flex-col items-center justify-between gap-6 lg:flex-row"
       >
-        <div className="flex gap-6 lg:w-2/5">
+        <div
+          className="flex gap-6 lg:w-2/5"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           {/* <DirectionAwareHover imageUrl={`img/home-about-1.png`}>
               <p className="text-xl font-bold"></p>
             </DirectionAwareHover>
@@ -190,7 +208,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="space-y-4 lg:w-1/2">
+        <div
+          className="space-y-4 lg:w-1/2"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <h3 className="text-2xl font-bold text-primary">About Us</h3>
           <p className="text-left text-lg lg:text-justify">
             Himpunan Mahasiswa Informatika alias HMIF adalah sebuah Organisasi
@@ -226,6 +248,8 @@ export default function Home() {
       <section
         id="home-event"
         className="flex flex-col items-center justify-between gap-8"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         <h1 className="text-center text-2xl font-bold text-primary xl:text-4xl">
           Get to know our events and participate in it
@@ -235,7 +259,11 @@ export default function Home() {
           peserta dalam petualangan mereka menjelajahi dunia teknologi yang
           luas.
         </p>
-        <div className="flex flex-col lg:flex-row">
+        <div
+          className="flex flex-col lg:flex-row"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           {event &&
             event.map((item: any) => (
               <ProgramCard
@@ -262,7 +290,11 @@ export default function Home() {
         id="home-review"
         className="-mx-5 space-y-8 bg-[#74DBEF] p-8 px-5 md:-mx-12 md:px-12 xl:-mx-20 xl:px-20"
       >
-        <h1 className="text-2xl font-bold text-primary xl:text-4xl">
+        <h1
+          className="text-2xl font-bold text-primary xl:text-4xl"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           What do They say?
         </h1>
         <InfiniteMovingCards
@@ -314,7 +346,11 @@ export default function Home() {
         id="home-faq"
         className="relative flex flex-col justify-between gap-8 md:flex-row"
       >
-        <div className="space-y-8 md:w-2/5">
+        <div
+          className="space-y-8 md:w-2/5"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h1 className="text-2xl font-bold text-primary xl:text-4xl">
             Have any questions?
           </h1>
@@ -327,7 +363,13 @@ export default function Home() {
             Terima kasih!
           </p>
         </div>
-        <Accordion type="single" collapsible className="space-y-8 md:w-1/2">
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-8 md:w-1/2"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <AccordionItem value="item-1">
             <AccordionTrigger>Apa itu HMIF ?</AccordionTrigger>
             <AccordionContent>
@@ -409,8 +451,14 @@ export default function Home() {
           src="img/hand-iphone.png"
           alt="hand-iphone"
           className="hidden w-1/2 md:block lg:w-2/5"
+          data-aos="fade-up-right"
+          data-aos-duration="1000"
         />
-        <div className="space-y-8 md:w-1/2 lg:w-2/5">
+        <div
+          className="space-y-8 md:w-1/2 lg:w-2/5"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <h1 className="text-2xl font-bold text-primary xl:text-4xl">
             Follow us on Instagram for the latest updates and fun activities!
           </h1>

@@ -1,10 +1,20 @@
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
+  AOS.init({
+    once: true,
+  });
+
   return (
     <section id="about" className="space-y-24 lg:space-y-32 xl:space-y-40">
       <section id="about-hero" className="flex items-center justify-between">
-        <div className="space-y-4 md:w-1/2">
+        <div
+          className="space-y-4 md:w-1/2"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h1 className="text-3xl font-bold text-primary xl:text-4xl">
             About HMIF
           </h1>
@@ -22,6 +32,8 @@ export default function About() {
           src="img/big-logo-hmif.png"
           alt="logo-hmif"
           className="hidden size-1/3 md:block"
+          data-aos="fade-left"
+          data-aos-duration="1000"
         />
       </section>
       <img
@@ -29,7 +41,12 @@ export default function About() {
         alt="about-ellipse-1"
         className="absolute right-0 top-10 -z-50 w-1/5"
       />
-      <section id="about-visi-misi" className="space-y-10">
+      <section
+        id="about-visi-misi"
+        className="space-y-10"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <h1 className="text-center text-3xl font-bold text-primary xl:text-4xl">
           VISI & MISI
         </h1>
@@ -81,7 +98,11 @@ export default function About() {
         </div>
       </section>
       <section id="about-logo-info" className="space-y-10">
-        <h1 className="text-3xl font-bold text-primary xl:text-4xl">
+        <h1
+          className="text-3xl font-bold text-primary xl:text-4xl"
+          data-aos="fade-down"
+          data-aos-duration="1000"
+        >
           FILOSOFI LOGO ANTAVARTA
         </h1>
         <div className="flex flex-col items-center gap-12 lg:flex-row">
@@ -89,8 +110,14 @@ export default function About() {
             src="img/logo-antavarta.png"
             alt="logo-antavarta"
             className="w-1/2"
+            data-aos="fade-right"
+            data-aos-duration="1000"
           />
-          <div className="space-y-6">
+          <div
+            className="space-y-6"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <div className="space-y-4">
               <h3 className="text-3xl font-bold text-primary">Tujuh Planet</h3>
               <p className="text-justify text-base xl:text-xl">
@@ -131,7 +158,11 @@ export default function About() {
       <section id="about-gallery" className="space-y-4">
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
           <div className="grid space-y-4 overflow-hidden md:w-1/2">
-            <div className="w-full space-y-4">
+            <div
+              className="w-full space-y-4"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            >
               <h1 className="text-3xl font-bold text-primary xl:text-4xl">
                 OUR GALLERY
               </h1>
@@ -140,7 +171,12 @@ export default function About() {
                 kebersamaan dalam setiap momen!
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4 self-end">
+            <div
+              className="grid grid-cols-2 gap-4 self-end"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+            >
               <DirectionAwareHover imageUrl={`img/gallery-1.png`}>
                 <p className="text-xl font-bold">Gathering HMIF</p>
               </DirectionAwareHover>
@@ -149,7 +185,12 @@ export default function About() {
               </DirectionAwareHover>
             </div>
           </div>
-          <div className="md:w-1/2">
+          <div
+            className="md:w-1/2"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <DirectionAwareHover
               className="h-full"
               imageUrl={`img/gallery-3.png`}
@@ -159,10 +200,18 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col justify-evenly gap-4 md:flex-row">
-          <DirectionAwareHover imageUrl={`img/gallery-4.png`}>
-            <p className="text-xl font-bold">Bukber X Makrab</p>
-          </DirectionAwareHover>
-          <div className="grid grid-cols-2 gap-4">
+          <div data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+            <DirectionAwareHover imageUrl={`img/gallery-4.png`}>
+              <p className="text-xl font-bold">Bukber X Makrab</p>
+            </DirectionAwareHover>
+          </div>
+
+          <div
+            className="grid grid-cols-2 gap-4"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-delay="800"
+          >
             <DirectionAwareHover imageUrl={`img/gallery-5.png`}>
               <p className="text-xl font-bold">Gathering HMIF</p>
             </DirectionAwareHover>

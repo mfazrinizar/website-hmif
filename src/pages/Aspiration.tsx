@@ -7,11 +7,19 @@ import {
 } from "@/components/ui/accordion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Aspiration() {
+  AOS.init({ once: true });
+
   return (
     <section id="aspiration" className="mx-auto space-y-24 text-center">
-      <section className="mx-auto space-y-8 overflow-hidden text-center md:w-3/4">
+      <section
+        className="mx-auto space-y-8 overflow-hidden text-center md:w-3/4"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <div className="mx-auto space-y-8 md:w-3/4">
           <h1 className="text-3xl font-bold text-primary xl:text-4xl">
             Aspiration
@@ -34,7 +42,11 @@ export default function Aspiration() {
         id="aspiration-faq"
         className="flex flex-col justify-between gap-8 md:flex-row"
       >
-        <div className="space-y-8 md:w-2/5">
+        <div
+          className="space-y-8 md:w-2/5"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <h1 className="text-2xl font-bold text-primary xl:text-4xl">
             Have any questions?
           </h1>
@@ -54,7 +66,13 @@ export default function Aspiration() {
             <ArrowRight className="" />
           </Link>
         </div>
-        <Accordion type="single" collapsible className="space-y-8 md:w-1/2">
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-8 md:w-1/2"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <AccordionItem value="item-1">
             <AccordionTrigger>Apa tujuan aspirasi ini ?</AccordionTrigger>
             <AccordionContent>
