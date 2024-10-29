@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className="relative w-[350px] max-w-full flex-shrink-0 rounded-2xl bg-white px-8 py-6 md:w-[450px]"
             key={item.name}
@@ -96,20 +96,20 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-xl font-semibold leading-[1.6] text-primary">
+              <span className="relative z-20 text-base font-semibold leading-[1.6] text-primary">
                 "{item.quote}"
               </span>
               <br />
-              <span className="relative z-20 text-sm font-normal leading-[1.6] text-black">
+              <span className="relative z-20 line-clamp-6 text-xs font-normal leading-[1.6] text-black hover:line-clamp-none md:text-sm">
                 {item.text}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center gap-4">
-                <img src="/img/review-dzawil.png" alt="review" />
+                <img src={`/img/review/${item.name}.png`} alt={item.name} />
                 <span className="flex flex-col gap-1">
-                  <span className="text-xl font-normal text-primary">
+                  <span className="text-md font-normal text-primary">
                     {item.name}
                   </span>
-                  <span className="text-xl font-normal text-primary">
+                  <span className="text-md font-normal text-primary">
                     {item.title}
                   </span>
                 </span>
