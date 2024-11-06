@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import AcademicCards from "@/components/Academic/AcademicCards";
 import AcademicHero from "@/components/Academic/AcademicHero";
-import { supabase } from "@/lib/createClient";
+import { fetchAcademicData } from "@/lib/networks/academicQueries";
 import { Database } from "database.types";
 
 export default function Academic() {
@@ -15,14 +15,14 @@ export default function Academic() {
 
     // Fetch data based on active content
     switch (activeContent) {
-      case "beasiswa":
+      case "scholarship":
         fetchData("academic_scholarship");
         break;
       case "competition":
-        fetchData("academic_scholarship");
+        fetchData("academic_competition");
         break;
       case "seminar":
-        fetchData("academic_scholarship");
+        fetchData("academic_seminar");
         break;
       default:
         fetchData("academic_scholarship");
@@ -30,21 +30,8 @@ export default function Academic() {
   }, [activeContent]);
 
   async function fetchData(tableName: keyof Database["public"]["Tables"]) {
-    try {
-      const { data: fetchedData, error } = await supabase
-        .from(tableName)
-        .select("*")
-        .order("created_at", { ascending: true });
-
-      if (error) {
-        console.error("Error fetching data:", error);
-      } else {
-        setData(fetchedData);
-        console.log(fetchedData);
-      }
-    } catch (err) {
-      console.error("Error in fetchData:", err);
-    }
+    const fetchedData = await fetchAcademicData(tableName);
+    setData(fetchedData);
   }
 
   const handleSeeMore = () => {
@@ -55,13 +42,10 @@ export default function Academic() {
     switch (activeContent) {
       case "scholarship":
         return "Explore Scholarship";
-        break;
       case "competition":
         return "Preparing Competition";
-        break;
       case "seminar":
         return "Founding Seminar";
-        break;
       default:
         return "Explore Scholarship";
     }

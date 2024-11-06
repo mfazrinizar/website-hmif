@@ -11,6 +11,7 @@ type Props = {
   dinas: string;
   src: string | undefined;
   type: string;
+  details_id?: string;
 };
 
 export default function ProgramCard({
@@ -21,12 +22,15 @@ export default function ProgramCard({
   dinas,
   src,
   type,
+  details_id,
 }: Props) {
   const navigate = useNavigate();
 
   const handleLearnMore = () => {
     const formattedTitle = name.toLowerCase().split(" ").join("-"); // Format title untuk URL
-    navigate(`/${type}/${dinas.toLowerCase()}/${formattedTitle}`); // Gunakan title sebagai bagian dari URL
+    navigate(`/${type}/${dinas.toLowerCase()}/${formattedTitle}`, {
+      state: { details_id }, // pastikan detailsId benar-benar ada
+    });
   };
 
   return (

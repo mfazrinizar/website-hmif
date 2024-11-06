@@ -4,9 +4,12 @@ import { Calendar, ArrowRight, Mail, Users } from "lucide-react";
 import { Button } from "../ui/button";
 import ProgramCard from "../ProgramCard";
 import { rndImage } from "@/lib/genImage";
-import { supabase } from "@/lib/createClient";
-import { Database } from "database.types";
+import {
+  fetchAcademicData,
+  fetchAcademicDetails,
+} from "@/lib/networks/academicQueries";
 import { useLocation } from "react-router-dom";
+import { Database } from "database.types";
 
 export default function AcademicCardsDetail() {
   const { type, title } = useParams();
@@ -25,81 +28,34 @@ export default function AcademicCardsDetail() {
     }
 
     switch (type) {
-      case "beasiswa":
-        fetchData(
-          "academic_scholarship",
-          "academic_scholarship_details",
-          title,
-        );
+      case "scholarship":
+        fetchData("academic_scholarship", "academic_scholarship_details");
         break;
       case "competition":
-        fetchData(
-          "academic_scholarship",
-          "academic_scholarship_details",
-          title,
-        );
+        fetchData("academic_competition", "academic_competition_details");
         break;
       case "seminar":
-        fetchData(
-          "academic_scholarship",
-          "academic_scholarship_details",
-          title,
-        );
+        fetchData("academic_seminar", "academic_seminar_details");
         break;
       default:
-        fetchData(
-          "academic_scholarship",
-          "academic_scholarship_details",
-          title,
-        );
+        fetchData("academic_scholarship", "academic_scholarship_details");
     }
   }, [details_id]);
 
   async function fetchData(
     mainTable: keyof Database["public"]["Tables"],
     detailsTable: keyof Database["public"]["Tables"],
-    title: string,
   ) {
-    try {
-      const { data: fetchedData, error } = await supabase
-        .from(mainTable)
-        .select(
-          `
-            title,
-            category,
-            date,
-            description,
-            img,
-            type,
-            details_id,
-            details:${detailsTable} (
-              img_details,
-              open_register,
-              category,
-              available_to,
-              presented_by,   
-              description_details
-            )
-          `,
-        )
-        .eq("details_id", details_id)
-        .maybeSingle();
+    const fetchedData = await fetchAcademicDetails(
+      mainTable,
+      detailsTable,
+      details_id,
+    );
+    setData(fetchedData);
 
-      setData(fetchedData);
-
-      // Ambil semua data di tabel utama untuk event mendatang
-      const { data: eventList } = await supabase.from(mainTable).select("*");
-      setEvent(eventList ?? []);
-
-      if (error) {
-        console.error("Error fetching data:", error.message);
-      } else {
-        setData(fetchedData);
-        // console.log(fetchedData);
-      }
-    } catch (err) {
-      console.error("Error in fetchData:", err);
-    }
+    // Fetch upcoming events from the main table
+    const eventList = await fetchAcademicData(mainTable);
+    setEvent(eventList);
   }
 
   useEffect(() => {
@@ -255,18 +211,25 @@ export default function AcademicCardsDetail() {
           peluang beasiswa yang tersedia untuk Anda!”
         </p>
         <div className="flex flex-col lg:flex-row">
-          {programs.flat().map((item: any, key: any) => (
-            <ProgramCard
-              key={key}
-              eventFormat={item["category"]}
-              name={item["title"]}
-              date={item["date"]}
-              description={item["description"]}
-              dinas={item["type"]}
-              src={item["img"]}
-              type={"academic"}
-            />
-          ))}
+          {programs
+            .filter(
+              (item: any) =>
+                item["details_id"]?.toString() !== details_id?.toString(),
+            )
+            .flat()
+            .map((item: any, key: any) => (
+              <ProgramCard
+                key={key}
+                eventFormat={item["category"]}
+                name={item["title"]}
+                date={item["date"]}
+                description={item["description"]}
+                dinas={item["type"]}
+                src={item["img"]}
+                type={"academic"}
+                details_id={item["details_id"]}
+              />
+            ))}
         </div>
       </div>
     </div>
