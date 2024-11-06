@@ -5,6 +5,7 @@ import ProkerCards from "./ProkerCards";
 import axios from "axios";
 import { getBreadCrumb } from "@/lib/networks/breadCrumbQueries";
 import useLoadWindow from "@/hooks/useLoadWindow";
+import { supabase } from "@/lib/createClient";
 
 export default function ProkerTabs() {
   const [data, setData] = useState([]);
@@ -20,12 +21,29 @@ export default function ProkerTabs() {
   ];
 
   useEffect(() => {
-    axios.get(`/data/proker.json`).then((res) => {
-      setData(res.data.data);
-    });
+    // axios.get(`/data/proker.json`).then((res) => {
+    //   setData(res.data.data);
+    // });
+    getData();
   }, []);
 
   useLoadWindow();
+
+  async function getData() {
+    try {
+      const { data: fetchedData, error } = await supabase
+        .from("proker")
+        .select("*");
+
+      if (error) {
+        console.error("Error fetching data:", error);
+      } else {
+        console.log(fetchedData);
+      }
+    } catch (err) {
+      console.error("Error in fetchData:", err);
+    }
+  }
 
   return (
     <Tabs
