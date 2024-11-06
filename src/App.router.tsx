@@ -9,6 +9,8 @@ import Proker from "./pages/Proker";
 import Aspiration from "./pages/Aspiration";
 import ProkerDetail from "./pages/ProkerDetail";
 import AcademicCardsDetail from "./components/Academic/AcademicCardsDetail";
+import Dashboard from "./pages/Dashboard";
+import Admin from "./pages/Admin";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -44,6 +46,14 @@ const RouterBuilder = () => {
     {
       path: "/aspiration",
       element: <Aspiration />,
+    },
+    {
+      path: "/admin/dashboard",
+      element: <Dashboard />,
+    },
+    {
+      path: "/admin",
+      element: <Admin />,
     },
   ];
 
