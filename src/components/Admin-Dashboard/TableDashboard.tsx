@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { getData } from "@/lib/networks/profileQueries";
 
 interface Column {
   column_name: string;
@@ -19,7 +19,7 @@ interface Column {
 
 export default function TableDashboard({ tableName }: { tableName: string }) {
   const { data, error, isLoading } = useQuery<Column[], Error>({
-    queryKey: [tableName], // Unique query key
+    queryKey: [tableName],
     queryFn: () =>
       new Promise<Column[]>((resolve, reject) => {
         getTableStructureWithFunction(tableName)
@@ -35,24 +35,23 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
             reject(err);
           });
       }),
-    enabled: !!tableName, // Only run if tableName is provided
+    enabled: !!tableName,
   });
-
-  console.log(data);
-
-  //   useEffect(() => {
-  //     getTableStructureWithFunction("proker").then((res) => console.log(res));
-  //   });
 
   return (
     <Table>
       <TableCaption>A list of your recent invoices.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          {Array.isArray(data) && data.length > 0 ? (
+            data?.slice(2, data.length).map((column) => (
+              <TableHead className="font-medium" key={column.column_name}>
+                {column.column_name}
+              </TableHead>
+            ))
+          ) : (
+            <TableCell colSpan={3}>No data available</TableCell>
+          )}
         </TableRow>
       </TableHeader>
       <TableBody>
