@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RouteObject } from "react-router-dom";
 import AppLayout from "./pages/Layout/AppLayout";
+import AdminLayout from "./pages/Layout/AdminLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Academic from "./pages/Academic";
@@ -47,6 +48,9 @@ const RouterBuilder = () => {
       path: "/aspiration",
       element: <Aspiration />,
     },
+  ];
+
+  const adminRoutes: RouteObject[] = [
     {
       path: "/admin/dashboard",
       element: <Dashboard />,
@@ -61,6 +65,10 @@ const RouterBuilder = () => {
     {
       element: <AppLayout />,
       children: generalRoutes,
+    },
+    {
+      element: <AdminLayout />,
+      children: adminRoutes,
     },
   ]);
 
