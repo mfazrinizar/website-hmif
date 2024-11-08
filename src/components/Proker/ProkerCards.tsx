@@ -14,7 +14,15 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
 
   useEffect(() => {
     if (item) {
-      setProker(item || null);
+      if (dinas == "all") {
+        setProker(item || []);
+        console.log(item);
+      } else {
+        const filteredProker = item.filter(
+          (proker: any) => proker.dinas === dinas,
+        );
+        setProker(filteredProker);
+      }
     }
   }, [item]);
 
@@ -28,10 +36,10 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
         ? proker
             .flat()
             .slice(0, sliced)
-            .map((proker, key) => (
+            .map((proker: any, key: any) => (
               <ProkerCardItem
                 key={key}
-                eventFormat={proker["eventFormat"]}
+                eventFormat={proker["event_format"]}
                 name={proker["name"]}
                 date={proker["date"]}
                 description={proker["description"]}
@@ -41,10 +49,10 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
             ))
         : proker
             .slice(0, sliced)
-            .map((proker, key) => (
+            .map((proker: any, key: any) => (
               <ProkerCardItem
                 key={key}
-                eventFormat={proker["eventFormat"]}
+                eventFormat={proker["event_format"]}
                 name={proker["name"]}
                 date={proker["date"]}
                 description={proker["description"]}

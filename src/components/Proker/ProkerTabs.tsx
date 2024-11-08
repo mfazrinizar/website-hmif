@@ -8,8 +8,9 @@ import useLoadWindow from "@/hooks/useLoadWindow";
 import { supabase } from "@/lib/createClient";
 
 export default function ProkerTabs() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
   const dinas = [
+    "all",
     "inti",
     "kominfo",
     "akademik",
@@ -39,6 +40,7 @@ export default function ProkerTabs() {
         console.error("Error fetching data:", error);
       } else {
         console.log(fetchedData);
+        setData(fetchedData);
       }
     } catch (err) {
       console.error("Error in fetchData:", err);
@@ -69,13 +71,13 @@ export default function ProkerTabs() {
         </div>
       </NavTabs>
 
-      <TabsContent value={"all"}>
+      {/* <TabsContent value={"all"}>
         <ProkerCards key={9} dinas={"all"} item={data} nav={"all"} />
-      </TabsContent>
+      </TabsContent> */}
 
       {dinas.map((item, key) => (
         <TabsContent key={key} value={item}>
-          <ProkerCards key={key} dinas={item} item={data[key]} nav={item} />
+          <ProkerCards key={key} dinas={item} item={data} nav={item} />
         </TabsContent>
       ))}
     </Tabs>
