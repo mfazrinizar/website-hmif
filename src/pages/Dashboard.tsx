@@ -1,22 +1,28 @@
 import NavTabs from "@/components/NavTabs";
 import { Tabs, TabsContent, TabsTrigger } from "@/components/ui/tabs";
 import TableDashboard from "@/components/Admin-Dashboard/TableDashboard";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import FormDashboard from "@/components/Admin-Dashboard/FormDashboard";
 
-const pages = ["academic", "proker", "profile"];
+const pages = [
+  "academic_competition",
+  "academic_competition_details",
+  "academic_scholarship",
+  "academic_scholarship_details",
+  "academic_seminar",
+  "academic_seminar_details",
+  "proker",
+  "member",
+];
 
 export default function Dashboard() {
   return (
     <section id="admin-dashboard">
-      <Tabs defaultValue="academic" className="text-center">
+      <Tabs defaultValue="academic_competition" className="text-center">
         <h1 className="mb-8 text-center text-2xl font-bold text-primary xl:text-4xl">
           Our Kabinet
         </h1>
         <NavTabs>
-          <div className="flex">
+          <div className="flex overflow-x-auto">
             {pages.map((item, key) => (
               <TabsTrigger value={item} key={key + item}>
                 {item}
