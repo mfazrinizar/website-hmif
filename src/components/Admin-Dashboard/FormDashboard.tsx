@@ -71,7 +71,7 @@ export default function FormDashboard({ tableName }: { tableName: string }) {
       new Promise<Column[]>((resolve, reject) => {
         getTableStructureWithFunction(tableName)
           .then((res) => {
-            console.log(res);
+            // console.log(res);
             if (res) {
               resolve(res);
             } else {
@@ -85,7 +85,7 @@ export default function FormDashboard({ tableName }: { tableName: string }) {
     enabled: !!tableName,
   });
 
-  data?.map((e) => console.log(e.data_type));
+  // data?.map((e) => console.log(e.data_type));
 
   return (
     <section className="flex items-center justify-center">

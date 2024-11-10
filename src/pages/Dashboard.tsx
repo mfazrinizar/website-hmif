@@ -19,7 +19,7 @@ export default function Dashboard() {
     <section id="admin-dashboard" className="-mx-5 md:-mx-12 xl:-mx-20">
       <Tabs defaultValue="academic_competition" className="flex">
         <div>
-          <TabsList className="fixed bottom-0 top-0 flex h-full w-1/3 flex-col items-start justify-start border-r-2 border-primary px-4 pt-8">
+          <TabsList className="fixed bottom-0 top-0 hidden h-full w-1/3 flex-col items-start justify-start border-r-2 border-primary px-4 pt-8 md:flex">
             <a href="/" className="mb-10">
               <div className="flex gap-4">
                 <img
@@ -49,7 +49,7 @@ export default function Dashboard() {
             value={item}
             id={item}
             key={key + item}
-            className="relative left-1/3 w-2/3 px-10"
+            className="relative w-full px-10 md:left-1/3 md:w-2/3"
           >
             <FormDashboard tableName={item} />
             <TableDashboard tableName={item} />
