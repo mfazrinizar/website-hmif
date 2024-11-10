@@ -1,5 +1,44 @@
 import { supabase } from "@/lib/createClient";
+import { useQuery } from "@tanstack/react-query";
 import { Database } from "database.types";
+
+interface ColumnAcademic {
+  title: string | null;
+  category: string | null;
+  date: string | null;
+  description: string | null;
+  img: string | null;
+  type: string | null;
+  details_id: string | null;
+}
+
+interface ColumnScholarship {
+  img_details: string | null;
+  open_register: string | null;
+  category: string | null;
+  available_to: string | null;
+  presented_by: string | null;
+  description_details: string | null;
+}
+
+interface ColumnCompetition {
+  img_details: string | null;
+  open_register: string | null;
+  submission: string | null;
+  announcement: string | null;
+  presented_by: string | null;
+  description_details: string | null;
+}
+
+interface ColumnSeminar {
+  img_details: string | null;
+  date: string | null;
+  time: string | null;
+  media: string | null;
+  presented_by: string | null;
+  description_details: string | null;
+  open_to: string | null;
+}
 
 export async function fetchAcademicData(
   tableName: keyof Database["public"]["Tables"],
@@ -97,3 +136,31 @@ function getDetailsFields(detailsTable: string): string {
       throw new Error(`Unknown details table: ${detailsTable}`);
   }
 }
+
+function useAcademicData(
+  tableName: keyof Database["public"]["Tables"],
+) {
+  const { data } = useQuery<any[], Error>({
+    queryKey: ["memberQuery"],
+    queryFn: () =>
+      new Promise<any[]>((resolve, reject) => {
+        fetchAcademicData(tableName)
+          .then((res) => {
+            // console.log(res);
+            if (res) {
+              resolve(res);
+            } else {
+              reject("No data found");
+            }
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      }),
+  });
+
+  return data;
+}
+
+export { useAcademicData };
+export type { ColumnAcademic, ColumnScholarship, ColumnCompetition, ColumnSeminar };

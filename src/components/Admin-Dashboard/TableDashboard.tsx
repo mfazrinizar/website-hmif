@@ -11,6 +11,7 @@ import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
 import { useQuery } from "@tanstack/react-query";
 import { useMemberData, ColumnMember } from "@/lib/networks/profileQueries";
 import { useEffect, useState } from "react";
+import { ColumnAcademic, ColumnScholarship, ColumnCompetition, ColumnSeminar, useAcademicData } from "@/lib/networks/academicQueries";
 
 interface Column {
   column_name: string;
@@ -24,6 +25,44 @@ const memberProps: (keyof ColumnMember)[] = [
   "instagram",
   "position_id",
   "division_id",
+];
+
+const academicProps: (keyof ColumnAcademic)[] = [
+  "title",
+  "category",
+  "date",
+  "description",
+  "img",
+  "type",
+  "details_id"
+];
+
+const scholarshipProps: (keyof ColumnScholarship)[] = [
+  "img_details",
+  "open_register",
+  "category",
+  "available_to",
+  "presented_by",
+  "description_details"
+];
+
+const competitionProps: (keyof ColumnCompetition)[] = [
+  "img_details",
+  "open_register",
+  "submission",
+  "announcement",
+  "presented_by",
+  "description_details"
+];
+
+const seminarProps: (keyof ColumnSeminar)[] = [
+  "img_details",
+  "date",
+  "time",
+  "media",
+  "presented_by",
+  "description_details",
+  "open_to"
 ];
 
 export default function TableDashboard({ tableName }: { tableName: string }) {
@@ -54,6 +93,18 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
     switch (tableName) {
       case "member":
         return memberProps;
+      case "academic_scholarship":
+        return academicProps;
+      case "academic_competition":
+        return academicProps;
+      case "academic_seminar":
+        return academicProps;
+      case "academic_scholarship_details":
+        return scholarshipProps;
+      case "academic_competition_details":
+        return competitionProps;
+      case "academic_seminar_details":
+        return seminarProps;
       default:
         return null;
     }
@@ -63,6 +114,18 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
     switch (tableName) {
       case "member":
         return useMemberData();
+      case "academic_competition":
+        return useAcademicData("academic_competition");
+      case "academic_competition_details":
+        return useAcademicData("academic_competition_details");
+      case "academic_scholarship":
+        return useAcademicData("academic_scholarship");
+      case "academic_scholarship_details":
+        return useAcademicData("academic_scholarship_details");
+      case "academic_seminar":
+        return useAcademicData("academic_seminar");
+      case "academic_seminar_details":
+        return useAcademicData("academic_seminar_details");
       default:
         return null;
     }
