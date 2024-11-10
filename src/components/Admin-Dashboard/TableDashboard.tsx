@@ -27,9 +27,10 @@ const memberProps: (keyof ColumnMember)[] = [
 ];
 
 export default function TableDashboard({ tableName }: { tableName: string }) {
-  const [fetchedData, setFetchedData] = useState<ColumnMember[]>();
+  const [fetchedData, setFetchedData] = useState<any[]>();
+  const [fieldTable, setFieldTable] = useState<any[]>();
 
-  const { data, error, isLoading } = useQuery<Column[], Error>({
+  const { data } = useQuery<Column[], Error>({
     queryKey: [tableName],
     queryFn: () =>
       new Promise<Column[]>((resolve, reject) => {
@@ -49,6 +50,15 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
     enabled: !!tableName,
   });
 
+  function switchField() {
+    switch (tableName) {
+      case "member":
+        return memberProps;
+      default:
+        return null;
+    }
+  }
+
   function switchTable() {
     switch (tableName) {
       case "member":
@@ -58,17 +68,17 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
     }
   }
 
-  let tempData = switchTable();
+  const tempData = switchTable();
+  const tempField = switchField();
 
   useEffect(() => {
-    if (tempData) {
-      setFetchedData(tempData);
-    }
+    if (tempData) setFetchedData(tempData);
+    if (tempField) setFieldTable(tempField);
   }, [tempData]);
 
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>A list of your recent tables.</TableCaption>
       <TableHeader>
         <TableRow>
           {Array.isArray(data) && data.length > 0 ? (
@@ -86,16 +96,12 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
         {fetchedData
           ? fetchedData?.map((item) => (
               <TableRow>
-                {memberProps?.map((list) => (
+                {fieldTable?.map((list) => (
                   <TableCell className="font-medium">{item[list]}</TableCell>
                 ))}
               </TableRow>
             ))
           : ""}
-        {/* <TableCell className="font-medium">INV001</TableCell>
-          <TableCell>Paid</TableCell>
-          <TableCell>Credit Card</TableCell>
-          <TableCell className="text-right">update</TableCell> */}
       </TableBody>
     </Table>
   );
