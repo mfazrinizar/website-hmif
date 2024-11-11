@@ -13,7 +13,8 @@ async function getMemberData() {
   try {
     const { data: fetchedData, error } = await supabase
       .from("member")
-      .select("name, email, instagram ,position_id, division_id");
+      .select("*");
+    // .select("name, email, instagram ,position_id, division_id");
 
     if (error) {
       console.error("Error fetching member data:", error);
