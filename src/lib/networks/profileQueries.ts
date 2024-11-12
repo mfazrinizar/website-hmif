@@ -34,13 +34,12 @@ async function getMemberData() {
 }
 
 function useMemberData() {
-  const { data, error, isLoading } = useQuery<ColumnMember[], Error>({
+  const { data } = useQuery<ColumnMember[], Error>({
     queryKey: ["memberQuery"],
     queryFn: () =>
       new Promise<ColumnMember[]>((resolve, reject) => {
         getMemberData()
           .then((res) => {
-            // console.log(res);
             if (res) {
               resolve(res);
             } else {
