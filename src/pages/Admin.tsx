@@ -19,6 +19,8 @@ import { useNavigate } from "react-router-dom";
 
 import { signInUser, getUser } from "@/lib/networks/adminQueries";
 import { useQuery } from "@tanstack/react-query";
+import { isLogin } from "@/hooks/useAdmin";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -36,32 +38,13 @@ export default function Admin() {
     },
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    if (await signInUser(values)) navigate("/admin/dashboard");
+    const res = await signInUser(values);
 
-    // const { data } = useQuery<any, Error>({
-    //   queryKey: ["user"],
-    //   queryFn: () =>
-    //     new Promise<any>((resolve, reject) => {
-    //       getUser()
-    //         .then((res) => {
-    //           if (res) {
-    //             resolve(res);
-    //           } else {
-    //             reject("No data found");
-    //           }
-    //         })
-    //         .catch((err) => {
-    //           reject(err);
-    //         });
-    //     }),
-    // });
-
-    // console.log(data);
-    // console.log(values);
+    if (res) {
+      toast("selamat datang admin!!");
+      navigate("/admin/dashboard");
+    }
   }
 
   return (

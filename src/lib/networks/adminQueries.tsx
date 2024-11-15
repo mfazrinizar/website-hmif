@@ -6,7 +6,7 @@ async function signInUser({ email, password }: any) {
     password: password,
   });
 
-  if (error) return false;
+  if (error) throw new Error(error.message);
 
   if (data) return true;
 }
@@ -19,4 +19,9 @@ async function getUser() {
   return user;
 }
 
-export { signInUser, getUser };
+async function signOutUser() {
+  const { error } = await supabase.auth.signOut();
+  if (error) throw new Error(error.message);
+}
+
+export { signInUser, getUser, signOutUser };
