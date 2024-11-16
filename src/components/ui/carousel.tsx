@@ -215,7 +215,7 @@ CarouselImg.displayName = "CarouselImg";
 const CarouselDots = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }) => {
+>(({ className, ...props }, ref) => {
   const { selectedIndex, scrollTo, api } = useCarousel();
   console.log(selectedIndex);
   return (
@@ -223,6 +223,7 @@ const CarouselDots = React.forwardRef<
       className={cn(
         "embla__dots z-50 mt-4 flex items-center justify-center gap-4",
         className,
+        ref,
       )}
       {...props}
     >
