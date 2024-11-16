@@ -8,10 +8,10 @@ async function signInUser({ email, password }: any) {
 
   if (error) throw new Error(error.message);
 
-  if (data) return true;
+  if (data) return data;
 }
 
-async function getUser() {
+async function getDataUser() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -24,4 +24,4 @@ async function signOutUser() {
   if (error) throw new Error(error.message);
 }
 
-export { signInUser, getUser, signOutUser };
+export { signInUser, getDataUser, signOutUser };

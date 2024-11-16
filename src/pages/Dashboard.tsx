@@ -1,4 +1,3 @@
-import NavTabs from "@/components/NavTabs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TableDashboard from "@/components/Admin-Dashboard/TableDashboard";
 import FormDashboard from "@/components/Admin-Dashboard/FormDashboard";
@@ -8,8 +7,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { getUser } from "@/lib/networks/adminQueries";
-import { useQuery } from "@tanstack/react-query";
 import { isLogin } from "@/hooks/useAdmin";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
