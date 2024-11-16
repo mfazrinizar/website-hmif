@@ -11,7 +11,13 @@ import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
 import { useQuery } from "@tanstack/react-query";
 import { useMemberData, ColumnMember } from "@/lib/networks/profileQueries";
 import { useEffect, useState } from "react";
-import { ColumnAcademic, ColumnScholarship, ColumnCompetition, ColumnSeminar, useAcademicData } from "@/lib/networks/academicQueries";
+import {
+  ColumnAcademic,
+  ColumnScholarship,
+  ColumnCompetition,
+  ColumnSeminar,
+  useAcademicData,
+} from "@/lib/networks/academicQueries";
 
 interface Column {
   column_name: string;
@@ -34,7 +40,7 @@ const academicProps: (keyof ColumnAcademic)[] = [
   "description",
   "img",
   "type",
-  "details_id"
+  "details_id",
 ];
 
 const scholarshipProps: (keyof ColumnScholarship)[] = [
@@ -43,7 +49,7 @@ const scholarshipProps: (keyof ColumnScholarship)[] = [
   "category",
   "available_to",
   "presented_by",
-  "description_details"
+  "description_details",
 ];
 
 const competitionProps: (keyof ColumnCompetition)[] = [
@@ -52,7 +58,7 @@ const competitionProps: (keyof ColumnCompetition)[] = [
   "submission",
   "announcement",
   "presented_by",
-  "description_details"
+  "description_details",
 ];
 
 const seminarProps: (keyof ColumnSeminar)[] = [
@@ -62,7 +68,7 @@ const seminarProps: (keyof ColumnSeminar)[] = [
   "media",
   "presented_by",
   "description_details",
-  "open_to"
+  "open_to",
 ];
 
 export default function TableDashboard({ tableName }: { tableName: string }) {
@@ -157,10 +163,12 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
       </TableHeader>
       <TableBody>
         {fetchedData
-          ? fetchedData?.map((item) => (
-              <TableRow>
-                {fieldTable?.map((list) => (
-                  <TableCell className="font-medium">{item[list]}</TableCell>
+          ? fetchedData?.map((item, key) => (
+              <TableRow key={item + key}>
+                {fieldTable?.map((list, key) => (
+                  <TableCell className="font-medium" key={item[list] + key}>
+                    {item[list]}
+                  </TableCell>
                 ))}
               </TableRow>
             ))
