@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { isLogin } from "@/hooks/useAdmin";
+import { isLogin } from "@/hooks/useLogin";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { signOutUser } from "@/lib/networks/adminQueries";
@@ -31,6 +31,10 @@ export default function Dashboard() {
   isLogin();
 
   function logOut() {
+    // need backend
+    // document.cookie =
+    //   "supabase_token=; Max-Age=0; Path=/; Secure; HttpOnly; SameSite=Strict";
+    // window.location.reload();
     signOutUser();
     toast("Anda berhasil log out!");
     navigate("/admin");
