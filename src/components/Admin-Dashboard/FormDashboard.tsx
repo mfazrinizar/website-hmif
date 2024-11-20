@@ -1,8 +1,6 @@
-import React, { useState } from "react";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -11,11 +9,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { z } from "zod";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useQuery } from "@tanstack/react-query";
 import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
-import FormArray from "../FormArray";
 
 interface Column {
   column_name: string;
@@ -95,17 +92,7 @@ export default function FormDashboard({ tableName }: { tableName: string }) {
             {data?.map((e) => {
               if (e.column_name != "id") {
                 if (e.data_type == "ARRAY") {
-                  return (
-                    <div>
-                      <FormField
-                        control={form.control}
-                        name={e.column_name}
-                        render={({ field }) => (
-                          <FormArray label={e.column_name} {...field} />
-                        )}
-                      />
-                    </div>
-                  );
+                  return <div></div>;
                 } else {
                   return (
                     <FormField
