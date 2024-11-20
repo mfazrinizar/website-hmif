@@ -1,28 +1,59 @@
 import { supabase } from "@/lib/createClient";
-import { Database } from "database.types";
+import { useQuery } from "@tanstack/react-query";
 
-export async function getData(table: keyof Database["public"]["Tables"]) {
+interface ColumnMember {
+  name: string | null;
+  instagram: string | null;
+  email: string | null;
+  position_id: string | null;
+  division_id: string | null;
+}
+
+async function getMemberData() {
   try {
     const { data: fetchedData, error } = await supabase
-      .from(table)
-      .select(
-        `
-          name, 
-          instagram, 
-          email,
-          position_id,
-          division_id
-        `,
-      )
-      .maybeSingle();
+      .from("member")
+      .select("*");
+    // .select("name, email, instagram ,position_id, division_id");
 
     if (error) {
-      console.error("Error fetching academic details:", error);
+      console.error("Error fetching member data:", error);
+      return null;
+    }
+
+    if (!fetchedData) {
+      console.warn("No member data found.");
       return null;
     }
 
     return fetchedData;
   } catch (err) {
+    console.error("Unexpected error:", err);
     return null;
   }
 }
+
+function useMemberData() {
+  const { data } = useQuery<ColumnMember[], Error>({
+    queryKey: ["memberQuery"],
+    queryFn: () =>
+      new Promise<ColumnMember[]>((resolve, reject) => {
+        getMemberData()
+          .then((res) => {
+            if (res) {
+              resolve(res);
+            } else {
+              reject("No data found");
+            }
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      }),
+  });
+
+  return data;
+}
+
+export { useMemberData };
+export type { ColumnMember };
