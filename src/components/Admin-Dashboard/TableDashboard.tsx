@@ -27,8 +27,8 @@ interface Column {
 
 const memberProps: (keyof ColumnMember)[] = [
   "name",
-  "email",
   "instagram",
+  "email",
   "position_id",
   "division_id",
 ];
@@ -143,14 +143,18 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
   useEffect(() => {
     if (tempData) setFetchedData(tempData);
     if (tempField) setFieldTable(tempField);
-  }, [tempData]);
+  }, [tempData, tempField]);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Table>
       <TableCaption>A list of your recent tables.</TableCaption>
       <TableHeader>
         <TableRow>
-          {Array.isArray(data) && data.length > 0 ? (
+          {/* {Array.isArray(data) && data.length > 0 ? (
             data?.slice(2, data.length).map((column) => (
               <TableHead className="font-medium" key={column.column_name}>
                 {column.column_name}
@@ -158,13 +162,20 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
             ))
           ) : (
             <TableCell colSpan={3}>No data available</TableCell>
-          )}
+          )} */}
+          <TableCell className="font-medium">Update</TableCell>
+          <TableCell className="font-medium">{item}</TableCell>
+          {fieldTable?.map((item, key) => (
+            <TableCell className="font-medium" key={item + key}>
+              {item}
+            </TableCell>
+          ))}
         </TableRow>
       </TableHeader>
       <TableBody>
         {fetchedData
           ? fetchedData?.map((item, key) => (
-              <TableRow key={item + key}>
+              <TableRow key={item.id + key}>
                 {fieldTable?.map((list, key) => (
                   <TableCell className="font-medium" key={item[list] + key}>
                     {item[list]}
