@@ -1,4 +1,5 @@
 import FormProker from "./FormProker";
+import FormProfile from "./FormProfile";
 
 // interface Column {
 //   column_name: string;
@@ -47,6 +48,8 @@ export default function FormDashboard({ tableName }: { tableName: string }) {
   switch (tableName) {
     case "proker":
       return <FormProker />;
+    case "member":
+      return <FormProfile />;
   }
 
   // function onSubmit(values: z.infer<typeof formSchema>) {

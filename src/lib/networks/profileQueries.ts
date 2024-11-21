@@ -55,5 +55,10 @@ function useMemberData() {
   return data;
 }
 
-export { useMemberData };
+async function setMemberData(data: any) {
+  const { error } = await supabase.from("member").insert(data);
+  if (error) console.log(error.message);
+}
+
+export { useMemberData, setMemberData };
 export type { ColumnMember };
