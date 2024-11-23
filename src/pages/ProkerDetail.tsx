@@ -1,5 +1,6 @@
 import ProkerDetailItem from "@/components/Proker/ProkerDetailItem";
 import { supabase } from "@/lib/createClient";
+import { getProkerData } from "@/lib/networks/prokerQueries";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -9,27 +10,12 @@ export default function ProkerDetail() {
   const { nav, prokerName } = useParams();
 
   useEffect(() => {
-    // axios.get(`/data/proker.json`).then((res) => {
-    //   setProkers(res.data.data);
-    // });
-    getData();
+    fetchData();
   }, []);
 
-  async function getData() {
-    try {
-      const { data: fetchedData, error } = await supabase
-        .from("proker")
-        .select("*");
-
-      if (error) {
-        console.error("Error fetching data:", error);
-      } else {
-        console.log(fetchedData);
-        setProkers(fetchedData);
-      }
-    } catch (err) {
-      console.error("Error in fetchData:", err);
-    }
+  async function fetchData() {
+    const prokerData = await getProkerData();
+    setProkers(prokerData ?? []);
   }
 
   return (

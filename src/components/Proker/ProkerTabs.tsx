@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import NavTabs from "../NavTabs";
 import { Tabs, TabsContent, TabsTrigger } from "../ui/tabs";
 import ProkerCards from "./ProkerCards";
-import axios from "axios";
 import { getBreadCrumb } from "@/lib/networks/breadCrumbQueries";
 import useLoadWindow from "@/hooks/useLoadWindow";
-import { supabase } from "@/lib/createClient";
+import { getProkerData } from "@/lib/networks/prokerQueries";
 
 export default function ProkerTabs() {
   const [data, setData] = useState<any[]>([]);
@@ -22,27 +21,15 @@ export default function ProkerTabs() {
   ];
 
   useEffect(() => {
-    getData();
+    fetchData();
   }, []);
 
-  useLoadWindow();
-
-  async function getData() {
-    try {
-      const { data: fetchedData, error } = await supabase
-        .from("proker")
-        .select("*");
-
-      if (error) {
-        console.error("Error fetching data:", error);
-      } else {
-        console.log(fetchedData);
-        setData(fetchedData);
-      }
-    } catch (err) {
-      console.error("Error in fetchData:", err);
-    }
+  async function fetchData() {
+    const prokerData = await getProkerData();
+    setData(prokerData ?? []);
   }
+
+  useLoadWindow();
 
   return (
     <Tabs

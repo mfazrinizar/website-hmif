@@ -17,6 +17,7 @@ import {
   CarouselItem,
 } from "../ui/carousel";
 import { rndImage } from "@/lib/genImage";
+import { getProkerData } from "@/lib/networks/prokerQueries";
 
 type Props = {
   name: string;
@@ -43,13 +44,16 @@ export default function ProkerDetailItem({
   const [programs, setPrograms] = useState<any[]>([]);
 
   useEffect(() => {
-    axios.get(`/data/proker.json`).then((res) => {
-      const filteredProker = res.data.data
-        .flat()
-        .filter((e: any) => e["dinas"] === dinas && e["name"] !== name);
-      setProkerDinas(filteredProker);
-    });
+    fetchData();
   }, []);
+
+  async function fetchData() {
+    const prokerData = await getProkerData();
+    const filteredProker = prokerData
+      ?.flat()
+      .filter((e: any) => e["dinas"] === dinas && e["name"] !== name);
+    setProkerDinas(filteredProker ?? []);
+  }
 
   useEffect(() => {
     if (prokerDinas.length > 3) setPrograms(rndImage({ array: prokerDinas }));
