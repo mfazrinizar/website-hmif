@@ -23,6 +23,7 @@ import {
   useAcademicData,
 } from "@/lib/networks/academicQueries";
 import { Button } from "../ui/button";
+import { ColumnProker, useProkerData } from "@/lib/networks/prokerQueries";
 
 interface Column {
   column_name: string;
@@ -76,6 +77,16 @@ const seminarProps: (keyof ColumnSeminar)[] = [
   "open_to",
 ];
 
+const proker: (keyof ColumnProker)[] = [
+  "name",
+  "date",
+  "event_format",
+  "description",
+  "dinas",
+  "benefits",
+  "assets",
+];
+
 export default function TableDashboard({ tableName }: { tableName: string }) {
   const [fetchedData, setFetchedData] = useState<any[]>();
   const [fieldTable, setFieldTable] = useState<any[]>();
@@ -116,6 +127,8 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
         return competitionProps;
       case "academic_seminar_details":
         return seminarProps;
+      case "proker":
+        return proker;
       default:
         return null;
     }
@@ -137,6 +150,8 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
         return useAcademicData("academic_seminar");
       case "academic_seminar_details":
         return useAcademicData("academic_seminar_details");
+      case "proker":
+        return useProkerData();
       default:
         return null;
     }
