@@ -9,7 +9,11 @@ import {
 } from "@/components/ui/table";
 import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
 import { useQuery } from "@tanstack/react-query";
-import { useMemberData, ColumnMember } from "@/lib/networks/profileQueries";
+import {
+  useMemberData,
+  ColumnMember,
+  deleteMemberData,
+} from "@/lib/networks/profileQueries";
 import { useEffect, useState } from "react";
 import {
   ColumnAcademic,
@@ -18,6 +22,7 @@ import {
   ColumnSeminar,
   useAcademicData,
 } from "@/lib/networks/academicQueries";
+import { Button } from "../ui/button";
 
 interface Column {
   column_name: string;
@@ -149,6 +154,12 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
     return <div>Loading...</div>;
   }
 
+  async function onDelete(title: any, name: any) {
+    const res = await deleteMemberData(title, name);
+
+    console.log(res);
+  }
+
   return (
     <Table>
       <TableCaption>A list of your recent tables.</TableCaption>
@@ -164,7 +175,7 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
             <TableCell colSpan={3}>No data available</TableCell>
           )} */}
           <TableCell className="font-medium">Update</TableCell>
-          <TableCell className="font-medium">{item}</TableCell>
+          <TableCell className="font-medium">Delete</TableCell>
           {fieldTable?.map((item, key) => (
             <TableCell className="font-medium" key={item + key}>
               {item}
@@ -176,6 +187,19 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
         {fetchedData
           ? fetchedData?.map((item, key) => (
               <TableRow key={item.id + key}>
+                <TableCell>
+                  <Button>Update</Button>
+                </TableCell>
+                <TableCell>
+                  <Button
+                    variant={"destructive"}
+                    onClick={() =>
+                      onDelete(fieldTable![0], item[fieldTable![0]])
+                    }
+                  >
+                    Delete
+                  </Button>
+                </TableCell>
                 {fieldTable?.map((list, key) => (
                   <TableCell className="font-medium" key={item[list] + key}>
                     {item[list]}

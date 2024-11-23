@@ -33,6 +33,20 @@ async function getMemberData() {
   }
 }
 
+async function deleteMemberData(title: any, name: any) {
+  const { data } = await supabase
+    .from("member")
+    .delete()
+    .eq(title, name)
+    .select("*");
+
+  return {
+    success: true,
+    message: "Data successfully deleted!",
+    deletedRows: data,
+  };
+}
+
 function useMemberData() {
   const { data } = useQuery<ColumnMember[], Error>({
     queryKey: ["memberQuery"],
@@ -60,5 +74,5 @@ async function setMemberData(data: any) {
   if (error) console.log(error.message);
 }
 
-export { useMemberData, setMemberData };
+export { useMemberData, setMemberData, deleteMemberData };
 export type { ColumnMember };
