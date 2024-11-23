@@ -13,6 +13,7 @@ import {
 } from "../ui/form";
 import { setProkerData } from "@/lib/networks/prokerQueries";
 import { supabase } from "@/lib/createClient";
+import { useRef } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -39,6 +40,7 @@ const formSchema = z.object({
 });
 
 export default function FormProker() {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const datas: string[] = [
     "name",
     "date",
@@ -76,22 +78,30 @@ export default function FormProker() {
           return indexImg++;
         }
       }
+      await Promise.all(
+        assets.map(async (file: any) => {
+          const fileName =
+            `${values.name
+              .toLowerCase()
+              .replace(/[^a-z\s]/g, "")
+              .split(" ")
+              .join("_")}` + getIndexImg();
+          const { data: uploadData, error: uploadError } =
+            await supabase.storage
+              .from(`img/proker/${values.dinas.toLowerCase()}`)
+              .upload(fileName, file);
 
-      assets.map(async (file: any) => {
-        const fileName =
-          `${values.name.toLowerCase().split(" ").join("_")}` + getIndexImg();
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from(`img/proker/${values.dinas.toLowerCase()}`)
-          .upload(fileName, file);
+          if (uploadError) {
+            throw new Error(
+              `Gagal upload foto ${values.name}: ${uploadError.message}`,
+            );
+          }
 
-        if (uploadError) {
-          throw new Error(
-            `Gagal upload foto ${values.name}: ${uploadError.message}`,
+          pathImage.push(
+            `/img/proker/${values.dinas.toLowerCase()}/${fileName}`,
           );
-        }
-
-        pathImage.push(`/img/proker/${values.dinas.toLowerCase()}/${fileName}`);
-      });
+        }),
+      );
 
       const processedValues = {
         ...values,
@@ -106,6 +116,10 @@ export default function FormProker() {
       await setProkerData(processedValues);
       alert("Data berhasil disimpan!");
       form.reset();
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
     } catch (error) {
       console.error(error);
     }
@@ -149,6 +163,7 @@ export default function FormProker() {
                         <FormLabel className="text-start">{data}</FormLabel>
                         <FormControl>
                           <Input
+                            ref={fileInputRef}
                             type="file"
                             multiple
                             accept="image/*"
