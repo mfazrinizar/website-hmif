@@ -163,13 +163,13 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
           ) : (
             <TableCell colSpan={3}>No data available</TableCell>
           )} */}
-          <TableCell className="font-medium">Update</TableCell>
+          {/* <TableCell className="font-medium">Update</TableCell>
           <TableCell className="font-medium">{item}</TableCell>
           {fieldTable?.map((item, key) => (
             <TableCell className="font-medium" key={item + key}>
               {item}
             </TableCell>
-          ))}
+          ))} */}
         </TableRow>
       </TableHeader>
       <TableBody>

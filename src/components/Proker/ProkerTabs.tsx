@@ -22,9 +22,6 @@ export default function ProkerTabs() {
   ];
 
   useEffect(() => {
-    // axios.get(`/data/proker.json`).then((res) => {
-    //   setData(res.data.data);
-    // });
     getData();
   }, []);
 

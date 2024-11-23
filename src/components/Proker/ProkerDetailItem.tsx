@@ -21,7 +21,7 @@ import { rndImage } from "@/lib/genImage";
 type Props = {
   name: string;
   nav: any;
-  eventFormat: string;
+  event_format: string;
   dinas: string;
   date: string;
   description: string;
@@ -32,7 +32,7 @@ type Props = {
 export default function ProkerDetailItem({
   name,
   nav,
-  eventFormat,
+  event_format,
   dinas,
   date,
   description,
@@ -80,7 +80,7 @@ export default function ProkerDetailItem({
 
       <div className="flex flex-col gap-4">
         <p className="inline-block w-fit rounded bg-primary px-3 py-1 text-white">
-          {eventFormat}
+          {event_format}
         </p>
         <h1 className="text-4xl">{name}</h1>
         <div className="flex gap-2">
@@ -96,7 +96,7 @@ export default function ProkerDetailItem({
                   .map((asset: any, key: number) => (
                     <CarouselItem key={key} className="max-w-full">
                       <img
-                        src={`/img/proker/${dinas}/${asset}`}
+                        src={import.meta.env.VITE_SUPABASE_BUCKET_URL + asset}
                         alt={asset}
                         className="h-[500px] w-full object-cover"
                       />
