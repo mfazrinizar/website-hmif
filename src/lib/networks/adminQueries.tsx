@@ -8,7 +8,14 @@ async function signInUser({ email, password }: any) {
 
   if (error) throw new Error(error.message);
 
-  if (data) return data;
+  const token = data.session.access_token;
+
+  if (token) {
+    document.cookie = `supabase_token=${data.session?.access_token}; Max-Age=3600; Path=/; Secure; HttpOnly; SameSite=Strict`;
+    return token;
+  }
+
+  throw new Error("Token not Found!!!");
 }
 
 async function getDataUser() {

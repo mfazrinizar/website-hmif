@@ -104,7 +104,6 @@ export default function FormProker() {
 
       console.log(processedValues);
       await setProkerData(processedValues);
-
       alert("Data berhasil disimpan!");
       form.reset();
     } catch (error) {
@@ -118,7 +117,7 @@ export default function FormProker() {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             {datas.map((data: any) => {
-              if (data == "benefits") {
+              if (data == "benefits" && data == "assets") {
                 return (
                   <FormField
                     key={data.id}
