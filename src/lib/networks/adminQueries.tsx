@@ -1,4 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import { supabase } from "../createClient";
+import { ColumnMember } from "./profileQueries";
 
 async function signInUser({ email, password }: any) {
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -26,6 +28,49 @@ async function getDataUser() {
   return user;
 }
 
+async function getDataByName(tableName: any, name: any) {
+  try {
+    const { data: fetchedData, error } = await supabase
+      .from(tableName)
+      .select("*")
+      .eq("name", name);
+
+    if (error) {
+      return null;
+    }
+
+    if (!fetchedData) {
+      return null;
+    }
+
+    return fetchedData;
+  } catch (err) {
+    return null;
+  }
+}
+
+function useDataByName(tableName: any, name: any) {
+  const { data } = useQuery<ColumnMember[], Error>({
+    queryKey: ["memberQuery"],
+    queryFn: () =>
+      new Promise<ColumnMember[]>((resolve, reject) => {
+        getDataByName(tableName, name)
+          .then((res) => {
+            if (res) {
+              resolve(res);
+            } else {
+              reject("No data found");
+            }
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      }),
+  });
+
+  return data;
+}
+
 async function signOutUser() {
   const { error } = await supabase.auth.signOut();
   if (error) throw new Error(error.message);
@@ -45,4 +90,4 @@ async function deleteData(tableName: any, title: any, name: any) {
   };
 }
 
-export { signInUser, getDataUser, signOutUser, deleteData };
+export { signInUser, getDataUser, signOutUser, deleteData, useDataByName };

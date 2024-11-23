@@ -3,17 +3,12 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
 import { useQuery } from "@tanstack/react-query";
-import {
-  useMemberData,
-  ColumnMember,
-  deleteMemberData,
-} from "@/lib/networks/profileQueries";
+import { useMemberData, ColumnMember } from "@/lib/networks/profileQueries";
 import { useEffect, useState } from "react";
 import {
   ColumnAcademic,
@@ -23,6 +18,9 @@ import {
   useAcademicData,
 } from "@/lib/networks/academicQueries";
 import { Button } from "../ui/button";
+import { useDashboardContext } from "@/lib/context/dashboardContext";
+import { deleteData } from "@/lib/networks/adminQueries";
+import { toast } from "sonner";
 import { ColumnProker, useProkerData } from "@/lib/networks/prokerQueries";
 
 interface Column {
@@ -90,6 +88,7 @@ const proker: (keyof ColumnProker)[] = [
 export default function TableDashboard({ tableName }: { tableName: string }) {
   const [fetchedData, setFetchedData] = useState<any[]>();
   const [fieldTable, setFieldTable] = useState<any[]>();
+  const { formData, setFormData } = useDashboardContext();
 
   const { data } = useQuery<Column[], Error>({
     queryKey: [tableName],
@@ -170,9 +169,13 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
   }
 
   async function onDelete(title: any, name: any) {
-    const res = await deleteMemberData(title, name);
-
+    const res = await deleteData(tableName, title, name);
     console.log(res);
+    toast("data berhasil dihapus !");
+  }
+
+  function onUpdate(item: any) {
+    setFormData(item);
   }
 
   return (
@@ -203,7 +206,7 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
           ? fetchedData?.map((item, key) => (
               <TableRow key={item.id + key}>
                 <TableCell>
-                  <Button>Update</Button>
+                  <Button onClick={() => onUpdate(item)}>Update</Button>
                 </TableCell>
                 <TableCell>
                   <Button

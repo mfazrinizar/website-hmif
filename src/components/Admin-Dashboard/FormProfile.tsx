@@ -11,10 +11,12 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+import { useDataByName } from "@/lib/networks/adminQueries";
 import { setMemberData } from "@/lib/networks/profileQueries";
 import { useEffect, useState } from "react";
 import { ComboBox } from "../ui/combobox";
 import { toast } from "sonner";
+import { useDashboardContext } from "@/lib/context/dashboardContext";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -57,6 +59,8 @@ export default function FormProfile() {
     "instagram",
   ];
 
+  const { formData }: any = useDashboardContext();
+
   const [positionSelect, setPositionSelect] = useState<string | undefined>();
   const [divisionSelect, setDivisionSelect] = useState<string | undefined>();
 
@@ -79,6 +83,11 @@ export default function FormProfile() {
       position_id: positionSelect,
       division_id: divisionSelect,
     };
+
+    const data = useDataByName("member", values.name);
+
+    console.log(data);
+
     await setMemberData(processedValues);
 
     toast("Data Telah Terkirim");
@@ -86,6 +95,18 @@ export default function FormProfile() {
     setPositionSelect("");
     setDivisionSelect("");
   }
+
+  useEffect(() => {
+    if (formData) {
+      form.reset({
+        name: formData.name,
+        instagram: formData.instagram,
+        email: formData.email,
+      });
+    }
+    setPositionSelect(formData ? formData.position_id : "");
+    setDivisionSelect(formData ? formData.division_id : "");
+  }, [formData]);
 
   return (
     <section className="flex items-center justify-center">
