@@ -45,6 +45,7 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
                 description={proker["description"]}
                 dinas={proker["dinas"]}
                 nav={nav}
+                assets={proker["assets"]}
               />
             ))
         : proker
@@ -58,6 +59,7 @@ export default function ProkerCards({ dinas, item, nav }: Props) {
                 description={proker["description"]}
                 dinas={proker["dinas"]}
                 nav={nav}
+                assets={proker["assets"]}
               />
             ))}
 

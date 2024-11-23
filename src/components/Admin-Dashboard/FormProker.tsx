@@ -12,6 +12,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { setProkerData } from "@/lib/networks/prokerQueries";
+import { supabase } from "@/lib/createClient";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -32,9 +33,9 @@ const formSchema = z.object({
   benefits: z.string().min(2, {
     message: "Benefits must be at least 2 characters.",
   }),
-  assets: z.string().min(2, {
-    message: "Assets must be at least 2 characters.",
-  }),
+  assets: z
+    .array(z.instanceof(File))
+    .nonempty("Harap unggah minimal satu foto"),
 });
 
 export default function FormProker() {
@@ -57,23 +58,58 @@ export default function FormProker() {
       description: "",
       dinas: "",
       benefits: "",
-      assets: "",
+      assets: [],
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const processedValues = {
-      ...values,
-      benefits: values.benefits
-        ? values.benefits.split(",").map((item) => item.trim())
-        : [],
-      assets: values.assets
-        ? values.assets.split(",").map((item) => item.trim())
-        : [],
-    };
+    try {
+      const { assets } = values;
+      let indexImg = 0;
+      const pathImage: any = [];
 
-    console.log(processedValues);
-    await setProkerData(processedValues);
+      function getIndexImg() {
+        if (indexImg == 0) {
+          indexImg++;
+          return "";
+        } else {
+          return indexImg++;
+        }
+      }
+
+      assets.map(async (file: any) => {
+        const fileName =
+          `${values.name.toLowerCase().split(" ").join("_")}` + getIndexImg();
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from(`img/proker/${values.dinas.toLowerCase()}`)
+          .upload(fileName, file);
+
+        if (uploadError) {
+          throw new Error(
+            `Gagal upload foto ${values.name}: ${uploadError.message}`,
+          );
+        }
+
+        pathImage.push(`/img/proker/${values.dinas.toLowerCase()}/${fileName}`);
+      });
+
+      const processedValues = {
+        ...values,
+        dinas: values.dinas.toLowerCase(),
+        benefits: values.benefits
+          ? values.benefits.split(",").map((item) => item.trim())
+          : [],
+        assets: pathImage,
+      };
+
+      console.log(processedValues);
+      await setProkerData(processedValues);
+
+      alert("Data berhasil disimpan!");
+      form.reset();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -82,7 +118,7 @@ export default function FormProker() {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             {datas.map((data: any) => {
-              if (data == "benefits" && data == "assets") {
+              if (data == "benefits") {
                 return (
                   <FormField
                     key={data.id}
@@ -96,6 +132,34 @@ export default function FormProker() {
                             type=""
                             placeholder={`${data} 1, ${data} 2, ...`}
                             {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                );
+              } else if (data == "assets") {
+                return (
+                  <FormField
+                    key={data.id}
+                    control={form.control}
+                    name={data}
+                    render={({ field }) => (
+                      <FormItem className="flex flex-col justify-start">
+                        <FormLabel className="text-start">{data}</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="file"
+                            multiple
+                            accept="image/*"
+                            placeholder={data}
+                            onChange={(e) => {
+                              const files = e.target.files
+                                ? Array.from(e.target.files)
+                                : [];
+                              field.onChange(files);
+                            }}
                           />
                         </FormControl>
                         <FormMessage />

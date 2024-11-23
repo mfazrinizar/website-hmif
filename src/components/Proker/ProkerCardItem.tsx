@@ -9,6 +9,7 @@ type Props = {
   description: string;
   dinas: string;
   nav: string;
+  assets: any;
 };
 
 export default function ProkerCardItem({
@@ -18,6 +19,7 @@ export default function ProkerCardItem({
   description,
   dinas,
   nav,
+  assets,
 }: Props) {
   const navigate = useNavigate();
 
@@ -26,8 +28,10 @@ export default function ProkerCardItem({
     navigate(`/proker/${nav.toLowerCase()}/${formattedTitle}`); // Gunakan title sebagai bagian dari URL
   };
 
-  const formattedImg = name.split(" ").join("%20");
-  console.log(dinas, "/", formattedImg);
+  // const formattedImg = name.split(" ").join("%20");
+  // console.log(dinas, "/", formattedImg);
+
+  console.log(import.meta.env.VITE_SUPABASE_BUCKET_URL + assets[0]);
 
   return (
     <div className="mb-7 flex h-fit w-full rounded-2xl border border-black p-4 md:h-auto md:p-7 lg:w-11/12">
@@ -35,7 +39,7 @@ export default function ProkerCardItem({
         <div
           className={`mb-4 h-52 w-full rounded-lg bg-cover bg-center md:mb-0 md:w-1/3 lg:h-80 lg:w-1/4`}
           style={{
-            backgroundImage: `url('/img/proker/${dinas}/${name}.png')`,
+            backgroundImage: `url(${import.meta.env.VITE_SUPABASE_BUCKET_URL + assets[0]})`,
           }}
         ></div>
         <div className="h- flex w-full flex-col items-start justify-between gap-2 md:w-2/3 md:pl-8 lg:h-80 lg:w-3/4 lg:pl-14">
