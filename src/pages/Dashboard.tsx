@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { signOutUser } from "@/lib/networks/adminQueries";
 import { Menu } from "lucide-react";
 import { toast } from "sonner";
+import { DashboardProvider } from "@/lib/context/dashboardContext";
 
 const pages = [
   "academic_competition",
@@ -112,8 +113,10 @@ export default function Dashboard() {
             key={key + item}
             className="relative w-full px-10 md:left-1/3 md:w-2/3"
           >
-            <FormDashboard tableName={item} />
-            <TableDashboard tableName={item} />
+            <DashboardProvider>
+              <FormDashboard tableName={item} />
+              <TableDashboard tableName={item} />
+            </DashboardProvider>
           </TabsContent>
         ))}
       </Tabs>

@@ -31,4 +31,18 @@ async function signOutUser() {
   if (error) throw new Error(error.message);
 }
 
-export { signInUser, getDataUser, signOutUser };
+async function deleteData(tableName: any, title: any, name: any) {
+  const { data } = await supabase
+    .from(tableName)
+    .delete()
+    .eq(title, name)
+    .select("*");
+
+  return {
+    success: true,
+    message: "Data successfully deleted!",
+    deletedRows: data,
+  };
+}
+
+export { signInUser, getDataUser, signOutUser, deleteData };

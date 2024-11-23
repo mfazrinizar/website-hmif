@@ -7,6 +7,7 @@ interface ColumnMember {
   email: string | null;
   position_id: string | null;
   division_id: string | null;
+  assets: string | null;
 }
 
 async function getMemberData() {
@@ -14,21 +15,38 @@ async function getMemberData() {
     const { data: fetchedData, error } = await supabase
       .from("member")
       .select("*");
-    // .select("name, email, instagram ,position_id, division_id");
 
     if (error) {
-      console.error("Error fetching member data:", error);
       return null;
     }
 
     if (!fetchedData) {
-      console.warn("No member data found.");
       return null;
     }
 
     return fetchedData;
   } catch (err) {
-    console.error("Unexpected error:", err);
+    return null;
+  }
+}
+
+async function getMemberDataByName(name: any) {
+  try {
+    const { data: fetchedData, error } = await supabase
+      .from("member")
+      .select("*")
+      .eq("name", name);
+
+    if (error) {
+      return null;
+    }
+
+    if (!fetchedData) {
+      return null;
+    }
+
+    return fetchedData;
+  } catch (err) {
     return null;
   }
 }
