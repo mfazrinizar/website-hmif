@@ -94,83 +94,73 @@ export default function FormProfile() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      if (formData) {
-        const processedValues = {
-          ...values,
-          position_id: positionSelect!.value,
-          division_id: divisionSelect!.value,
-        };
-
-        const { data, error } = await updateMemberData(processedValues);
-        console.log(data, error);
-
-        toast("Data Telah Terkirim");
-        form.reset();
-        setPositionSelect({ value: "", label: "" });
-        setDivisionSelect({ value: "", label: "" });
-        if (fileInputRef.current) {
-          fileInputRef.current.value = "";
-        }
-      } else {
-        const { assets } = values;
-        let indexImg = 0;
-        const pathImage: any = [];
-
-        function getIndexImg() {
-          if (indexImg == 0) {
-            indexImg++;
-            return "";
-          } else {
-            return indexImg++;
-          }
-        }
-
-        const label = divisionSelect!.label;
-
-        await Promise.all(
-          assets.map(async (file: any) => {
-            const fileName =
-              `${values.name
-                .toLowerCase()
-                .replace(/[^a-z\s]/g, "")
-                .split(" ")
-                .join("_")}` + getIndexImg();
-            const { data: uploadData, error: uploadError } =
-              await supabase.storage
-                .from(`img/profile/${label}`)
-                .upload(fileName, file);
-
-            if (uploadError) {
-              throw new Error(
-                `Gagal upload foto ${values.name}: ${uploadError.message}`,
-              );
-            }
-
-            pathImage.push(`/img/profile/${label}/${fileName}`);
-          }),
-        );
-
-        const processedValues = {
-          ...values,
-          position_id: positionSelect!.value,
-          division_id: divisionSelect!.value,
-          assets: pathImage,
-        };
-
-        await setMemberData(processedValues);
-
-        toast("Data Telah Terkirim");
-        form.reset();
-        setPositionSelect({ value: "", label: "" });
-        setDivisionSelect({ value: "", label: "" });
-        if (fileInputRef.current) {
-          fileInputRef.current.value = "";
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    //   if (formData) {
+    //     const processedValues = {
+    //       ...values,
+    //       position_id: positionSelect!.value,
+    //       division_id: divisionSelect!.value,
+    //     };
+    //     const { data, error } = await updateMemberData(processedValues);
+    //     console.log(data, error);
+    //     toast("Data Telah Terkirim");
+    //     form.reset();
+    //     setPositionSelect({ value: "", label: "" });
+    //     setDivisionSelect({ value: "", label: "" });
+    //     if (fileInputRef.current) {
+    //       fileInputRef.current.value = "";
+    //     }
+    //   } else {
+    //     const { assets } = values;
+    //     let indexImg = 0;
+    //     const pathImage: any = [];
+    //     function getIndexImg() {
+    //       if (indexImg == 0) {
+    //         indexImg++;
+    //         return "";
+    //       } else {
+    //         return indexImg++;
+    //       }
+    //     }
+    //     const label = divisionSelect!.label;
+    //     await Promise.all(
+    //       assets.map(async (file: any) => {
+    //         const fileName =
+    //           `${values.name
+    //             .toLowerCase()
+    //             .replace(/[^a-z\s]/g, "")
+    //             .split(" ")
+    //             .join("_")}` + getIndexImg();
+    //         const { data: uploadData, error: uploadError } =
+    //           await supabase.storage
+    //             .from(`img/profile/${label}`)
+    //             .upload(fileName, file);
+    //         if (uploadError) {
+    //           throw new Error(
+    //             `Gagal upload foto ${values.name}: ${uploadError.message}`,
+    //           );
+    //         }
+    //         pathImage.push(`/img/profile/${label}/${fileName}`);
+    //       }),
+    //     );
+    //     const processedValues = {
+    //       ...values,
+    //       position_id: positionSelect!.value,
+    //       division_id: divisionSelect!.value,
+    //       assets: pathImage,
+    //     };
+    //     await setMemberData(processedValues);
+    //     toast("Data Telah Terkirim");
+    //     form.reset();
+    //     setPositionSelect({ value: "", label: "" });
+    //     setDivisionSelect({ value: "", label: "" });
+    //     if (fileInputRef.current) {
+    //       fileInputRef.current.value = "";
+    //     }
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   }
 
   function searchLabel(value: any) {
@@ -178,14 +168,14 @@ export default function FormProfile() {
   }
 
   useEffect(() => {
-    if (formData) {
-      form.reset({
-        name: formData.name,
-        instagram: formData.instagram,
-        email: formData.email,
-        assets: formData.assets,
-      });
-    }
+    // if (formData) {
+    //   form.reset({
+    //     name: formData.name,
+    //     instagram: formData.instagram,
+    //     email: formData.email,
+    //     assets: formData.assets,
+    //   });
+    // }
 
     setPositionSelect({
       value: formData ? formData.position_id : "",

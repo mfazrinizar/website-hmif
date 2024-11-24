@@ -28,8 +28,10 @@ async function getDataUser() {
   return user;
 }
 
-async function deleteImage(tableName: any, name: any) {
-  const { data, error } = await supabase.storage.from(tableName).remove([name]);
+async function deleteImage() {
+  const { data, error } = await supabase.storage
+    .from("test")
+    .remove(["halo/foto1.jpeg"]);
 
   return { data, error };
 }

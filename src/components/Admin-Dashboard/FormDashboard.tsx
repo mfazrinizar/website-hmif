@@ -1,5 +1,6 @@
 import FormProker from "./FormProker";
 import FormProfile from "./FormProfile";
+import FormAcademic from "./FormAcademic";
 
 // interface Column {
 //   column_name: string;
@@ -32,6 +33,7 @@ import FormProfile from "./FormProfile";
 // });
 
 export default function FormDashboard({ tableName }: { tableName: string }) {
+  console.log(tableName);
   // const form = useForm<z.infer<typeof formSchema>>({
   //   resolver: zodResolver(formSchema),
   //   defaultValues: {
@@ -50,6 +52,8 @@ export default function FormDashboard({ tableName }: { tableName: string }) {
       return <FormProker />;
     case "member":
       return <FormProfile />;
+    case "academic_competition":
+      return <FormAcademic />;
   }
 
   // function onSubmit(values: z.infer<typeof formSchema>) {

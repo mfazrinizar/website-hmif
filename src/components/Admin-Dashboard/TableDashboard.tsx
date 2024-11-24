@@ -8,7 +8,11 @@ import {
 } from "@/components/ui/table";
 import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
 import { useQuery } from "@tanstack/react-query";
-import { useMemberData, ColumnMember } from "@/lib/networks/profileQueries";
+import {
+  useMemberData,
+  ColumnMember,
+  listBucket,
+} from "@/lib/networks/profileQueries";
 import { useEffect, useState } from "react";
 import {
   ColumnAcademic,
@@ -22,6 +26,7 @@ import { useDashboardContext } from "@/lib/context/dashboardContext";
 import { deleteData } from "@/lib/networks/adminQueries";
 import { toast } from "sonner";
 import { ColumnProker, useProkerData } from "@/lib/networks/prokerQueries";
+import { deleteImage } from "@/lib/networks/adminQueries";
 
 interface Column {
   column_name: string;
@@ -170,10 +175,16 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
   }
 
   async function onDelete(title: any, name: any) {
-    const res = await deleteData(tableName, title, name);
+    // const res = await deleteData(tableName, title, name);
+
+    // console.log(res);
+    // toast("data berhasil dihapus !");
+
+    // const res = await listBucket();
+
+    const res = await deleteImage();
 
     console.log(res);
-    toast("data berhasil dihapus !");
   }
 
   function onUpdate(item: any) {

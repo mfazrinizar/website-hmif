@@ -99,12 +99,22 @@ function useMemberData() {
   return data;
 }
 
-async function updateImage() {}
+async function listBucket() {
+  const { data, error } = await supabase.storage.from("test").list("halo");
+
+  return { data, error };
+}
 
 async function setMemberData(data: any) {
   const { error } = await supabase.from("member").insert(data);
   if (error) console.log(error.message);
 }
 
-export { useMemberData, setMemberData, deleteMemberData, updateMemberData };
+export {
+  useMemberData,
+  setMemberData,
+  deleteMemberData,
+  updateMemberData,
+  listBucket,
+};
 export type { ColumnMember };
