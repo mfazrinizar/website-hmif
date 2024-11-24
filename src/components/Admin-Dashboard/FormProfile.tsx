@@ -12,7 +12,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { useDataByName } from "@/lib/networks/adminQueries";
-import { setMemberData } from "@/lib/networks/profileQueries";
+import { setMemberData, updateMemberData } from "@/lib/networks/profileQueries";
 import { useEffect, useRef, useState } from "react";
 import { ComboBox } from "../ui/combobox";
 import { toast } from "sonner";
@@ -71,8 +71,12 @@ export default function FormProfile() {
 
   const { formData }: any = useDashboardContext();
 
-  const [positionSelect, setPositionSelect] = useState<any | undefined>();
-  const [divisionSelect, setDivisionSelect] = useState<any | undefined>();
+  const [positionSelect, setPositionSelect] = useState<
+    { value: any; label: any } | undefined
+  >({ value: "", label: "" });
+  const [divisionSelect, setDivisionSelect] = useState<
+    { value: any; label: any } | undefined
+  >({ value: "", label: "" });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -84,67 +88,87 @@ export default function FormProfile() {
     },
   });
 
-  useEffect(() => {
-    console.log(divisionSelect?.value);
-  }, [divisionSelect]);
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const { assets } = values;
-      let indexImg = 0;
-      const pathImage: any = [];
+      if (formData) {
+        const processedValues = {
+          ...values,
+          position_id: positionSelect!.value,
+          division_id: divisionSelect!.value,
+        };
 
-      function getIndexImg() {
-        if (indexImg == 0) {
-          indexImg++;
-          return "";
-        } else {
-          return indexImg++;
+        const { data, error } = await updateMemberData(processedValues);
+        console.log(data, error);
+
+        toast("Data Telah Terkirim");
+        form.reset();
+        setPositionSelect({ value: "", label: "" });
+        setDivisionSelect({ value: "", label: "" });
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
         }
-      }
-      await Promise.all(
-        assets.map(async (file: any) => {
-          const fileName =
-            `${values.name
-              .toLowerCase()
-              .replace(/[^a-z\s]/g, "")
-              .split(" ")
-              .join("_")}` + getIndexImg();
-          const { data: uploadData, error: uploadError } =
-            await supabase.storage
-              .from(`img/profile/${divisionSelect.label || ""}`)
-              .upload(fileName, file);
+      } else {
+        const { assets } = values;
+        let indexImg = 0;
+        const pathImage: any = [];
 
-          if (uploadError) {
-            throw new Error(
-              `Gagal upload foto ${values.name}: ${uploadError.message}`,
-            );
+        function getIndexImg() {
+          if (indexImg == 0) {
+            indexImg++;
+            return "";
+          } else {
+            return indexImg++;
           }
+        }
 
-          pathImage.push(
-            `/img/profile/${divisionSelect.label || ""}/${fileName}`,
-          );
-        }),
-      );
+        const label = divisionSelect!.label;
 
-      const processedValues = {
-        ...values,
-        position_id: positionSelect.value || "",
-        division_id: divisionSelect.value || "",
-      };
+        await Promise.all(
+          assets.map(async (file: any) => {
+            const fileName =
+              `${values.name
+                .toLowerCase()
+                .replace(/[^a-z\s]/g, "")
+                .split(" ")
+                .join("_")}` + getIndexImg();
+            const { data: uploadData, error: uploadError } =
+              await supabase.storage
+                .from(`img/profile/${label}`)
+                .upload(fileName, file);
 
-      await setMemberData(processedValues);
+            if (uploadError) {
+              throw new Error(
+                `Gagal upload foto ${values.name}: ${uploadError.message}`,
+              );
+            }
 
-      toast("Data Telah Terkirim");
-      form.reset();
-      setPositionSelect("");
-      setDivisionSelect("");
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
+            pathImage.push(`/img/profile/${label}/${fileName}`);
+          }),
+        );
+
+        const processedValues = {
+          ...values,
+          position_id: positionSelect!.value,
+          division_id: divisionSelect!.value,
+        };
+
+        await setMemberData(processedValues);
+
+        toast("Data Telah Terkirim");
+        form.reset();
+        setPositionSelect({ value: "", label: "" });
+        setDivisionSelect({ value: "", label: "" });
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
       }
     } catch (error) {
       console.error(error);
     }
+  }
+
+  function searchLabel(value: any) {
+    division_framework.filter((item) => item.value === value);
   }
 
   useEffect(() => {
@@ -156,8 +180,17 @@ export default function FormProfile() {
         assets: formData.assets,
       });
     }
-    setPositionSelect(formData ? formData.position_id : "");
-    setDivisionSelect(formData ? formData.division_id : "");
+
+    setPositionSelect({
+      value: formData ? formData.position_id : "",
+      label: searchLabel(formData ? formData.position_id : ""),
+    });
+    setDivisionSelect({
+      value: formData ? formData.division_id : "",
+      label: searchLabel(formData ? formData.division_id : ""),
+    });
+
+    console.log(formData);
   }, [formData]);
 
   return (
@@ -174,7 +207,7 @@ export default function FormProfile() {
                     </label>
                     <ComboBox
                       framework={position_framework}
-                      value={positionSelect?.value}
+                      value={positionSelect}
                       setValue={setPositionSelect}
                       id="position"
                     />
@@ -186,7 +219,7 @@ export default function FormProfile() {
                     </label>
                     <ComboBox
                       framework={division_framework}
-                      value={divisionSelect?.value}
+                      value={divisionSelect}
                       setValue={setDivisionSelect}
                       id="division"
                     />

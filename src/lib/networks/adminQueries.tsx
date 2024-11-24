@@ -28,6 +28,12 @@ async function getDataUser() {
   return user;
 }
 
+async function deleteImage(tableName: any, name: any) {
+  const { data, error } = await supabase.storage.from(tableName).remove([name]);
+
+  return { data, error };
+}
+
 async function getDataByName(tableName: any, name: any) {
   try {
     const { data: fetchedData, error } = await supabase
@@ -90,4 +96,11 @@ async function deleteData(tableName: any, title: any, name: any) {
   };
 }
 
-export { signInUser, getDataUser, signOutUser, deleteData, useDataByName };
+export {
+  signInUser,
+  getDataUser,
+  signOutUser,
+  deleteData,
+  useDataByName,
+  deleteImage,
+};

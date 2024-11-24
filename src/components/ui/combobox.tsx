@@ -21,13 +21,20 @@ import {
 export function ComboBox({ framework, value, setValue, id }: any) {
   const [open, setOpen] = React.useState(false);
 
+  function searchLabel(value: any) {
+    const data = framework.filter((item: any) => item.value === value);
+    console.log(data[0].label);
+    return data[0].label;
+  }
+
   return (
     <Accordion type="single" collapsible id={id}>
       <AccordionItem value="item-1">
         <AccordionTrigger className="text-sm">
           {value
-            ? framework.find((framework: any) => framework.value === value)
-                ?.label
+            ? framework.find(
+                (framework: any) => framework.value === value.value,
+              )?.label
             : "Pilih Kategori"}
         </AccordionTrigger>
         <AccordionContent>
@@ -40,7 +47,11 @@ export function ComboBox({ framework, value, setValue, id }: any) {
                     key={framework.value + framework.index}
                     value={framework.value}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : framework);
+                      console.log(value);
+                      setValue({
+                        value: currentValue === value ? "" : framework.value,
+                        label: searchLabel(framework.value),
+                      });
                       setOpen(false);
                     }}
                     className="flex gap-4"
