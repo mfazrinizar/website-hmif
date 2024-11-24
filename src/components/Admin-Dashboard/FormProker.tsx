@@ -14,6 +14,7 @@ import {
 import { setProkerData } from "@/lib/networks/prokerQueries";
 import { supabase } from "@/lib/createClient";
 import { useRef } from "react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -112,9 +113,9 @@ export default function FormProker() {
         assets: pathImage,
       };
 
-      console.log(processedValues);
+      // console.log(processedValues);
       await setProkerData(processedValues);
-      alert("Data berhasil disimpan!");
+      toast("Data berhasil disimpan!");
       form.reset();
 
       if (fileInputRef.current) {
@@ -122,6 +123,7 @@ export default function FormProker() {
       }
     } catch (error) {
       console.error(error);
+      toast("Gagal Menambahkan data!");
     }
   }
 
