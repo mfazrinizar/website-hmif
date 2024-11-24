@@ -96,13 +96,13 @@ export default function ProkerDetailItem({
             <Carousel>
               <CarouselContent>
                 {assets
-                  .filter((e: any, key: any) => key >= 1)
+                  // .filter((e: any, key: any) => key >= 0)
                   .map((asset: any, key: number) => (
                     <CarouselItem key={key} className="max-w-full">
                       <img
                         src={import.meta.env.VITE_SUPABASE_BUCKET_URL + asset}
                         alt={asset}
-                        className="h-[500px] w-full object-cover"
+                        className="center h-[500px] w-full bg-center object-cover"
                       />
                     </CarouselItem>
                   ))}
@@ -147,7 +147,7 @@ export default function ProkerDetailItem({
                 .map((item: any, key: any) => (
                   <ProgramCard
                     key={key}
-                    eventFormat={item["eventFormat"]}
+                    eventFormat={item["event_format"]}
                     name={item["name"]}
                     date={item["date"]}
                     description={item["description"]}
