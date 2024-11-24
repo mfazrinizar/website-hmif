@@ -65,6 +65,17 @@ async function deleteMemberData(title: any, name: any) {
   };
 }
 
+async function updateMemberData(item: any) {
+  console.log(item);
+
+  const { data, error } = await supabase
+    .from("member")
+    .update({ instagram: item.instagram })
+    .eq("name", "widys");
+
+  return { data, error };
+}
+
 function useMemberData() {
   const { data } = useQuery<ColumnMember[], Error>({
     queryKey: ["memberQuery"],
@@ -87,10 +98,12 @@ function useMemberData() {
   return data;
 }
 
+async function updateImage() {}
+
 async function setMemberData(data: any) {
   const { error } = await supabase.from("member").insert(data);
   if (error) console.log(error.message);
 }
 
-export { useMemberData, setMemberData, deleteMemberData };
+export { useMemberData, setMemberData, deleteMemberData, updateMemberData };
 export type { ColumnMember };

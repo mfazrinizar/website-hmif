@@ -13,8 +13,9 @@ import {
 } from "../ui/form";
 import { setProkerData } from "@/lib/networks/prokerQueries";
 import { supabase } from "@/lib/createClient";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { toast } from "sonner";
+import { useDashboardContext } from "@/lib/context/dashboardContext";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -52,6 +53,8 @@ export default function FormProker() {
     "assets",
   ];
 
+  const { formData } = useDashboardContext();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -79,6 +82,7 @@ export default function FormProker() {
           return indexImg++;
         }
       }
+
       await Promise.all(
         assets.map(async (file: any) => {
           const fileName =
@@ -126,6 +130,20 @@ export default function FormProker() {
       toast("Gagal Menambahkan data!");
     }
   }
+
+  useEffect(() => {
+    if (formData) {
+      form.reset({
+        name: formData.name,
+        date: formData.date,
+        event_format: formData.event_format,
+        description: formData.description,
+        dinas: formData.dinas,
+        benefits: formData.benefits.join(", "),
+        assets: formData.assets,
+      });
+    }
+  }, [formData]);
 
   return (
     <section className="flex items-center justify-center">
