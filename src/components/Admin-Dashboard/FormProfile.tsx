@@ -150,6 +150,7 @@ export default function FormProfile() {
           ...values,
           position_id: positionSelect!.value,
           division_id: divisionSelect!.value,
+          assets: pathImage,
         };
 
         await setMemberData(processedValues);
