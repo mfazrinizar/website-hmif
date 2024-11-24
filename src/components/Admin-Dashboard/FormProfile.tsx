@@ -13,15 +13,19 @@ import {
 } from "../ui/form";
 import { useDataByName } from "@/lib/networks/adminQueries";
 import { setMemberData } from "@/lib/networks/profileQueries";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ComboBox } from "../ui/combobox";
 import { toast } from "sonner";
 import { useDashboardContext } from "@/lib/context/dashboardContext";
+import { supabase } from "@/lib/createClient";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
   email: z.string().email(),
   instagram: z.string().min(2).max(50),
+  assets: z
+    .array(z.instanceof(File))
+    .nonempty("Harap unggah minimal satu foto"),
 });
 
 const position_framework = [
@@ -48,21 +52,27 @@ const division_framework = [
     value: "65705216-a957-4734-8af5-c149215f638d",
     label: "inti",
   },
+  {
+    value: "a095d168-808c-4f29-b564-8acafb037203",
+    label: "kominfo",
+  },
 ];
 
 export default function FormProfile() {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const datas: string[] = [
     "name",
     "email",
     "position_id",
     "division_id",
     "instagram",
+    "assets",
   ];
 
   const { formData }: any = useDashboardContext();
 
-  const [positionSelect, setPositionSelect] = useState<string | undefined>();
-  const [divisionSelect, setDivisionSelect] = useState<string | undefined>();
+  const [positionSelect, setPositionSelect] = useState<any | undefined>();
+  const [divisionSelect, setDivisionSelect] = useState<any | undefined>();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -70,30 +80,71 @@ export default function FormProfile() {
       name: "",
       instagram: "",
       email: "",
+      assets: [],
     },
   });
 
-  // useEffect(() => {
-  //   console.log(positionSelect, divisionSelect);
-  // }, [positionSelect, divisionSelect]);
+  useEffect(() => {
+    console.log(divisionSelect?.value);
+  }, [divisionSelect]);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const processedValues = {
-      ...values,
-      position_id: positionSelect,
-      division_id: divisionSelect,
-    };
+    try {
+      const { assets } = values;
+      let indexImg = 0;
+      const pathImage: any = [];
 
-    const data = useDataByName("member", values.name);
+      function getIndexImg() {
+        if (indexImg == 0) {
+          indexImg++;
+          return "";
+        } else {
+          return indexImg++;
+        }
+      }
+      await Promise.all(
+        assets.map(async (file: any) => {
+          const fileName =
+            `${values.name
+              .toLowerCase()
+              .replace(/[^a-z\s]/g, "")
+              .split(" ")
+              .join("_")}` + getIndexImg();
+          const { data: uploadData, error: uploadError } =
+            await supabase.storage
+              .from(`img/profile/${divisionSelect.label || ""}`)
+              .upload(fileName, file);
 
-    console.log(data);
+          if (uploadError) {
+            throw new Error(
+              `Gagal upload foto ${values.name}: ${uploadError.message}`,
+            );
+          }
 
-    await setMemberData(processedValues);
+          pathImage.push(
+            `/img/profile/${divisionSelect.label || ""}/${fileName}`,
+          );
+        }),
+      );
 
-    toast("Data Telah Terkirim");
-    form.reset();
-    setPositionSelect("");
-    setDivisionSelect("");
+      const processedValues = {
+        ...values,
+        position_id: positionSelect.value || "",
+        division_id: divisionSelect.value || "",
+      };
+
+      await setMemberData(processedValues);
+
+      toast("Data Telah Terkirim");
+      form.reset();
+      setPositionSelect("");
+      setDivisionSelect("");
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   useEffect(() => {
@@ -102,6 +153,7 @@ export default function FormProfile() {
         name: formData.name,
         instagram: formData.instagram,
         email: formData.email,
+        assets: formData.assets,
       });
     }
     setPositionSelect(formData ? formData.position_id : "");
@@ -122,7 +174,7 @@ export default function FormProfile() {
                     </label>
                     <ComboBox
                       framework={position_framework}
-                      value={positionSelect}
+                      value={positionSelect?.value}
                       setValue={setPositionSelect}
                       id="position"
                     />
@@ -134,11 +186,40 @@ export default function FormProfile() {
                     </label>
                     <ComboBox
                       framework={division_framework}
-                      value={divisionSelect}
+                      value={divisionSelect?.value}
                       setValue={setDivisionSelect}
                       id="division"
                     />
                   </div>
+                );
+              } else if (data == "assets") {
+                return (
+                  <FormField
+                    key={data.id}
+                    control={form.control}
+                    name={data}
+                    render={({ field }) => (
+                      <FormItem className="flex flex-col justify-start">
+                        <FormLabel className="text-start">{data}</FormLabel>
+                        <FormControl>
+                          <Input
+                            ref={fileInputRef}
+                            type="file"
+                            multiple
+                            accept="image/*"
+                            placeholder={data}
+                            onChange={(e) => {
+                              const files = e.target.files
+                                ? Array.from(e.target.files)
+                                : [];
+                              field.onChange(files);
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
                 );
               } else {
                 return (

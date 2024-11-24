@@ -35,6 +35,7 @@ const memberProps: (keyof ColumnMember)[] = [
   "email",
   "position_id",
   "division_id",
+  "assets",
 ];
 
 const academicProps: (keyof ColumnAcademic)[] = [

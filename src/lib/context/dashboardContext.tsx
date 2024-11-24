@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState } from "react";
 
 // 1. Definisikan tipe data context
 interface DashboardContextType {
-  formData: string | undefined;
-  setFormData: React.Dispatch<React.SetStateAction<string | undefined>>;
+  formData: any | undefined;
+  setFormData: React.Dispatch<React.SetStateAction<any | undefined>>;
 }
 
 // 2. Buat context dengan tipe `DashboardContextType | null`
@@ -26,7 +26,7 @@ export const DashboardProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [formData, setFormData] = useState<string | undefined>(undefined);
+  const [formData, setFormData] = useState<any | undefined>(undefined);
 
   return (
     <DashboardContext.Provider value={{ formData, setFormData }}>
