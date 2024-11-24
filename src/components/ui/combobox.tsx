@@ -40,7 +40,7 @@ export function ComboBox({ framework, value, setValue, id }: any) {
                     key={framework.value + framework.index}
                     value={framework.value}
                     onSelect={(currentValue) => {
-                      setValue(currentValue === value ? "" : currentValue);
+                      setValue(currentValue === value ? "" : framework);
                       setOpen(false);
                     }}
                     className="flex gap-4"
