@@ -171,6 +171,7 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
 
   async function onDelete(title: any, name: any) {
     const res = await deleteData(tableName, title, name);
+
     console.log(res);
     toast("data berhasil dihapus !");
   }

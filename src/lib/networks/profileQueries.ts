@@ -65,13 +65,14 @@ async function deleteMemberData(title: any, name: any) {
   };
 }
 
-async function updateMemberData(item: any) {
+async function updateMemberData(item: any, id: any) {
   console.log(item);
 
   const { data, error } = await supabase
     .from("member")
-    .update({ instagram: item.instagram })
-    .eq("name", "widys");
+    .update({ email: item.email })
+    .eq("id", id)
+    .select();
 
   return { data, error };
 }

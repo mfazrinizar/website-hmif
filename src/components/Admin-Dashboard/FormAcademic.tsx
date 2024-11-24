@@ -20,12 +20,13 @@ import { useDashboardContext } from "@/lib/context/dashboardContext";
 import { supabase } from "@/lib/createClient";
 
 const formSchema = z.object({
-  name: z.string().min(2).max(50),
-  email: z.string().email(),
-  instagram: z.string().min(2).max(50),
-  assets: z
-    .array(z.instanceof(File))
-    .nonempty("Harap unggah minimal satu foto"),
+  title: z.string().min(2).max(50),
+  category: z.string().min(2).max(50),
+  date: z.string().min(2).max(50),
+  description: z.string().min(2).max(50),
+  img: z.array(z.instanceof(File)).nonempty("Harap unggah minimal satu foto"),
+  type: z.string().min(2).max(50),
+  details_id: z.string().min(2).max(50),
 });
 
 const position_framework = [
@@ -61,12 +62,13 @@ const division_framework = [
 export default function FormProfile() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const datas: string[] = [
-    "name",
-    "email",
-    "position_id",
-    "division_id",
-    "instagram",
-    "assets",
+    "title",
+    "category",
+    "date",
+    "description",
+    "img",
+    "type",
+    "details_id",
   ];
 
   const { formData }: any = useDashboardContext();
@@ -77,15 +79,17 @@ export default function FormProfile() {
   const [divisionSelect, setDivisionSelect] = useState<
     { value: any; label: any } | undefined
   >({ value: "", label: "" });
-  const [id, setId] = useState();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      instagram: "",
-      email: "",
-      assets: [],
+      title: "",
+      category: "",
+      date: "",
+      description: "",
+      img: [],
+      type: "",
+      details_id: "",
     },
   });
 
@@ -98,7 +102,7 @@ export default function FormProfile() {
           division_id: divisionSelect!.value,
         };
 
-        const { data, error } = await updateMemberData(processedValues, id);
+        const { data, error } = await updateMemberData(processedValues);
         console.log(data, error);
 
         toast("Data Telah Terkirim");
@@ -151,7 +155,7 @@ export default function FormProfile() {
           ...values,
           position_id: positionSelect!.value,
           division_id: divisionSelect!.value,
-          assets: pathImage[0],
+          assets: pathImage,
         };
 
         await setMemberData(processedValues);
@@ -181,8 +185,6 @@ export default function FormProfile() {
         email: formData.email,
         assets: formData.assets,
       });
-
-      setId(formData.id);
     }
 
     setPositionSelect({
