@@ -7,7 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getTableStructureWithFunction } from "@/lib/networks/tableQueries";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import {
   useMemberData,
   ColumnMember,
@@ -170,51 +170,38 @@ export default function TableDashboard({ tableName }: { tableName: string }) {
     if (tempField) setFieldTable(tempField);
   }, [tempData, tempField]);
 
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
-  async function onDelete(title: any, name: any) {
-    // const res = await deleteData(tableName, title, name);
-
-    // console.log(res);
-    // toast("data berhasil dihapus !");
-
-    // const res = await listBucket();
-
-    const res = await deleteImage();
-
-    console.log(res);
-  }
+  const { mutate: onDelete } = useMutation({
+    mutationFn: () => deleteImage(),
+    onSuccess: (data) => {
+      console.log(data);
+    },
+    onError: (err) => {
+      console.error(err);
+    },
+  });
 
   function onUpdate(item: any) {
     setFormData(item);
   }
 
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <Table>
-      <TableCaption>A list of your recent tables.</TableCaption>
+    <Table className="text-wrap">
       <TableHeader>
         <TableRow>
-          {/* {Array.isArray(data) && data.length > 0 ? (
-            data?.slice(2, data.length).map((column) => (
-              <TableHead className="font-medium" key={column.column_name}>
-                {column.column_name}
-              </TableHead>
-            ))
-          ) : (
-            <TableCell colSpan={3}>No data available</TableCell>
-          )} */}
           <TableCell className="font-medium">Update</TableCell>
           <TableCell className="font-medium">Delete</TableCell>
           {fieldTable?.map((item, key) => (
-            <TableCell className="font-medium" key={item + key}>
+            <TableCell className="max-w-xs" key={item + key}>
               {item}
             </TableCell>
           ))}
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody className="text-wrap">
         {fetchedData
           ? fetchedData?.map((item, key) => (
               <TableRow key={item.id + key}>

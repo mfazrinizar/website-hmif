@@ -1,19 +1,21 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TableDashboard from "@/components/Admin-Dashboard/TableDashboard";
 import FormDashboard from "@/components/Admin-Dashboard/FormDashboard";
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { isLogin } from "@/hooks/useLogin";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { signOutUser } from "@/lib/networks/adminQueries";
-import { Menu } from "lucide-react";
 import { toast } from "sonner";
 import { DashboardProvider } from "@/lib/context/dashboardContext";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+  SidebarProvider,
+} from "@/components/ui/sidebar";
+import { useState } from "react";
+import { PinRightIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
 
 const pages = [
   "academic_competition",
@@ -41,84 +43,88 @@ export default function Dashboard() {
     navigate("/admin");
   }
 
+  const [isOpenSidebar, setIsOpenSidebar] = useState(true);
+
   return (
-    <section id="admin-dashboard" className="-mx-5 md:-mx-12 xl:-mx-20">
-      <Tabs defaultValue="academic_competition" className="flex">
-        <div>
-          <TabsList className="fixed bottom-0 top-0 hidden h-full w-1/3 flex-col items-start justify-start border-r-2 border-primary px-4 pt-8 md:flex">
-            <a href="/" className="mb-10">
-              <div className="flex gap-4">
+    <section id="admin-dashboard">
+      <Tabs>
+        <SidebarProvider
+          open={isOpenSidebar}
+          className="w-screen"
+          style={{
+            "--sidebar-width": "20vw",
+            "--sidebar-width-mobile": "20rem",
+          }}
+        >
+          <Sidebar>
+            <SidebarHeader>
+              <div className="mt-3 flex items-center gap-4">
                 <img
                   src="/img/logo-hmif.png"
                   alt="logo-hmif"
-                  className="size-12 xl:size-16"
+                  className="size-12 xl:size-10"
                 />
                 <div className="flex flex-col justify-center text-primary">
-                  <h1 className="text-xl font-bold md:text-2xl xl:text-3xl">
+                  <h1 className="text-xl font-bold md:text-2xl xl:text-xl">
                     HMIF UNSRI
                   </h1>
-                  <p className="text-xs font-medium xl:text-sm">
+                  <p className="text-xs font-medium xl:text-xs">
                     Kuatkan Formasi Wujudkan Inovasi
                   </p>
                 </div>
               </div>
-            </a>
-            {pages.map((item, key) => (
-              <TabsTrigger value={item} key={key + item} className="my-2">
-                {item}
-              </TabsTrigger>
-            ))}
-            <Button variant={"destructive"} onClick={() => logOut()}>
-              Log Out
-            </Button>
-          </TabsList>
-          <TabsList className="fixed left-0 right-0 z-50 h-auto items-center justify-between border-b-2 border-primary bg-background px-6 py-4 md:hidden">
-            <a href="/">
-              <div className="flex gap-4">
-                <img
-                  src="/img/logo-hmif.png"
-                  alt="logo-hmif"
-                  className="size-12"
-                />
-                <div className="flex flex-col justify-center text-primary">
-                  <h1 className="text-xl font-bold md:text-2xl">HMIF UNSRI</h1>
-                  <p className="text-xs font-medium">
-                    Kuatkan Formasi Wujudkan Inovasi
-                  </p>
-                </div>
-              </div>
-            </a>
-            <Sheet>
-              <SheetTrigger className="lg:hidden">
-                <Menu className="size-8 text-primary" />
-              </SheetTrigger>
-              <SheetContent className="flex flex-col items-start space-y-4">
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
+            </SidebarHeader>
+            <hr className="m-5" />
+            <SidebarContent>
+              <TabsList className="flex flex-col">
                 {pages.map((item, key) => (
                   <TabsTrigger value={item} key={key + item} className="my-2">
                     {item}
                   </TabsTrigger>
                 ))}
-                <Button variant={"destructive"} onClick={() => logOut()}>
+                {pages.map((item, key) => (
+                  <TabsTrigger value={item} key={key + item} className="my-2">
+                    {item}
+                  </TabsTrigger>
+                ))}
+                <Button
+                  variant={"destructive"}
+                  onClick={() => logOut()}
+                  className="mt-5"
+                >
                   Log Out
                 </Button>
-              </SheetContent>
-            </Sheet>
-          </TabsList>
-        </div>
-        {pages.map((item, key) => (
-          <TabsContent
-            value={item}
-            id={item}
-            key={key + item}
-            className="relative w-full px-10 md:left-1/3 md:w-2/3"
-          >
-            <DashboardProvider>
-              <FormDashboard tableName={item} />
-              <TableDashboard tableName={item} />
-            </DashboardProvider>
-          </TabsContent>
-        ))}
+              </TabsList>
+            </SidebarContent>
+          </Sidebar>
+          <main className="-ml-20 w-[80vw] px-10">
+            <button
+              onClick={() => setIsOpenSidebar((e) => !e)}
+              className="group top-0 -ml-5 mt-5 flex rounded-md"
+            >
+              <div className="scale-125 rounded-md bg-gray-100 p-2 hover:bg-gray-200">
+                <PinRightIcon
+                  className={cn(`group-hover:rotate-180`, {
+                    "rotate-180 group-hover:rotate-0": isOpenSidebar,
+                  })}
+                />
+              </div>
+            </button>
+            {pages.map((item, key) => (
+              <TabsContent
+                value={item}
+                id={item}
+                key={key + item}
+                className="max-w-screen overflow-x-auto"
+              >
+                <DashboardProvider>
+                  <FormDashboard tableName={item} />
+                  <TableDashboard tableName={item} />
+                </DashboardProvider>
+              </TabsContent>
+            ))}
+          </main>
+        </SidebarProvider>
       </Tabs>
     </section>
   );

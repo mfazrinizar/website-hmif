@@ -10,7 +10,7 @@ import Proker from "./pages/Proker";
 import Aspiration from "./pages/Aspiration";
 import ProkerDetail from "./pages/ProkerDetail";
 import AcademicCardsDetail from "./components/Academic/AcademicCardsDetail";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard_old";
 import Admin from "./pages/Admin";
 
 const RouterBuilder = () => {
