@@ -26,6 +26,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "vite-env.d.ts", "src/pages/Dashboardd/.tsx"],
+  "include": ["src", "vite-env.d.ts"],
+  "exclude": ["src/pages/Dashboard.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
